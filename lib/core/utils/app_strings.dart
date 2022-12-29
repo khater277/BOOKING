@@ -20,4 +20,5 @@ class AppStrings {
   static const String signUp = "Sign Up";
   static const String google = "Google";
   static const String facebook = "Facebook";
+  static const String imagesUrl = "http://photos.hotelbeds.com/giata/";
 }

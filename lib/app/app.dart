@@ -29,9 +29,10 @@ class MyApp extends StatelessWidget {
               BlocProvider(
                 create: (BuildContext context) => di<LoginCubit>(),
               ),
-              BlocProvider(create: (BuildContext context) => di<HotelsCubit>()
-                  // ..getHotels(),
-                  ),
+              BlocProvider(
+                create: (BuildContext context) =>
+                    di<HotelsCubit>()..getHotels(),
+              ),
               BlocProvider(
                 create: (BuildContext context) => di<HomeCubit>(),
               ),

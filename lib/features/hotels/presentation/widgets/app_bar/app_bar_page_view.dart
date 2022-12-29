@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 
 class AppBarPageView extends StatefulWidget {
   final HotelsCubit cubit;
-  final double opacity;
-  const AppBarPageView({super.key, required this.cubit, required this.opacity});
+
+  const AppBarPageView({super.key, required this.cubit});
 
   @override
   State<AppBarPageView> createState() => _AppBarPageViewState();
@@ -59,7 +59,7 @@ class _AppBarPageViewState extends State<AppBarPageView> {
         /// (cubit.scrollController.position.pixels)
         /// لو اقل من 1
         AnimatedOpacity(
-          opacity: 1 - widget.opacity,
+          opacity: 1 - widget.cubit.opacity,
           duration: const Duration(microseconds: 100),
           child: Align(
             alignment: AlignmentDirectional.bottomStart,

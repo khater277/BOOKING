@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 
 class HotelsAppBar extends StatelessWidget {
   final HotelsCubit cubit;
-  final double opacity;
-  const HotelsAppBar({super.key, required this.cubit, required this.opacity});
+
+  const HotelsAppBar({super.key, required this.cubit});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,6 @@ class HotelsAppBar extends StatelessWidget {
       ),
       flexibleSpace: AppBarPageView(
         cubit: cubit,
-        opacity: opacity,
       ),
     );
   }

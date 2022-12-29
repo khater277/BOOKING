@@ -4,6 +4,7 @@ import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/hotels/cubit/hotels_state.dart';
 import 'package:booking/features/hotels/data/models/hotel_page_view/hotel_page_view_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_body_model/hotels_body_model.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotels_response_model.dart';
 import 'package:booking/features/hotels/domain/usecases/hotel_usecases.dart';
 import 'package:flutter/material.dart';
@@ -64,35 +65,37 @@ class HotelsCubit extends Cubit<HotelsStates> {
     emit(HotelsChangePageView());
   }
 
-  // double opacity = 0;
-  // void determineContentOpacity(BuildContext context) {
-  //   /*
-  //       490 refers to total pixels 320 expandedHeight +
-  //       150 collapsedHeight + 20 sizedbox
-  //     */
-  //   double x = (scrollController.position.pixels) /
-  //       (MediaQuery.of(context).size.height - AppHeight.h490);
-  //   opacity = x >= 1
-  //       ? 1
-  //       : x <= 0
-  //           ? 0.0
-  //           : x;
-  //   // emit(HotelsDetermineContentOpacity());
-  // }
-
-  void addListenerToController() {
-    scrollController.addListener(getSomeHotels);
-    emit(AddListenerToController());
+  double opacity = 0;
+  void determineContentOpacity(BuildContext context) {
+    /*
+        490 refers to total pixels 320 expandedHeight +
+        150 collapsedHeight + 20 sizedbox
+      */
+    double x = (scrollController.position.pixels) /
+        (MediaQuery.of(context).size.height - AppHeight.h490);
+    opacity = x >= 1
+        ? 1
+        : x <= 0
+            ? 0.0
+            : x;
+    emit(HotelsDetermineContentOpacity());
   }
+
+  // code ,name ,description,countryCode,coordinates,address ,city,email,phones,facilities,images,
+
+  // void addListenerToController() {
+  // scrollController.addListener(getSomeHotels);
+  // emit(AddListenerToController());
+  // }
 
   bool hasNextPage = true;
   HotelsResponseModel? allHotels;
-  List<Hotel> hotels = [];
-  int from = 0;
-  int to = 10;
+  // List<Hotel> hotels = [];
+  // int from = 0;
+  // int to = 10;
   void getHotels() async {
     emit(GetHotelsLoading());
-    scrollController.addListener(getSomeHotels);
+    // scrollController.addListener(getSomeHotels);
     HotelsBodyModel hotelsBodyModel = const HotelsBodyModel(
       language: 'ENG',
     );
@@ -102,9 +105,9 @@ class HotelsCubit extends Cubit<HotelsStates> {
       (hotelsResponseModel) {
         HiveHelper.setAllHotels(hotelsResponseModel: hotelsResponseModel);
         allHotels = HiveHelper.getAllHotels();
-        hotels = hotelsResponseModel.hotels!.sublist(from, to);
-        from += 10;
-        to += 10;
+        // hotels = hotelsResponseModel.hotels!.sublist(from, to);
+        // from += 10;
+        // to += 10;
         // print(hotelsResponseModel.hotels![0].address);
         emit(GetHotelsSuccess());
       },
@@ -112,43 +115,43 @@ class HotelsCubit extends Cubit<HotelsStates> {
   }
 
   // List<Hotel> someHotels = [];
-  void getSomeHotels() async {
-    if (hasNextPage == true &&
-        state is! GetHotelsLoading &&
-        state is! GetMoreHotelsLoading &&
-        scrollController.position.extentAfter < 300) {
-      emit(GetMoreHotelsLoading());
-      try {
-        List<Hotel> fetchedList =
-            HiveHelper.getSomeHotels(from: from, to: to) ?? [];
-        if (fetchedList.isNotEmpty) {
-          hotels.addAll(fetchedList);
-          from += 10;
-          to += 10;
-        } else {
-          hasNextPage = false;
-        }
-        emit(GetMoreHotelsSuccess());
-      } catch (error) {
-        print("ERROR===>$error");
-        emit(GetMoreHotelsError());
-      }
-    }
-    // someHotels = [];
-    // HotelsBodyModel hotelsBodyModel = HotelsBodyModel(
-    //   language: 'ENG',
-    //   from: from,
-    //   to: to,
-    // );
-    // final response = await getHotelsUseCase(hotelsBodyModel);
-    // response.fold(
-    //   (failure) => {emit(HotelsError())},
-    //   (hotelsResponseModel) {
-    //     HiveHelper.setAllHotels(hotelsResponseModel: hotelsResponseModel);
-    //     allHotels = HiveHelper.getAllHotels();
-    //     someHotels = hotelsResponseModel.hotels!;
-    //     emit(GetHotelsSuccess());
-    //   },
-    // );
-  }
+  // void getSomeHotels() async {
+  //   if (hasNextPage == true &&
+  //       state is! GetHotelsLoading &&
+  //       state is! GetMoreHotelsLoading &&
+  //       scrollController.position.extentAfter < 300) {
+  //     emit(GetMoreHotelsLoading());
+  //     try {
+  //       List<Hotel> fetchedList =
+  //           HiveHelper.getSomeHotels(from: from, to: to) ?? [];
+  //       if (fetchedList.isNotEmpty) {
+  //         hotels.addAll(fetchedList);
+  //         from += 10;
+  //         to += 10;
+  //       } else {
+  //         hasNextPage = false;
+  //       }
+  //       emit(GetMoreHotelsSuccess());
+  //     } catch (error) {
+  //       debugPrint("ERROR===>$error");
+  //       emit(GetMoreHotelsError());
+  //     }
+  //   }
+  // someHotels = [];
+  // HotelsBodyModel hotelsBodyModel = HotelsBodyModel(
+  //   language: 'ENG',
+  //   from: from,
+  //   to: to,
+  // );
+  // final response = await getHotelsUseCase(hotelsBodyModel);
+  // response.fold(
+  //   (failure) => {emit(HotelsError())},
+  //   (hotelsResponseModel) {
+  //     HiveHelper.setAllHotels(hotelsResponseModel: hotelsResponseModel);
+  //     allHotels = HiveHelper.getAllHotels();
+  //     someHotels = hotelsResponseModel.hotels!;
+  //     emit(GetHotelsSuccess());
+  //   },
+  // );
+  // }
 }
