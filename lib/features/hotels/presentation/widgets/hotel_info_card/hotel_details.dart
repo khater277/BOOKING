@@ -21,7 +21,7 @@ class HotelDetails extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const HotellNameAndAddress(),
+            const HotelNameAndAddress(),
             SizedBox(height: AppHeight.h5),
             Row(
               children: [
