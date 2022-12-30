@@ -1,29 +1,42 @@
 import 'package:booking/core/api/dio_helper/dio_helper.dart';
-import 'package:booking/features/auth/data/models/auth_response_model.dart';
-import 'package:booking/features/auth/data/models/login/body/login_body_model.dart';
-import 'package:booking/features/auth/data/models/register/register_body/register_body_model.dart';
+import 'package:booking/core/firebase/firebase_helper.dart';
+import 'package:booking/features/auth/data/models/auth_body/body/auth_body.dart';
+import 'package:booking/features/auth/data/models/current_user/current_user.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class AuthRemoteDataSource {
-  Future<AuthResponseModel> registerUser(
-      {required RegisterBodyModel registerBody});
-  Future<AuthResponseModel> loginUser({required LoginBodyModel loginBody});
+  Future<UserCredential> registerUser({required AuthBody authBody});
+  Future<UserCredential> loginUser({required AuthBody authBody});
+  Future<void> addUserToFirestore({required CurrentUser user});
+  Future<CurrentUser> getCurrentUser({required String uid});
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   final DioHelper dioHelper;
+  final FirebaseHelper firebaseHelper;
 
-  AuthRemoteDataSourceImpl({required this.dioHelper});
+  AuthRemoteDataSourceImpl(
+      {required this.dioHelper, required this.firebaseHelper});
 
   /// REGISTER
   @override
-  Future<AuthResponseModel> registerUser(
-      {required RegisterBodyModel registerBody}) {
-    return dioHelper.register(registerBodyModel: registerBody);
+  Future<UserCredential> registerUser({required AuthBody authBody}) {
+    return firebaseHelper.createUserWithEmail(authBody: authBody);
   }
 
   /// LOGIN
   @override
-  Future<AuthResponseModel> loginUser({required LoginBodyModel loginBody}) {
-    return dioHelper.login(loginBodyModel: loginBody);
+  Future<UserCredential> loginUser({required AuthBody authBody}) {
+    return firebaseHelper.signInUserWithEmail(authBody: authBody);
+  }
+
+  @override
+  Future<void> addUserToFirestore({required CurrentUser user}) {
+    return firebaseHelper.addUserToFirestore(user: user);
+  }
+
+  @override
+  Future<CurrentUser> getCurrentUser({required String uid}) async {
+    return firebaseHelper.getCurrentUser(uid: uid);
   }
 }

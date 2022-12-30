@@ -18,9 +18,7 @@ class BestDealsHead extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // LargeHeadText(
-          // text:
-          //     "${HotelsCubit.get(context).allHotels!.hotels![0].phones![0].phoneNumber}"),
+          // LargeHeadText(text: "${HotelsCubit.get(context).opacity}"),
           Expanded(
             child: LargeHeadText(
               text: "Best Deals",

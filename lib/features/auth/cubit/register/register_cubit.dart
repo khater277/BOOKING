@@ -1,5 +1,5 @@
 import 'package:booking/features/auth/cubit/register/register_states.dart';
-import 'package:booking/features/auth/data/models/register/register_body/register_body_model.dart';
+import 'package:booking/features/auth/data/models/auth_body/body/auth_body.dart';
 import 'package:booking/features/auth/domain/usecases/register_use_case.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,11 +11,11 @@ class RegisterCubit extends Cubit<RegisterState> {
   static RegisterCubit get(context) => BlocProvider.of<RegisterCubit>(context);
 
   IconData passwordIcon = Icons.visibility_outlined;
-  bool passwordObsecure = true;
+  bool passwordObscure = true;
   void changePasswordVisibility() {
     emit(ChangePasswordVisibilityLoading());
-    passwordObsecure = !passwordObsecure;
-    if (passwordObsecure) {
+    passwordObscure = !passwordObscure;
+    if (passwordObscure) {
       passwordIcon = Icons.visibility_outlined;
     } else {
       passwordIcon = Icons.visibility_off_outlined;
@@ -56,14 +56,17 @@ class RegisterCubit extends Cubit<RegisterState> {
     emit(InitRegisterControllers());
   }
 
-  void registerUser({required RegisterBodyModel registerBody}) async {
+  void registerUser({required AuthBody authBody}) async {
     emit(RegisterCreateUserLoading());
-    final response = await registerUseCase.call(registerBody);
+    final response = await registerUseCase.call(authBody);
     response.fold(
-      (failure) => emit(RegisterCreateUserError()),
-      (authResponse) {
-        debugPrint("================> ${authResponse.status!.title!.en}");
-        emit(RegisterCreateUserSuccess(authResponse: authResponse));
+      (failure) => emit(RegisterCreateUserError(message: failure.getMessage())),
+      (user) {
+        nameController!.clear();
+        emailController!.clear();
+        passwordController!.clear();
+        passwordConfirmationController!.clear();
+        emit(RegisterCreateUserSuccess(user: user));
       },
     );
   }

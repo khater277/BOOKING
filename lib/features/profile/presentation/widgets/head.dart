@@ -2,6 +2,7 @@ import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_fonts.dart';
 import 'package:booking/core/utils/app_images.dart';
 import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/features/profile/cubit/profile_cubit.dart';
 import 'package:flutter/material.dart';
 
 class ProfileHead extends StatelessWidget {
@@ -16,15 +17,21 @@ class ProfileHead extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              LargeHeadText(
-                text: "Khater",
-                size: FontSize.s22,
+              Flexible(
+                child: LargeHeadText(
+                  text: ProfileCubit.get(context).user.name!,
+                  size: FontSize.s22,
+                  maxLines: 3,
+                ),
               ),
-              SecondaryText(
-                text: "view and edit profile",
-                size: FontSize.s16,
-                isButton: true,
-                isLight: true,
+              Flexible(
+                child: SecondaryText(
+                  text: "view and edit profile",
+                  size: FontSize.s16,
+                  isButton: true,
+                  isLight: true,
+                  maxLines: 2,
+                ),
               )
             ],
           ),

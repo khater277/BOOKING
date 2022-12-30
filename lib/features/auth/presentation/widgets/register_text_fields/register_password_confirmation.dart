@@ -22,7 +22,7 @@ class RegisterPasswordConfirmationTextField extends StatelessWidget {
         title: AppStrings.passwordConfirmation,
         hint: AppStrings.passwordConfirmationHint,
         inputType: TextInputType.text,
-        obscure: cubit.passwordObsecure,
+        obscure: cubit.passwordObscure,
         suffixIcon:
             cubit.passwordConfIconVisibility ? cubit.passwordIcon : null,
         onChange: (value) {

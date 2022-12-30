@@ -22,7 +22,7 @@ class RegisterPasswordTextField extends StatelessWidget {
         title: AppStrings.password,
         hint: AppStrings.passwordHint,
         inputType: TextInputType.text,
-        obscure: cubit.passwordObsecure,
+        obscure: cubit.passwordObscure,
         suffixIcon: cubit.passwordIcon,
         suffixTap: () => cubit.changePasswordVisibility(),
         validator: (value) {

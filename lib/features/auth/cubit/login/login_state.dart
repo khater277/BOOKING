@@ -1,5 +1,5 @@
-import 'package:booking/features/auth/data/models/auth_response_model.dart';
 import 'package:equatable/equatable.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class LoginState extends Equatable {
   const LoginState();
@@ -19,9 +19,13 @@ class ChangePasswordVisibility extends LoginState {}
 class UserLoginLoading extends LoginState {}
 
 class UserLoginSuccess extends LoginState {
-  final AuthResponseModel authResponse;
+  // final CurrentUser currentUser;
 
-  const UserLoginSuccess({required this.authResponse});
+  // const UserLoginSuccess({required this.currentUser});
 }
 
-class UserLoginError extends LoginState {}
+class UserLoginError extends LoginState {
+  final String message;
+
+  const UserLoginError({required this.message});
+}

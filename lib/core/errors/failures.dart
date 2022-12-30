@@ -1,5 +1,8 @@
+import 'package:booking/core/errors/firebase_exceptions.dart';
 import 'package:booking/core/errors/network_exceptions.dart';
+import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class Failure extends Equatable {
   String getMessage();
@@ -8,14 +11,31 @@ abstract class Failure extends Equatable {
 }
 
 class ServerFailure extends Failure {
-  final NetworkExceptions error;
+  final Exception error;
 
   ServerFailure({required this.error});
 
+  String handleException(e) {
+    String result;
+    switch (e.runtimeType) {
+      case DioError:
+        result = NetworkExceptions.getErrorMessage(
+            NetworkExceptions.getDioException(error));
+        break;
+      case FirebaseAuthException:
+        result = AuthExceptionHandler.generateExceptionMessage(
+            AuthExceptionHandler.handleException(error));
+        break;
+      default:
+        result = e.runtimeType.toString();
+    }
+    return result;
+  }
+
   @override
-  String getMessage() => NetworkExceptions.getErrorMessage(error);
-  // NetworkExceptions.getErrorMessage(
-  //     NetworkExceptions.getDioException(error));
+  String getMessage() => handleException(error);
+  // "error is  NetworkExceptions.getErrorMessage(error)";
+
 }
 
 class CacheFailure extends Failure {

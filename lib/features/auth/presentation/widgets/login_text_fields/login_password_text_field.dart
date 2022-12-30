@@ -20,7 +20,7 @@ class LoginPasswordTextField extends StatelessWidget {
         controller: cubit.passwordController!,
         formKey: cubit.passwordFormKey,
         title: AppStrings.password,
-        obscure: cubit.passwordObsecure,
+        obscure: cubit.passwordObscure,
         suffixIcon: cubit.passwordIcon,
         suffixTap: () => cubit.changePasswordVisibility(),
         hint: AppStrings.passwordHint,

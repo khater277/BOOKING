@@ -16,7 +16,7 @@ class AppBottomNavBar extends StatelessWidget {
         curve: Curves.easeIn,
         currentIndex: cubit.currentIndex,
         onTap: (index) {
-          cubit.changeNavBar(index: index);
+          cubit.changeNavBar(index: index, context: context);
         },
         marginR: EdgeInsets.symmetric(horizontal: AppWidth.w20)
             .add(EdgeInsets.only(bottom: AppHeight.h2)),

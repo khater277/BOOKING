@@ -1,11 +1,12 @@
-import 'package:bloc/bloc.dart';
+import 'package:booking/core/hive/hive_helper.dart';
+import 'package:booking/features/auth/data/models/current_user/current_user.dart';
 import 'package:booking/features/profile/data/models/pofile_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'profile_state.dart';
 part 'profile_cubit.freezed.dart';
+part 'profile_state.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
   ProfileCubit() : super(const ProfileState.initial());
@@ -20,4 +21,6 @@ class ProfileCubit extends Cubit<ProfileState> {
     ProfileItemModel(name: "Payment", icon: Icons.wallet),
     ProfileItemModel(name: "Setting", icon: Icons.settings),
   ];
+
+  CurrentUser user = HiveHelper.getCurrentUser()!;
 }

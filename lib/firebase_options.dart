@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '525564821315',
     projectId: 'booking-b6bab',
     storageBucket: 'booking-b6bab.appspot.com',
-    iosClientId: '525564821315-2veqpvom3srs1197lrtthq8na44jblu3.apps.googleusercontent.com',
+    iosClientId:
+        '525564821315-2veqpvom3srs1197lrtthq8na44jblu3.apps.googleusercontent.com',
     iosBundleId: 'com.example.booking',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '525564821315',
     projectId: 'booking-b6bab',
     storageBucket: 'booking-b6bab.appspot.com',
-    iosClientId: '525564821315-2veqpvom3srs1197lrtthq8na44jblu3.apps.googleusercontent.com',
+    iosClientId:
+        '525564821315-2veqpvom3srs1197lrtthq8na44jblu3.apps.googleusercontent.com',
     iosBundleId: 'com.example.booking',
   );
 }

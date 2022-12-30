@@ -1,5 +1,6 @@
 import 'package:booking/core/api/dio_helper/dio_helper.dart';
 import 'package:booking/core/api/end_points.dart';
+import 'package:booking/core/firebase/firebase_helper.dart';
 import 'package:booking/core/utils/app_functions.dart';
 import 'package:booking/features/auth/cubit/login/login_cubit.dart';
 import 'package:booking/features/auth/cubit/register/register_cubit.dart';
@@ -34,7 +35,7 @@ void setupGetIt() {
 
   /// DATA SOURCES
   di.registerLazySingleton<AuthRemoteDataSource>(
-      () => AuthRemoteDataSourceImpl(dioHelper: di()));
+      () => AuthRemoteDataSourceImpl(dioHelper: di(), firebaseHelper: di()));
   di.registerLazySingleton<HotelsRemoteDataSource>(
       () => HotelsRemoteDataSourceImpl(dioHelper: di()));
 
@@ -55,6 +56,9 @@ void setupGetIt() {
   /// DIO
   di.registerLazySingleton<DioHelper>(() => DioHelper(di()));
   di.registerLazySingleton<Dio>(() => _createAndSetupDio());
+
+  /// FIREBASE
+  di.registerLazySingleton<FirebaseHelper>(() => FirebaseHelperImpl());
 }
 
 Dio _createAndSetupDio() {

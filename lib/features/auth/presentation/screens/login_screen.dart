@@ -15,7 +15,7 @@ import 'package:booking/features/auth/presentation/widgets/already_have_account.
 import 'package:booking/features/auth/presentation/widgets/auth_head.dart';
 import 'package:booking/features/auth/presentation/widgets/google_facebook_sign_in.dart';
 import 'package:booking/features/auth/presentation/widgets/login_text_fields/login_text_fields.dart';
-import 'package:booking/features/hotels/presentation/screens/hotels_screen.dart';
+import 'package:booking/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -45,22 +45,35 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
-      listener: (context, state) {
-        if (state is UserLoginSuccess) {
-          if (state.authResponse.status!.type == "0") {
-            showSnackBar(
-              context: context,
-              message: state.authResponse.status!.title!.en!,
-              color: AppColors.red,
-            );
-          } else {
-            Go.offAll(
-              context: context,
-              screen: const HotelsScreen(),
-            );
-            HiveHelper.setCurrentUser(authData: state.authResponse.authData!);
-          }
+      listener: (context, state) async {
+        if (state is UserLoginError) {
+          showSnackBar(
+            context: context,
+            message: state.message,
+            color: AppColors.red,
+          );
+        } else if (state is UserLoginSuccess) {
+          Go.offAll(context: context, screen: const HomeScreen());
+
+          // await HiveHelper.setCurrentUser(user: state.currentUser);
+          // print(HiveHelper.getCurrentUser()!.userCredential.user!.email);
         }
+
+        // if (state is UserLoginSuccess) {
+        //   if (state.authResponse.status!.type == "0") {
+        // showSnackBar(
+        //   context: context,
+        //   message: state.authResponse.status!.title!.en!,
+        //   color: AppColors.red,
+        // );
+        //   } else {
+        //     Go.offAll(
+        //       context: context,
+        //       screen: const HotelsScreen(),
+        //     );
+        //     HiveHelper.setCurrentUser(authData: state.authResponse.authData!);
+        //   }
+        // }
       },
       builder: (context, state) {
         final LoginCubit cubit = LoginCubit.get(context);

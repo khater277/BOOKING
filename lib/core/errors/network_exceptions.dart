@@ -1,7 +1,8 @@
 import 'dart:io';
+
+import 'package:booking/core/errors/error_model.dart';
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:booking/core/errors/error_model.dart';
 
 part 'network_exceptions.freezed.dart';
 

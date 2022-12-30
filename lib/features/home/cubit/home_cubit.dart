@@ -1,5 +1,6 @@
 import 'package:booking/features/booking/presentation/screens/booking_screen.dart';
 import 'package:booking/features/home/cubit/home_states.dart';
+import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
 import 'package:booking/features/hotels/presentation/screens/hotels_screen.dart';
 import 'package:booking/features/profile/presentation/screens/profile_screen.dart';
 import 'package:flutter/widgets.dart';
@@ -17,8 +18,9 @@ class HomeCubit extends Cubit<HomeState> {
   ];
 
   int currentIndex = 0;
-  void changeNavBar({required int index}) {
+  void changeNavBar({required int index, required BuildContext context}) {
     currentIndex = index;
+    HotelsCubit.get(context).zeroOpacity();
     emit(ChangeNavBarState());
   }
 }

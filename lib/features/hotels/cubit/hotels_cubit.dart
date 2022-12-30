@@ -4,7 +4,6 @@ import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/hotels/cubit/hotels_state.dart';
 import 'package:booking/features/hotels/data/models/hotel_page_view/hotel_page_view_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_body_model/hotels_body_model.dart';
-import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotels_response_model.dart';
 import 'package:booking/features/hotels/domain/usecases/hotel_usecases.dart';
 import 'package:flutter/material.dart';
@@ -78,6 +77,12 @@ class HotelsCubit extends Cubit<HotelsStates> {
         : x <= 0
             ? 0.0
             : x;
+
+    emit(HotelsDetermineContentOpacity());
+  }
+
+  void zeroOpacity() {
+    opacity = 0;
     emit(HotelsDetermineContentOpacity());
   }
 

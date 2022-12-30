@@ -8,7 +8,7 @@ import 'package:booking/core/utils/app_strings.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/auth/cubit/register/register_cubit.dart';
 import 'package:booking/features/auth/cubit/register/register_states.dart';
-import 'package:booking/features/auth/data/models/register/register_body/register_body_model.dart';
+import 'package:booking/features/auth/data/models/auth_body/body/auth_body.dart';
 import 'package:booking/features/auth/presentation/screens/login_screen.dart';
 import 'package:booking/features/auth/presentation/widgets/accept_terms_text.dart';
 import 'package:booking/features/auth/presentation/widgets/auth_head.dart';
@@ -48,16 +48,31 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return BlocConsumer<RegisterCubit, RegisterState>(
       listener: (context, state) {
-        if (state is RegisterCreateUserSuccess) {
+        if (state is RegisterCreateUserError) {
           showSnackBar(
             context: context,
-            message: state.authResponse.status!.title!.en!,
+            message: state.message,
+            color: AppColors.red,
+          );
+        } else if (state is RegisterCreateUserSuccess) {
+          showSnackBar(
+            context: context,
+            message: "User created successfully",
             color: AppColors.teal,
           );
-          if (state.authResponse.status!.type == "1") {
-            Go.offAll(context: context, screen: const LoginScreen());
-          }
+          Go.offAll(context: context, screen: const LoginScreen());
         }
+
+        // if (state is RegisterCreateUserSuccess) {
+        //   showSnackBar(
+        //     context: context,
+        //     message: state.authResponse.status!.title!.en!,
+        //     color: AppColors.teal,
+        //   );
+        //   if (state.authResponse.status!.type == "1") {
+        // Go.offAll(context: context, screen: const LoginScreen());
+        //   }
+        // }
       },
       builder: (context, state) {
         final RegisterCubit cubit = RegisterCubit.get(context);
@@ -109,12 +124,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                           if (registerValidation) {
                             cubit.registerUser(
-                              registerBody: RegisterBodyModel(
+                              authBody: AuthBody(
                                 name: cubit.nameController!.text,
                                 email: cubit.emailController!.text,
                                 password: cubit.passwordController!.text,
-                                passwordConfirmation:
-                                    cubit.passwordConfirmationController!.text,
                               ),
                             );
                           }

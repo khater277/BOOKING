@@ -1,6 +1,8 @@
 import 'package:booking/features/auth/cubit/login/login_state.dart';
-import 'package:booking/features/auth/data/models/login/body/login_body_model.dart';
+import 'package:booking/features/auth/data/models/auth_body/body/auth_body.dart';
+import 'package:booking/features/auth/data/models/current_user/current_user.dart';
 import 'package:booking/features/auth/domain/usecases/login_use_case.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,34 +29,42 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   IconData passwordIcon = Icons.visibility_outlined;
-  bool passwordObsecure = true;
+  bool passwordObscure = true;
   void changePasswordVisibility() {
     emit(ChangePasswordVisibilityLoading());
-    passwordObsecure = !passwordObsecure;
-    if (passwordObsecure) {
+    passwordObscure = !passwordObscure;
+    if (passwordObscure) {
       passwordIcon = Icons.visibility_outlined;
     } else {
       passwordIcon = Icons.visibility_off_outlined;
     }
-    debugPrint(passwordObsecure.toString());
+    debugPrint(passwordObscure.toString());
     emit(ChangePasswordVisibility());
   }
 
   void userLogin() async {
     emit(UserLoginLoading());
-    LoginBodyModel loginBody = LoginBodyModel(
+    AuthBody loginBody = AuthBody(
       email: emailController!.text,
       password: passwordController!.text,
     );
     final response = await loginUseCase.call(loginBody);
     response.fold(
       (failure) {
-        debugPrint("ERROR");
-        emit(UserLoginError());
+        debugPrint("ERROR ==> ${failure.getMessage()} ");
+        emit(UserLoginError(message: failure.getMessage()));
       },
-      (authResponseModel) {
+      (userCredential) {
         debugPrint("DONE =====> ");
-        emit(UserLoginSuccess(authResponse: authResponseModel));
+
+        // CurrentUser x = CurrentUser(
+        //   uid: userCredential.user!.uid,
+        //   token: userCredential.credential!.accessToken,
+        //   name: ,
+        //   email: ,
+        //   image: ,
+        // );
+        emit(UserLoginSuccess());
       },
     );
   }

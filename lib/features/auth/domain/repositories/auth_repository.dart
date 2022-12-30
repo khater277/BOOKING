@@ -1,13 +1,12 @@
 import 'package:booking/core/errors/failures.dart';
-import 'package:booking/features/auth/data/models/auth_response_model.dart';
-import 'package:booking/features/auth/data/models/login/body/login_body_model.dart';
-import 'package:booking/features/auth/data/models/register/register_body/register_body_model.dart';
+import 'package:booking/features/auth/data/models/auth_body/body/auth_body.dart';
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class AuthRepository {
-  Future<Either<Failure, AuthResponseModel>> registerUser(
-      {required RegisterBodyModel registerBody});
+  Future<Either<Failure, UserCredential>> registerUser(
+      {required AuthBody authBody});
 
-  Future<Either<Failure, AuthResponseModel>> loginUser(
-      {required LoginBodyModel loginBody});
+  Future<Either<Failure, UserCredential>> loginUser(
+      {required AuthBody authBody});
 }

@@ -1,5 +1,5 @@
 import 'package:booking/core/hive/keys.dart';
-import 'package:booking/features/auth/data/models/auth_response_model.dart';
+import 'package:booking/features/auth/data/models/current_user/current_user.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/address.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/city.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/coordinates.dart';
@@ -8,17 +8,18 @@ import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotels_response_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/image.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/phone.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class HiveHelper {
-  static Box<AuthData>? currentUser;
+  static Box<CurrentUser>? currentUser;
   static Box<HotelsResponseModel>? allHotelsData;
 
   static Future<void> init() async {
     await Hive.initFlutter();
 
     /// Adapters
-    Hive.registerAdapter(AuthDataAdapter());
+    Hive.registerAdapter(CurrentUserAdapter());
     Hive.registerAdapter(HotelsResponseModelAdapter());
     Hive.registerAdapter(HotelAdapter());
     Hive.registerAdapter(AddressAdapter());
@@ -34,11 +35,11 @@ class HiveHelper {
   }
 
   // USER
-  static Future<void> setCurrentUser({required AuthData authData}) {
-    return currentUser!.put(HiveKeys.currentUser, authData);
+  static Future<void> setCurrentUser({required CurrentUser user}) {
+    return currentUser!.put(HiveKeys.currentUser, user);
   }
 
-  static AuthData? getCurrentUser() {
+  static CurrentUser? getCurrentUser() {
     return currentUser!.get(HiveKeys.currentUser);
   }
 
