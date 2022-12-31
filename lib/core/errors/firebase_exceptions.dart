@@ -14,6 +14,9 @@ class AuthExceptionHandler with _$AuthExceptionHandler {
       OperationNotAllowed;
   const factory AuthExceptionHandler.expiredActionCode() = ExpiredActionCode;
   const factory AuthExceptionHandler.tooManyRequests() = TooManyRequests;
+  const factory AuthExceptionHandler.requestCancelled() = RequestCancelled;
+  const factory AuthExceptionHandler.emailExistsWithDifferentCredential() =
+      EmailExistsWithDifferentCredential;
   const factory AuthExceptionHandler.undefined() = Undefined;
   const factory AuthExceptionHandler.noInternetConnection() =
       NoInternetConnection;
@@ -52,6 +55,12 @@ class AuthExceptionHandler with _$AuthExceptionHandler {
       case "network-request-failed":
         status = const AuthExceptionHandler.noInternetConnection();
         break;
+      case "request-cancelled":
+        status = const AuthExceptionHandler.requestCancelled();
+        break;
+      case "account-exists-with-different-credential":
+        status = const AuthExceptionHandler.requestCancelled();
+        break;
       default:
         status = const AuthExceptionHandler.undefined();
     }
@@ -81,6 +90,9 @@ class AuthExceptionHandler with _$AuthExceptionHandler {
       undefined: () => "Undefined Error",
       noInternetConnection: () => errorMessage =
           "No internet connection, please check your connection and try again.",
+      requestCancelled: () => errorMessage = "Your request has been cancelled.",
+      emailExistsWithDifferentCredential: () => errorMessage =
+          "The account already exists with a different credential.",
     );
     return errorMessage;
   }

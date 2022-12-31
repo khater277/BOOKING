@@ -1,10 +1,12 @@
 import 'package:booking/core/shared_widgets/button.dart';
 import 'package:booking/core/utils/app_strings.dart';
 import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/features/auth/cubit/login/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class GoogleFacebookSignIn extends StatelessWidget {
+  // final LoginCubit cubit
   const GoogleFacebookSignIn({super.key});
 
   @override
@@ -17,6 +19,7 @@ class GoogleFacebookSignIn extends StatelessWidget {
             text: AppStrings.facebook,
             icon: FontAwesomeIcons.facebook,
             onPressed: () {
+              LoginCubit.get(context).signInWithFacebook();
               // AuthCubit.get(context)
             },
           ),
@@ -28,7 +31,7 @@ class GoogleFacebookSignIn extends StatelessWidget {
             text: AppStrings.google,
             icon: FontAwesomeIcons.google,
             onPressed: () {
-              // AuthCubit.get(context).changeRegisterPasswordVisibility();
+              LoginCubit.get(context).signInWithGoogle();
             },
           ),
         ),

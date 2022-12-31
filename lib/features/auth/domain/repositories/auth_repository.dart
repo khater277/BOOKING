@@ -9,4 +9,7 @@ abstract class AuthRepository {
 
   Future<Either<Failure, UserCredential>> loginUser(
       {required AuthBody authBody});
+
+  Future<Either<Failure, UserCredential>> signInWithGoogle();
+  Future<Either<Failure, UserCredential?>> signInWithFacebook();
 }

@@ -27,6 +27,8 @@ mixin _$AuthExceptionHandler {
     required TResult Function() operationNotAllowed,
     required TResult Function() expiredActionCode,
     required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
     required TResult Function() undefined,
     required TResult Function() noInternetConnection,
   }) =>
@@ -42,6 +44,8 @@ mixin _$AuthExceptionHandler {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
   }) =>
@@ -57,6 +61,8 @@ mixin _$AuthExceptionHandler {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
     required TResult orElse(),
@@ -73,6 +79,9 @@ mixin _$AuthExceptionHandler {
     required TResult Function(OperationNotAllowed value) operationNotAllowed,
     required TResult Function(ExpiredActionCode value) expiredActionCode,
     required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
     required TResult Function(Undefined value) undefined,
     required TResult Function(NoInternetConnection value) noInternetConnection,
   }) =>
@@ -88,6 +97,9 @@ mixin _$AuthExceptionHandler {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
   }) =>
@@ -103,6 +115,9 @@ mixin _$AuthExceptionHandler {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
     required TResult orElse(),
@@ -177,6 +192,8 @@ class _$WrongPassword implements WrongPassword {
     required TResult Function() operationNotAllowed,
     required TResult Function() expiredActionCode,
     required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
     required TResult Function() undefined,
     required TResult Function() noInternetConnection,
   }) {
@@ -195,6 +212,8 @@ class _$WrongPassword implements WrongPassword {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
   }) {
@@ -213,6 +232,8 @@ class _$WrongPassword implements WrongPassword {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
     required TResult orElse(),
@@ -235,6 +256,9 @@ class _$WrongPassword implements WrongPassword {
     required TResult Function(OperationNotAllowed value) operationNotAllowed,
     required TResult Function(ExpiredActionCode value) expiredActionCode,
     required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
     required TResult Function(Undefined value) undefined,
     required TResult Function(NoInternetConnection value) noInternetConnection,
   }) {
@@ -253,6 +277,9 @@ class _$WrongPassword implements WrongPassword {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
   }) {
@@ -271,6 +298,9 @@ class _$WrongPassword implements WrongPassword {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
     required TResult orElse(),
@@ -336,6 +366,8 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     required TResult Function() operationNotAllowed,
     required TResult Function() expiredActionCode,
     required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
     required TResult Function() undefined,
     required TResult Function() noInternetConnection,
   }) {
@@ -354,6 +386,8 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
   }) {
@@ -372,6 +406,8 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
     required TResult orElse(),
@@ -394,6 +430,9 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     required TResult Function(OperationNotAllowed value) operationNotAllowed,
     required TResult Function(ExpiredActionCode value) expiredActionCode,
     required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
     required TResult Function(Undefined value) undefined,
     required TResult Function(NoInternetConnection value) noInternetConnection,
   }) {
@@ -412,6 +451,9 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
   }) {
@@ -430,6 +472,9 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
     required TResult orElse(),
@@ -495,6 +540,8 @@ class _$WeakPassword implements WeakPassword {
     required TResult Function() operationNotAllowed,
     required TResult Function() expiredActionCode,
     required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
     required TResult Function() undefined,
     required TResult Function() noInternetConnection,
   }) {
@@ -513,6 +560,8 @@ class _$WeakPassword implements WeakPassword {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
   }) {
@@ -531,6 +580,8 @@ class _$WeakPassword implements WeakPassword {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
     required TResult orElse(),
@@ -553,6 +604,9 @@ class _$WeakPassword implements WeakPassword {
     required TResult Function(OperationNotAllowed value) operationNotAllowed,
     required TResult Function(ExpiredActionCode value) expiredActionCode,
     required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
     required TResult Function(Undefined value) undefined,
     required TResult Function(NoInternetConnection value) noInternetConnection,
   }) {
@@ -571,6 +625,9 @@ class _$WeakPassword implements WeakPassword {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
   }) {
@@ -589,6 +646,9 @@ class _$WeakPassword implements WeakPassword {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
     required TResult orElse(),
@@ -654,6 +714,8 @@ class _$InvalidEmail implements InvalidEmail {
     required TResult Function() operationNotAllowed,
     required TResult Function() expiredActionCode,
     required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
     required TResult Function() undefined,
     required TResult Function() noInternetConnection,
   }) {
@@ -672,6 +734,8 @@ class _$InvalidEmail implements InvalidEmail {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
   }) {
@@ -690,6 +754,8 @@ class _$InvalidEmail implements InvalidEmail {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
     required TResult orElse(),
@@ -712,6 +778,9 @@ class _$InvalidEmail implements InvalidEmail {
     required TResult Function(OperationNotAllowed value) operationNotAllowed,
     required TResult Function(ExpiredActionCode value) expiredActionCode,
     required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
     required TResult Function(Undefined value) undefined,
     required TResult Function(NoInternetConnection value) noInternetConnection,
   }) {
@@ -730,6 +799,9 @@ class _$InvalidEmail implements InvalidEmail {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
   }) {
@@ -748,6 +820,9 @@ class _$InvalidEmail implements InvalidEmail {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
     required TResult orElse(),
@@ -813,6 +888,8 @@ class _$UserNotFound implements UserNotFound {
     required TResult Function() operationNotAllowed,
     required TResult Function() expiredActionCode,
     required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
     required TResult Function() undefined,
     required TResult Function() noInternetConnection,
   }) {
@@ -831,6 +908,8 @@ class _$UserNotFound implements UserNotFound {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
   }) {
@@ -849,6 +928,8 @@ class _$UserNotFound implements UserNotFound {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
     required TResult orElse(),
@@ -871,6 +952,9 @@ class _$UserNotFound implements UserNotFound {
     required TResult Function(OperationNotAllowed value) operationNotAllowed,
     required TResult Function(ExpiredActionCode value) expiredActionCode,
     required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
     required TResult Function(Undefined value) undefined,
     required TResult Function(NoInternetConnection value) noInternetConnection,
   }) {
@@ -889,6 +973,9 @@ class _$UserNotFound implements UserNotFound {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
   }) {
@@ -907,6 +994,9 @@ class _$UserNotFound implements UserNotFound {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
     required TResult orElse(),
@@ -972,6 +1062,8 @@ class _$UserDisabled implements UserDisabled {
     required TResult Function() operationNotAllowed,
     required TResult Function() expiredActionCode,
     required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
     required TResult Function() undefined,
     required TResult Function() noInternetConnection,
   }) {
@@ -990,6 +1082,8 @@ class _$UserDisabled implements UserDisabled {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
   }) {
@@ -1008,6 +1102,8 @@ class _$UserDisabled implements UserDisabled {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
     required TResult orElse(),
@@ -1030,6 +1126,9 @@ class _$UserDisabled implements UserDisabled {
     required TResult Function(OperationNotAllowed value) operationNotAllowed,
     required TResult Function(ExpiredActionCode value) expiredActionCode,
     required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
     required TResult Function(Undefined value) undefined,
     required TResult Function(NoInternetConnection value) noInternetConnection,
   }) {
@@ -1048,6 +1147,9 @@ class _$UserDisabled implements UserDisabled {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
   }) {
@@ -1066,6 +1168,9 @@ class _$UserDisabled implements UserDisabled {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
     required TResult orElse(),
@@ -1131,6 +1236,8 @@ class _$OperationNotAllowed implements OperationNotAllowed {
     required TResult Function() operationNotAllowed,
     required TResult Function() expiredActionCode,
     required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
     required TResult Function() undefined,
     required TResult Function() noInternetConnection,
   }) {
@@ -1149,6 +1256,8 @@ class _$OperationNotAllowed implements OperationNotAllowed {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
   }) {
@@ -1167,6 +1276,8 @@ class _$OperationNotAllowed implements OperationNotAllowed {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
     required TResult orElse(),
@@ -1189,6 +1300,9 @@ class _$OperationNotAllowed implements OperationNotAllowed {
     required TResult Function(OperationNotAllowed value) operationNotAllowed,
     required TResult Function(ExpiredActionCode value) expiredActionCode,
     required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
     required TResult Function(Undefined value) undefined,
     required TResult Function(NoInternetConnection value) noInternetConnection,
   }) {
@@ -1207,6 +1321,9 @@ class _$OperationNotAllowed implements OperationNotAllowed {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
   }) {
@@ -1225,6 +1342,9 @@ class _$OperationNotAllowed implements OperationNotAllowed {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
     required TResult orElse(),
@@ -1290,6 +1410,8 @@ class _$ExpiredActionCode implements ExpiredActionCode {
     required TResult Function() operationNotAllowed,
     required TResult Function() expiredActionCode,
     required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
     required TResult Function() undefined,
     required TResult Function() noInternetConnection,
   }) {
@@ -1308,6 +1430,8 @@ class _$ExpiredActionCode implements ExpiredActionCode {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
   }) {
@@ -1326,6 +1450,8 @@ class _$ExpiredActionCode implements ExpiredActionCode {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
     required TResult orElse(),
@@ -1348,6 +1474,9 @@ class _$ExpiredActionCode implements ExpiredActionCode {
     required TResult Function(OperationNotAllowed value) operationNotAllowed,
     required TResult Function(ExpiredActionCode value) expiredActionCode,
     required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
     required TResult Function(Undefined value) undefined,
     required TResult Function(NoInternetConnection value) noInternetConnection,
   }) {
@@ -1366,6 +1495,9 @@ class _$ExpiredActionCode implements ExpiredActionCode {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
   }) {
@@ -1384,6 +1516,9 @@ class _$ExpiredActionCode implements ExpiredActionCode {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
     required TResult orElse(),
@@ -1449,6 +1584,8 @@ class _$TooManyRequests implements TooManyRequests {
     required TResult Function() operationNotAllowed,
     required TResult Function() expiredActionCode,
     required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
     required TResult Function() undefined,
     required TResult Function() noInternetConnection,
   }) {
@@ -1467,6 +1604,8 @@ class _$TooManyRequests implements TooManyRequests {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
   }) {
@@ -1485,6 +1624,8 @@ class _$TooManyRequests implements TooManyRequests {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
     required TResult orElse(),
@@ -1507,6 +1648,9 @@ class _$TooManyRequests implements TooManyRequests {
     required TResult Function(OperationNotAllowed value) operationNotAllowed,
     required TResult Function(ExpiredActionCode value) expiredActionCode,
     required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
     required TResult Function(Undefined value) undefined,
     required TResult Function(NoInternetConnection value) noInternetConnection,
   }) {
@@ -1525,6 +1669,9 @@ class _$TooManyRequests implements TooManyRequests {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
   }) {
@@ -1543,6 +1690,9 @@ class _$TooManyRequests implements TooManyRequests {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
     required TResult orElse(),
@@ -1556,6 +1706,361 @@ class _$TooManyRequests implements TooManyRequests {
 
 abstract class TooManyRequests implements AuthExceptionHandler {
   const factory TooManyRequests() = _$TooManyRequests;
+}
+
+/// @nodoc
+abstract class _$$RequestCancelledCopyWith<$Res> {
+  factory _$$RequestCancelledCopyWith(
+          _$RequestCancelled value, $Res Function(_$RequestCancelled) then) =
+      __$$RequestCancelledCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RequestCancelledCopyWithImpl<$Res>
+    extends _$AuthExceptionHandlerCopyWithImpl<$Res>
+    implements _$$RequestCancelledCopyWith<$Res> {
+  __$$RequestCancelledCopyWithImpl(
+      _$RequestCancelled _value, $Res Function(_$RequestCancelled) _then)
+      : super(_value, (v) => _then(v as _$RequestCancelled));
+
+  @override
+  _$RequestCancelled get _value => super._value as _$RequestCancelled;
+}
+
+/// @nodoc
+
+class _$RequestCancelled implements RequestCancelled {
+  const _$RequestCancelled();
+
+  @override
+  String toString() {
+    return 'AuthExceptionHandler.requestCancelled()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RequestCancelled);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() wrongPassword,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() weakPassword,
+    required TResult Function() invalidEmail,
+    required TResult Function() userNotFound,
+    required TResult Function() userDisabled,
+    required TResult Function() operationNotAllowed,
+    required TResult Function() expiredActionCode,
+    required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
+    required TResult Function() undefined,
+    required TResult Function() noInternetConnection,
+  }) {
+    return requestCancelled();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? wrongPassword,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? weakPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? userNotFound,
+    TResult Function()? userDisabled,
+    TResult Function()? operationNotAllowed,
+    TResult Function()? expiredActionCode,
+    TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
+    TResult Function()? undefined,
+    TResult Function()? noInternetConnection,
+  }) {
+    return requestCancelled?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? wrongPassword,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? weakPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? userNotFound,
+    TResult Function()? userDisabled,
+    TResult Function()? operationNotAllowed,
+    TResult Function()? expiredActionCode,
+    TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
+    TResult Function()? undefined,
+    TResult Function()? noInternetConnection,
+    required TResult orElse(),
+  }) {
+    if (requestCancelled != null) {
+      return requestCancelled();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(WrongPassword value) wrongPassword,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(WeakPassword value) weakPassword,
+    required TResult Function(InvalidEmail value) invalidEmail,
+    required TResult Function(UserNotFound value) userNotFound,
+    required TResult Function(UserDisabled value) userDisabled,
+    required TResult Function(OperationNotAllowed value) operationNotAllowed,
+    required TResult Function(ExpiredActionCode value) expiredActionCode,
+    required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
+    required TResult Function(Undefined value) undefined,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+  }) {
+    return requestCancelled(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(WrongPassword value)? wrongPassword,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(WeakPassword value)? weakPassword,
+    TResult Function(InvalidEmail value)? invalidEmail,
+    TResult Function(UserNotFound value)? userNotFound,
+    TResult Function(UserDisabled value)? userDisabled,
+    TResult Function(OperationNotAllowed value)? operationNotAllowed,
+    TResult Function(ExpiredActionCode value)? expiredActionCode,
+    TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
+    TResult Function(Undefined value)? undefined,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+  }) {
+    return requestCancelled?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(WrongPassword value)? wrongPassword,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(WeakPassword value)? weakPassword,
+    TResult Function(InvalidEmail value)? invalidEmail,
+    TResult Function(UserNotFound value)? userNotFound,
+    TResult Function(UserDisabled value)? userDisabled,
+    TResult Function(OperationNotAllowed value)? operationNotAllowed,
+    TResult Function(ExpiredActionCode value)? expiredActionCode,
+    TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
+    TResult Function(Undefined value)? undefined,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    required TResult orElse(),
+  }) {
+    if (requestCancelled != null) {
+      return requestCancelled(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RequestCancelled implements AuthExceptionHandler {
+  const factory RequestCancelled() = _$RequestCancelled;
+}
+
+/// @nodoc
+abstract class _$$EmailExistsWithDifferentCredentialCopyWith<$Res> {
+  factory _$$EmailExistsWithDifferentCredentialCopyWith(
+          _$EmailExistsWithDifferentCredential value,
+          $Res Function(_$EmailExistsWithDifferentCredential) then) =
+      __$$EmailExistsWithDifferentCredentialCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EmailExistsWithDifferentCredentialCopyWithImpl<$Res>
+    extends _$AuthExceptionHandlerCopyWithImpl<$Res>
+    implements _$$EmailExistsWithDifferentCredentialCopyWith<$Res> {
+  __$$EmailExistsWithDifferentCredentialCopyWithImpl(
+      _$EmailExistsWithDifferentCredential _value,
+      $Res Function(_$EmailExistsWithDifferentCredential) _then)
+      : super(_value, (v) => _then(v as _$EmailExistsWithDifferentCredential));
+
+  @override
+  _$EmailExistsWithDifferentCredential get _value =>
+      super._value as _$EmailExistsWithDifferentCredential;
+}
+
+/// @nodoc
+
+class _$EmailExistsWithDifferentCredential
+    implements EmailExistsWithDifferentCredential {
+  const _$EmailExistsWithDifferentCredential();
+
+  @override
+  String toString() {
+    return 'AuthExceptionHandler.emailExistsWithDifferentCredential()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EmailExistsWithDifferentCredential);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() wrongPassword,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() weakPassword,
+    required TResult Function() invalidEmail,
+    required TResult Function() userNotFound,
+    required TResult Function() userDisabled,
+    required TResult Function() operationNotAllowed,
+    required TResult Function() expiredActionCode,
+    required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
+    required TResult Function() undefined,
+    required TResult Function() noInternetConnection,
+  }) {
+    return emailExistsWithDifferentCredential();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? wrongPassword,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? weakPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? userNotFound,
+    TResult Function()? userDisabled,
+    TResult Function()? operationNotAllowed,
+    TResult Function()? expiredActionCode,
+    TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
+    TResult Function()? undefined,
+    TResult Function()? noInternetConnection,
+  }) {
+    return emailExistsWithDifferentCredential?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? wrongPassword,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? weakPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? userNotFound,
+    TResult Function()? userDisabled,
+    TResult Function()? operationNotAllowed,
+    TResult Function()? expiredActionCode,
+    TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
+    TResult Function()? undefined,
+    TResult Function()? noInternetConnection,
+    required TResult orElse(),
+  }) {
+    if (emailExistsWithDifferentCredential != null) {
+      return emailExistsWithDifferentCredential();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(WrongPassword value) wrongPassword,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(WeakPassword value) weakPassword,
+    required TResult Function(InvalidEmail value) invalidEmail,
+    required TResult Function(UserNotFound value) userNotFound,
+    required TResult Function(UserDisabled value) userDisabled,
+    required TResult Function(OperationNotAllowed value) operationNotAllowed,
+    required TResult Function(ExpiredActionCode value) expiredActionCode,
+    required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
+    required TResult Function(Undefined value) undefined,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+  }) {
+    return emailExistsWithDifferentCredential(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(WrongPassword value)? wrongPassword,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(WeakPassword value)? weakPassword,
+    TResult Function(InvalidEmail value)? invalidEmail,
+    TResult Function(UserNotFound value)? userNotFound,
+    TResult Function(UserDisabled value)? userDisabled,
+    TResult Function(OperationNotAllowed value)? operationNotAllowed,
+    TResult Function(ExpiredActionCode value)? expiredActionCode,
+    TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
+    TResult Function(Undefined value)? undefined,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+  }) {
+    return emailExistsWithDifferentCredential?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(WrongPassword value)? wrongPassword,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(WeakPassword value)? weakPassword,
+    TResult Function(InvalidEmail value)? invalidEmail,
+    TResult Function(UserNotFound value)? userNotFound,
+    TResult Function(UserDisabled value)? userDisabled,
+    TResult Function(OperationNotAllowed value)? operationNotAllowed,
+    TResult Function(ExpiredActionCode value)? expiredActionCode,
+    TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
+    TResult Function(Undefined value)? undefined,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    required TResult orElse(),
+  }) {
+    if (emailExistsWithDifferentCredential != null) {
+      return emailExistsWithDifferentCredential(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmailExistsWithDifferentCredential
+    implements AuthExceptionHandler {
+  const factory EmailExistsWithDifferentCredential() =
+      _$EmailExistsWithDifferentCredential;
 }
 
 /// @nodoc
@@ -1608,6 +2113,8 @@ class _$Undefined implements Undefined {
     required TResult Function() operationNotAllowed,
     required TResult Function() expiredActionCode,
     required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
     required TResult Function() undefined,
     required TResult Function() noInternetConnection,
   }) {
@@ -1626,6 +2133,8 @@ class _$Undefined implements Undefined {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
   }) {
@@ -1644,6 +2153,8 @@ class _$Undefined implements Undefined {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
     required TResult orElse(),
@@ -1666,6 +2177,9 @@ class _$Undefined implements Undefined {
     required TResult Function(OperationNotAllowed value) operationNotAllowed,
     required TResult Function(ExpiredActionCode value) expiredActionCode,
     required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
     required TResult Function(Undefined value) undefined,
     required TResult Function(NoInternetConnection value) noInternetConnection,
   }) {
@@ -1684,6 +2198,9 @@ class _$Undefined implements Undefined {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
   }) {
@@ -1702,6 +2219,9 @@ class _$Undefined implements Undefined {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
     required TResult orElse(),
@@ -1767,6 +2287,8 @@ class _$NoInternetConnection implements NoInternetConnection {
     required TResult Function() operationNotAllowed,
     required TResult Function() expiredActionCode,
     required TResult Function() tooManyRequests,
+    required TResult Function() requestCancelled,
+    required TResult Function() emailExistsWithDifferentCredential,
     required TResult Function() undefined,
     required TResult Function() noInternetConnection,
   }) {
@@ -1785,6 +2307,8 @@ class _$NoInternetConnection implements NoInternetConnection {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
   }) {
@@ -1803,6 +2327,8 @@ class _$NoInternetConnection implements NoInternetConnection {
     TResult Function()? operationNotAllowed,
     TResult Function()? expiredActionCode,
     TResult Function()? tooManyRequests,
+    TResult Function()? requestCancelled,
+    TResult Function()? emailExistsWithDifferentCredential,
     TResult Function()? undefined,
     TResult Function()? noInternetConnection,
     required TResult orElse(),
@@ -1825,6 +2351,9 @@ class _$NoInternetConnection implements NoInternetConnection {
     required TResult Function(OperationNotAllowed value) operationNotAllowed,
     required TResult Function(ExpiredActionCode value) expiredActionCode,
     required TResult Function(TooManyRequests value) tooManyRequests,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(EmailExistsWithDifferentCredential value)
+        emailExistsWithDifferentCredential,
     required TResult Function(Undefined value) undefined,
     required TResult Function(NoInternetConnection value) noInternetConnection,
   }) {
@@ -1843,6 +2372,9 @@ class _$NoInternetConnection implements NoInternetConnection {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
   }) {
@@ -1861,6 +2393,9 @@ class _$NoInternetConnection implements NoInternetConnection {
     TResult Function(OperationNotAllowed value)? operationNotAllowed,
     TResult Function(ExpiredActionCode value)? expiredActionCode,
     TResult Function(TooManyRequests value)? tooManyRequests,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(EmailExistsWithDifferentCredential value)?
+        emailExistsWithDifferentCredential,
     TResult Function(Undefined value)? undefined,
     TResult Function(NoInternetConnection value)? noInternetConnection,
     required TResult orElse(),

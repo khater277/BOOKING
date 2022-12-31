@@ -1,4 +1,5 @@
 import 'package:booking/core/shared_widgets/text.dart';
+import 'package:booking/core/utils/app_colors.dart';
 import 'package:booking/core/utils/app_fonts.dart';
 import 'package:booking/core/utils/app_images.dart';
 import 'package:booking/core/utils/app_values.dart';
@@ -38,7 +39,11 @@ class ProfileHead extends StatelessWidget {
         ),
         CircleAvatar(
           radius: AppSize.s35,
-          backgroundImage: const AssetImage(AppImages.hotel),
+          backgroundColor: AppColors.teal.withOpacity(0.5),
+          backgroundImage: ProfileCubit.get(context).user.image == ""
+              ? const AssetImage(AppImages.hotel)
+              : NetworkImage(ProfileCubit.get(context).user.image!)
+                  as ImageProvider,
         )
       ],
     );

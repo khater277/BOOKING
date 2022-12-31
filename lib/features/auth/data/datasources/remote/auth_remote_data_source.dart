@@ -9,6 +9,8 @@ abstract class AuthRemoteDataSource {
   Future<UserCredential> loginUser({required AuthBody authBody});
   Future<void> addUserToFirestore({required CurrentUser user});
   Future<CurrentUser> getCurrentUser({required String uid});
+  Future<UserCredential> signInWithGoogle();
+  Future<UserCredential?> signInWithFacebook();
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
@@ -38,5 +40,15 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   @override
   Future<CurrentUser> getCurrentUser({required String uid}) async {
     return firebaseHelper.getCurrentUser(uid: uid);
+  }
+
+  @override
+  Future<UserCredential> signInWithGoogle() {
+    return firebaseHelper.signInWithGoogle();
+  }
+
+  @override
+  Future<UserCredential?> signInWithFacebook() {
+    return firebaseHelper.signInWithFacebook();
   }
 }
