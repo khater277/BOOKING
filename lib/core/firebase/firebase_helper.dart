@@ -11,7 +11,7 @@ abstract class FirebaseHelper {
   Future<UserCredential> signInUserWithEmail({required AuthBody authBody});
   Future<void> addUserToFirestore({required CurrentUser user});
   Future<CurrentUser> getCurrentUser({required String uid});
-  Future<UserCredential> signInWithGoogle();
+  Future<UserCredential?> signInWithGoogle();
   Future<UserCredential?> signInWithFacebook();
 }
 
@@ -50,18 +50,20 @@ class FirebaseHelperImpl implements FirebaseHelper {
   }
 
   @override
-  Future<UserCredential> signInWithGoogle() async {
+  Future<UserCredential?> signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-
+    UserCredential? userCredential;
     final GoogleSignInAuthentication? googleAuth =
         await googleUser?.authentication;
-
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth?.accessToken,
-      idToken: googleAuth?.idToken,
-    );
-
-    return await _auth.signInWithCredential(credential);
+    try {
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth!.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      return _auth.signInWithCredential(credential);
+    } catch (error) {
+      return userCredential;
+    }
   }
 
   @override

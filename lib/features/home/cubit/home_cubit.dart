@@ -20,7 +20,10 @@ class HomeCubit extends Cubit<HomeState> {
   int currentIndex = 0;
   void changeNavBar({required int index, required BuildContext context}) {
     currentIndex = index;
-    HotelsCubit.get(context).zeroOpacity();
+    if (index == 0) {
+      HotelsCubit.get(context).resetHotelsCubitValues();
+    }
+
     emit(ChangeNavBarState());
   }
 }

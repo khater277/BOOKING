@@ -1,10 +1,13 @@
 import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_colors.dart';
+import 'package:booking/core/utils/app_functions.dart';
 import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/coordinates.dart';
 import 'package:flutter/material.dart';
 
 class HotelLocation extends StatelessWidget {
-  const HotelLocation({super.key});
+  final Coordinates coordinates;
+  const HotelLocation({super.key, required this.coordinates});
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +19,13 @@ class HotelLocation extends StatelessWidget {
           color: AppColors.teal,
         ),
         SizedBox(width: AppWidth.w2),
-        const Flexible(
+        Flexible(
           child: SecondaryText(
-            text: "2.0 km to city",
+            text:
+                "${AppFunctions.formatDistance(distance: AppFunctions.determineDistanceToHotel(coordinates: coordinates))} away from you",
             isLight: true,
             isButton: true,
-            maxLines: 1,
+            maxLines: 2,
           ),
         ),
       ],

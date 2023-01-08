@@ -13,7 +13,7 @@ class HotelsResponseModel with _$HotelsResponseModel {
     @HiveField(0) int? from,
     @HiveField(1) int? to,
     @HiveField(2) int? total,
-    List<Hotel>? hotels,
+    @HiveField(3) List<Hotel>? hotels,
   }) = _HotelsResponseModel;
 
   factory HotelsResponseModel.fromJson(Map<String, dynamic> json) =>

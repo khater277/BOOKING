@@ -1,3 +1,5 @@
+import 'package:booking/core/hive/hive_helper.dart';
+import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
 import 'package:booking/features/hotels/presentation/widgets/app_bar/hotels_app_bar.dart';
@@ -24,6 +26,7 @@ class HomeDataWidget extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         slivers: [
           HotelsAppBar(cubit: cubit),
+          // LargeHeadText(text: "${HiveHelper.getAllHotels()}")
           SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,13 +39,13 @@ class HomeDataWidget extends StatelessWidget {
                   child: ListView.separated(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 10,
+                    itemCount: cubit.someHotels.length,
                     separatorBuilder: (BuildContext context, int index) =>
                         SizedBox(
                       height: AppHeight.h25,
                     ),
                     itemBuilder: (BuildContext context, int index) =>
-                        const HotelInfoCard(),
+                        HotelInfoCard(hotel: cubit.someHotels[index]),
                   ),
                 ),
               ],

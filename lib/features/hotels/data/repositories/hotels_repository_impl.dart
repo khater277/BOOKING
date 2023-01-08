@@ -1,4 +1,5 @@
 import 'package:booking/core/errors/failures.dart';
+import 'package:booking/core/hive/hive_helper.dart';
 import 'package:booking/features/hotels/data/datasources/remote/hotels_remote_data_source.dart';
 import 'package:booking/features/hotels/data/models/hotels_body_model/hotels_body_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotels_response_model.dart';
@@ -17,6 +18,7 @@ class HotelsRepositoryImpl implements HotelsRepository {
     try {
       final response = await hotelsRemoteDataSource.getHotels(
           hotelsBodyModel: hotelsBodyModel);
+      await HiveHelper.setAllHotels(hotelsResponseModel: response);
       return Right(response);
     } on DioError catch (error) {
       return Left(ServerFailure(error: error));

@@ -1,3 +1,4 @@
+import 'package:booking/core/hive/hive_helper.dart';
 import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_colors.dart';
 import 'package:booking/core/utils/app_fonts.dart';
@@ -18,7 +19,6 @@ class BestDealsHead extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // LargeHeadText(text: "${HotelsCubit.get(context).opacity}"),
           Expanded(
             child: LargeHeadText(
               text: "Best Deals",

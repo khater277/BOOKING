@@ -20,19 +20,22 @@ class HotelsResponseModelAdapter extends TypeAdapter<HotelsResponseModel> {
       from: fields[0] as int?,
       to: fields[1] as int?,
       total: fields[2] as int?,
+      hotels: (fields[3] as List?)?.cast<Hotel>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, HotelsResponseModel obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(4)
       ..writeByte(0)
       ..write(obj.from)
       ..writeByte(1)
       ..write(obj.to)
       ..writeByte(2)
-      ..write(obj.total);
+      ..write(obj.total)
+      ..writeByte(3)
+      ..write(obj.hotels);
   }
 
   @override

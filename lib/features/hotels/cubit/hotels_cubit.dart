@@ -4,6 +4,7 @@ import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/hotels/cubit/hotels_state.dart';
 import 'package:booking/features/hotels/data/models/hotel_page_view/hotel_page_view_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_body_model/hotels_body_model.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotels_response_model.dart';
 import 'package:booking/features/hotels/domain/usecases/hotel_usecases.dart';
 import 'package:flutter/material.dart';
@@ -99,64 +100,72 @@ class HotelsCubit extends Cubit<HotelsStates> {
   // int from = 0;
   // int to = 10;
   void getHotels() async {
-    emit(GetHotelsLoading());
-    // scrollController.addListener(getSomeHotels);
-    HotelsBodyModel hotelsBodyModel = const HotelsBodyModel(
-      language: 'ENG',
-    );
-    final response = await getHotelsUseCase(hotelsBodyModel);
-    response.fold(
-      (failure) => emit(HotelsError()),
-      (hotelsResponseModel) {
-        HiveHelper.setAllHotels(hotelsResponseModel: hotelsResponseModel);
-        allHotels = HiveHelper.getAllHotels();
-        // hotels = hotelsResponseModel.hotels!.sublist(from, to);
-        // from += 10;
-        // to += 10;
-        // print(hotelsResponseModel.hotels![0].address);
-        emit(GetHotelsSuccess());
-      },
-    );
+    if (HiveHelper.getAllHotels() == null) {
+      emit(GetHotelsLoading());
+      scrollController.addListener(getSomeHotels);
+      HotelsBodyModel hotelsBodyModel = const HotelsBodyModel(
+        language: 'ENG',
+        from: 1,
+        to: 500,
+      );
+      final response = await getHotelsUseCase(hotelsBodyModel);
+      response.fold(
+        (failure) {
+          print("ERROR====>${failure.getMessage()}");
+          emit(HotelsError());
+        },
+        (hotelsResponseModel) async {
+          allHotels = HiveHelper.getAllHotels();
+          someHotels = allHotels!.hotels!.sublist(0, 10);
+          emit(GetHotelsSuccess());
+        },
+      );
+    } else {
+      scrollController.addListener(getSomeHotels);
+      emit(GetHotelsSuccess());
+    }
   }
 
-  // List<Hotel> someHotels = [];
-  // void getSomeHotels() async {
-  //   if (hasNextPage == true &&
-  //       state is! GetHotelsLoading &&
-  //       state is! GetMoreHotelsLoading &&
-  //       scrollController.position.extentAfter < 300) {
-  //     emit(GetMoreHotelsLoading());
-  //     try {
-  //       List<Hotel> fetchedList =
-  //           HiveHelper.getSomeHotels(from: from, to: to) ?? [];
-  //       if (fetchedList.isNotEmpty) {
-  //         hotels.addAll(fetchedList);
-  //         from += 10;
-  //         to += 10;
-  //       } else {
-  //         hasNextPage = false;
-  //       }
-  //       emit(GetMoreHotelsSuccess());
-  //     } catch (error) {
-  //       debugPrint("ERROR===>$error");
-  //       emit(GetMoreHotelsError());
-  //     }
-  //   }
-  // someHotels = [];
-  // HotelsBodyModel hotelsBodyModel = HotelsBodyModel(
-  //   language: 'ENG',
-  //   from: from,
-  //   to: to,
-  // );
-  // final response = await getHotelsUseCase(hotelsBodyModel);
-  // response.fold(
-  //   (failure) => {emit(HotelsError())},
-  //   (hotelsResponseModel) {
-  //     HiveHelper.setAllHotels(hotelsResponseModel: hotelsResponseModel);
-  //     allHotels = HiveHelper.getAllHotels();
-  //     someHotels = hotelsResponseModel.hotels!;
-  //     emit(GetHotelsSuccess());
-  //   },
-  // );
-  // }
+  List<Hotel> someHotels = HiveHelper.getAllHotels() != null
+      ? HiveHelper.getAllHotels()!.hotels!.sublist(0, 10)
+      : [];
+  int from = 0;
+  int to = 10;
+
+  void resetHotelsCubitValues() {
+    opacity = 0;
+    someHotels = HiveHelper.getAllHotels() != null
+        ? HiveHelper.getAllHotels()!.hotels!.sublist(0, 10)
+        : [];
+    from = 0;
+    to = 10;
+    emit(ResetHotelsCubitValues());
+  }
+
+  void getSomeHotels() async {
+    if (hasNextPage == true &&
+        state is! GetHotelsLoading &&
+        state is! GetMoreHotelsLoading &&
+        scrollController.position.extentAfter < 300) {
+      emit(GetMoreHotelsLoading());
+      try {
+        List<Hotel> fetchedList =
+            HiveHelper.getSomeHotels(from: from, to: to) ?? [];
+        print("STATUS====>${fetchedList.isNotEmpty}");
+        if (fetchedList.isNotEmpty &&
+            to <= HiveHelper.getAllHotels()!.hotels!.length - 10) {
+          someHotels.addAll(fetchedList);
+          from += 10;
+          to += 10;
+        } else {
+          hasNextPage = false;
+        }
+        emit(GetMoreHotelsSuccess());
+      } catch (error) {
+        debugPrint("ERROR===>$error");
+        emit(GetMoreHotelsError());
+      }
+    }
+    // someHotels = [];
+  }
 }

@@ -1,6 +1,8 @@
 const String _sourceImage = "assets/images";
 
 class AppImages {
+  static const loading = "$_sourceImage/loading.gif";
+  static const error = "$_sourceImage/error.gif";
   static const hotel = "$_sourceImage/hotel.jpg";
   static const hotel2 = "$_sourceImage/hotel2.jpg";
   static const hotel3 = "$_sourceImage/hotel3.jpg";

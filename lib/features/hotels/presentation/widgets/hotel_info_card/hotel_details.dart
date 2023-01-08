@@ -1,4 +1,5 @@
 import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_info_card/hotel_location.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_info_card/hotel_name_and_address.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_info_card/hotel_night_price.dart';
@@ -6,7 +7,8 @@ import 'package:booking/features/hotels/presentation/widgets/hotel_info_card/hot
 import 'package:flutter/material.dart';
 
 class HotelDetails extends StatelessWidget {
-  const HotelDetails({super.key});
+  final Hotel hotel;
+  const HotelDetails({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +23,21 @@ class HotelDetails extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const HotelNameAndAddress(),
+            HotelNameAndAddress(
+              name: hotel.name!.content!,
+              address: hotel.address!,
+              city: hotel.city!,
+              countryCode: hotel.countryCode!,
+            ),
             SizedBox(height: AppHeight.h5),
             Row(
               children: [
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      HotelLocation(),
-                      HotelRating(),
+                    children: [
+                      HotelLocation(coordinates: hotel.coordinates!),
+                      const HotelRating(),
                     ],
                   ),
                 ),

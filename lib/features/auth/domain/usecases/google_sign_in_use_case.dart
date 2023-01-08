@@ -5,12 +5,12 @@ import 'package:booking/features/hotels/domain/usecases/hotel_usecases.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class GoogleSignInUseCase implements BaseUsecase<UserCredential, NoParams> {
+class GoogleSignInUseCase implements BaseUsecase<UserCredential?, NoParams> {
   final AuthRepository authRepository;
 
   GoogleSignInUseCase({required this.authRepository});
   @override
-  Future<Either<Failure, UserCredential>> call(NoParams params) {
+  Future<Either<Failure, UserCredential?>> call(NoParams params) {
     return authRepository.signInWithGoogle();
   }
 }

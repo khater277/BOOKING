@@ -23,3 +23,5 @@ class GetMoreHotelsLoading extends HotelsStates {}
 class GetMoreHotelsSuccess extends HotelsStates {}
 
 class GetMoreHotelsError extends HotelsStates {}
+
+class ResetHotelsCubitValues extends HotelsStates {}

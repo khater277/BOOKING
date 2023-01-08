@@ -26,6 +26,7 @@ mixin _$HotelsResponseModel {
   int? get to => throw _privateConstructorUsedError;
   @HiveField(2)
   int? get total => throw _privateConstructorUsedError;
+  @HiveField(3)
   List<Hotel>? get hotels => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,7 +44,7 @@ abstract class $HotelsResponseModelCopyWith<$Res> {
       {@HiveField(0) int? from,
       @HiveField(1) int? to,
       @HiveField(2) int? total,
-      List<Hotel>? hotels});
+      @HiveField(3) List<Hotel>? hotels});
 }
 
 /// @nodoc
@@ -94,7 +95,7 @@ abstract class _$$_HotelsResponseModelCopyWith<$Res>
       {@HiveField(0) int? from,
       @HiveField(1) int? to,
       @HiveField(2) int? total,
-      List<Hotel>? hotels});
+      @HiveField(3) List<Hotel>? hotels});
 }
 
 /// @nodoc
@@ -143,7 +144,7 @@ class _$_HotelsResponseModel implements _HotelsResponseModel {
       {@HiveField(0) this.from,
       @HiveField(1) this.to,
       @HiveField(2) this.total,
-      final List<Hotel>? hotels})
+      @HiveField(3) final List<Hotel>? hotels})
       : _hotels = hotels;
 
   factory _$_HotelsResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -160,6 +161,7 @@ class _$_HotelsResponseModel implements _HotelsResponseModel {
   final int? total;
   final List<Hotel>? _hotels;
   @override
+  @HiveField(3)
   List<Hotel>? get hotels {
     final value = _hotels;
     if (value == null) return null;
@@ -211,7 +213,7 @@ abstract class _HotelsResponseModel implements HotelsResponseModel {
       {@HiveField(0) final int? from,
       @HiveField(1) final int? to,
       @HiveField(2) final int? total,
-      final List<Hotel>? hotels}) = _$_HotelsResponseModel;
+      @HiveField(3) final List<Hotel>? hotels}) = _$_HotelsResponseModel;
 
   factory _HotelsResponseModel.fromJson(Map<String, dynamic> json) =
       _$_HotelsResponseModel.fromJson;
@@ -226,6 +228,7 @@ abstract class _HotelsResponseModel implements HotelsResponseModel {
   @HiveField(2)
   int? get total;
   @override
+  @HiveField(3)
   List<Hotel>? get hotels;
   @override
   @JsonKey(ignore: true)

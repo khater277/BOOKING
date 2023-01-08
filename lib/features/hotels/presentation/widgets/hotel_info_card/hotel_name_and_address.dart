@@ -1,31 +1,71 @@
 import 'package:booking/core/shared_widgets/text.dart';
+import 'package:booking/core/utils/app_colors.dart';
+import 'package:booking/core/utils/app_functions.dart';
+import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/address.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/city.dart';
 import 'package:flutter/material.dart';
 
 class HotelNameAndAddress extends StatelessWidget {
-  final double? nameSize;
-  final double? addressSize;
-  const HotelNameAndAddress({super.key, this.nameSize, this.addressSize});
+  final String name;
+  final Address address;
+  final City city;
+  final String countryCode;
+  const HotelNameAndAddress(
+      {super.key,
+      required this.name,
+      required this.address,
+      required this.city,
+      required this.countryCode});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Flexible(
-              child: LargeHeadText(
-            text: "Grand Royal Hotel",
+          LargeHeadText(
+            text: name,
             maxLines: 2,
-            size: nameSize,
-          )),
+          ),
           Flexible(
-              child: SecondaryText(
-            text: "Wembley, London",
-            isLight: true,
-            isButton: true,
-            maxLines: 2,
-            size: addressSize,
-          )),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SecondaryText(
+                  text:
+                      "${AppFunctions.generateCountryFlag(countryCode: countryCode)} ${city.content}",
+                  isLight: true,
+                  isButton: true,
+                  maxLines: 1,
+                  // size: addressSize,
+                ),
+                SizedBox(height: AppHeight.h2),
+                Flexible(
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.maps_home_work,
+                        size: AppSize.s18,
+                        color: AppColors.teal,
+                      ),
+                      SizedBox(width: AppWidth.w5),
+                      Flexible(
+                          child: SecondaryText(
+                        text: "${address.number}, ${address.street}",
+                        isLight: true,
+                        isButton: true,
+                        // maxLines: 2,
+                        // size: addressSize,
+                      )),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

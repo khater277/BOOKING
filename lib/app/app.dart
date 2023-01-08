@@ -32,9 +32,10 @@ class MyApp extends StatelessWidget {
               BlocProvider(
                 create: (BuildContext context) => di<LoginCubit>(),
               ),
-              BlocProvider(create: (BuildContext context) => di<HotelsCubit>()
-                  // ..getHotels(),
-                  ),
+              BlocProvider(
+                create: (BuildContext context) =>
+                    di<HotelsCubit>()..getHotels(),
+              ),
               BlocProvider(
                 create: (BuildContext context) => di<HomeCubit>(),
               ),
@@ -48,12 +49,11 @@ class MyApp extends StatelessWidget {
             child: MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: AppTheme.lightTheme(),
-              home:
-                  // HiveHelper.getCurrentUser() == null
-                  //     ? const LoginScreen()
-                  //     : const HomeScreen(),
-                  // const HomeScreen(),
-                  const LoginScreen(),
+              home: HiveHelper.getCurrentUser() == null
+                  ? const LoginScreen()
+                  : const HomeScreen(),
+              // const HomeScreen(),
+              // const LoginScreen(),
             ),
           );
         });

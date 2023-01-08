@@ -1,10 +1,12 @@
 import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_info_card/hotel_details.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_info_card/hotel_image.dart';
 import 'package:flutter/material.dart';
 
 class HotelInfoCard extends StatelessWidget {
-  const HotelInfoCard({super.key});
+  final Hotel hotel;
+  const HotelInfoCard({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +19,9 @@ class HotelInfoCard extends StatelessWidget {
           width: double.infinity,
           height: AppHeight.h140,
           child: Row(
-            children: const [
-              HotelImage(),
-              HotelDetails(),
+            children: [
+              HotelImage(image: hotel.images![0].path!),
+              HotelDetails(hotel: hotel),
             ],
           ),
         ),

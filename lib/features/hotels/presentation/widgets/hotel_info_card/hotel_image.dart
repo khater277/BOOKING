@@ -1,9 +1,12 @@
+import 'package:booking/core/shared_widgets/network_image.dart';
 import 'package:booking/core/utils/app_images.dart';
+import 'package:booking/core/utils/app_strings.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:flutter/material.dart';
 
 class HotelImage extends StatelessWidget {
-  const HotelImage({super.key});
+  final String image;
+  const HotelImage({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +18,7 @@ class HotelImage extends StatelessWidget {
           topLeft: Radius.circular(AppSize.s20),
           bottomLeft: Radius.circular(AppSize.s20),
         ),
-        child: Image.asset(
-          AppImages.hotel,
-          fit: BoxFit.fill,
-        ),
+        child: CustomNetworkImage(imageUrl: AppStrings.imagesUrl + image),
       ),
     );
   }
