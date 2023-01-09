@@ -1,5 +1,4 @@
 import 'package:booking/config/navigation.dart';
-import 'package:booking/core/hive/hive_helper.dart';
 import 'package:booking/core/shared_widgets/button.dart';
 import 'package:booking/core/shared_widgets/circle_indicator.dart';
 import 'package:booking/core/shared_widgets/snack_bar.dart';

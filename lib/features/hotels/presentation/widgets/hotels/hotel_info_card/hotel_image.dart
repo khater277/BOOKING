@@ -1,5 +1,4 @@
 import 'package:booking/core/shared_widgets/network_image.dart';
-import 'package:booking/core/utils/app_images.dart';
 import 'package:booking/core/utils/app_strings.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:flutter/material.dart';

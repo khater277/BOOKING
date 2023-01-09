@@ -44,7 +44,7 @@ class AuthRepositoryImpl implements AuthRepository {
       final user =
           await authRemoteDataSource.getCurrentUser(uid: response.user!.uid);
       HiveHelper.setCurrentUser(user: user);
-      print("WELCOME ${user.name}");
+      debugPrint("WELCOME ${user.name}");
       return Right(response);
     } on FirebaseAuthException catch (error) {
       return Left(ServerFailure(error: error));

@@ -5,8 +5,8 @@ import 'package:booking/core/shared_widgets/button.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotels_response_model.dart';
-import 'package:booking/features/hotels/presentation/widgets/app_bar/page_indicator.dart';
-import 'package:booking/features/hotels/presentation/widgets/app_bar/page_title_and_description.dart';
+import 'package:booking/features/hotels/presentation/widgets/hotels/hotel_app_bar/page_indicator.dart';
+import 'package:booking/features/hotels/presentation/widgets/hotels/hotel_app_bar/page_title_and_description.dart';
 import 'package:flutter/material.dart';
 
 class AppBarPageView extends StatefulWidget {
@@ -86,7 +86,7 @@ class _AppBarPageViewState extends State<AppBarPageView> {
                     text: "View Hotel",
                     onPressed: () {
                       HotelsResponseModel? test = HiveHelper.getAllHotels();
-                      print(test!.hotels!.length);
+                      debugPrint(test!.hotels!.length.toString());
                     },
                   ),
                 ),

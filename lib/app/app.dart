@@ -8,7 +8,6 @@ import 'package:booking/features/booking/cubit/booking_cubit.dart';
 import 'package:booking/features/home/cubit/home_cubit.dart';
 import 'package:booking/features/home/presentation/screens/home_screen.dart';
 import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
-import 'package:booking/features/hotels/presentation/screens/hotels_screen.dart';
 import 'package:booking/features/profile/cubit/profile_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -4,11 +4,10 @@ import 'package:booking/app/bloc_observer.dart';
 import 'package:booking/app/injector.dart';
 import 'package:booking/core/hive/hive_helper.dart';
 import 'package:booking/core/utils/app_functions.dart';
-import 'package:booking/features/hotels/data/models/hotels_response_model/coordinates.dart';
-import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
+
 import 'firebase_options.dart';
 
 void main() async {

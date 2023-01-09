@@ -111,7 +111,7 @@ class HotelsCubit extends Cubit<HotelsStates> {
       final response = await getHotelsUseCase(hotelsBodyModel);
       response.fold(
         (failure) {
-          print("ERROR====>${failure.getMessage()}");
+          debugPrint("ERROR====>${failure.getMessage()}");
           emit(HotelsError());
         },
         (hotelsResponseModel) async {
@@ -151,7 +151,7 @@ class HotelsCubit extends Cubit<HotelsStates> {
       try {
         List<Hotel> fetchedList =
             HiveHelper.getSomeHotels(from: from, to: to) ?? [];
-        print("STATUS====>${fetchedList.isNotEmpty}");
+        debugPrint("STATUS====>${fetchedList.isNotEmpty}");
         if (fetchedList.isNotEmpty &&
             to <= HiveHelper.getAllHotels()!.hotels!.length - 10) {
           someHotels.addAll(fetchedList);

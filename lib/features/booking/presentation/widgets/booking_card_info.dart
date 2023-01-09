@@ -4,8 +4,8 @@ import 'package:booking/core/utils/app_fonts.dart';
 import 'package:booking/core/utils/app_images.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/core/utils/font_styles.dart';
-import 'package:booking/features/hotels/presentation/widgets/hotel_info_card/hotel_night_price.dart';
-import 'package:booking/features/hotels/presentation/widgets/hotel_info_card/hotel_rating.dart';
+import 'package:booking/features/hotels/presentation/widgets/hotels/hotel_info_card/hotel_night_price.dart';
+import 'package:booking/features/hotels/presentation/widgets/hotels/hotel_info_card/hotel_rating.dart';
 import 'package:flutter/material.dart';
 
 class BookingCardInfo extends StatelessWidget {
@@ -30,7 +30,7 @@ class BookingCardInfo extends StatelessWidget {
             child: Container(
               width: double.infinity,
               height: AppHeight.h230,
-              color: Theme.of(context).cardColor,
+              color: Theme.of(context).cardTheme.color,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

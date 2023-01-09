@@ -1,9 +1,9 @@
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
-import 'package:booking/features/hotels/presentation/widgets/hotel_info_card/hotel_location.dart';
-import 'package:booking/features/hotels/presentation/widgets/hotel_info_card/hotel_name_and_address.dart';
-import 'package:booking/features/hotels/presentation/widgets/hotel_info_card/hotel_night_price.dart';
-import 'package:booking/features/hotels/presentation/widgets/hotel_info_card/hotel_rating.dart';
+import 'package:booking/features/hotels/presentation/widgets/hotels/hotel_info_card/hotel_location.dart';
+import 'package:booking/features/hotels/presentation/widgets/hotels/hotel_info_card/hotel_name_and_address.dart';
+import 'package:booking/features/hotels/presentation/widgets/hotels/hotel_info_card/hotel_night_price.dart';
+import 'package:booking/features/hotels/presentation/widgets/hotels/hotel_info_card/hotel_rating.dart';
 import 'package:flutter/material.dart';
 
 class HotelDetails extends StatelessWidget {

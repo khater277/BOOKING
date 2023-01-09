@@ -14,6 +14,7 @@ class AppColors {
       Color(0xff2C2C2C); // button grey , textfield background
   static const Color darkGrey = Color(0xff555555); // profile icons
   static const Color teal = Color(0xff4FBE9E); // primary
+  static const Color blur = Color(0xff658182); // primary
   static const Color darkBlue = Colors.indigo; // for button background
 
   static MaterialColor generateMaterialColor(Color color) {
