@@ -17,7 +17,8 @@ class HotelImage extends StatelessWidget {
           topLeft: Radius.circular(AppSize.s20),
           bottomLeft: Radius.circular(AppSize.s20),
         ),
-        child: CustomNetworkImage(imageUrl: AppStrings.imagesUrl + image),
+        child: CustomNetworkImage(
+            imageUrl: AppStrings.imagesUrl + image, fit: BoxFit.fill),
       ),
     );
   }

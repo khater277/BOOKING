@@ -61,7 +61,7 @@ class _AppBarPageViewState extends State<AppBarPageView> {
         /// (cubit.scrollController.position.pixels)
         /// لو اقل من 1
         AnimatedOpacity(
-          opacity: 1 - widget.cubit.opacity,
+          opacity: 1 - widget.cubit.hotelsOpacity,
           duration: const Duration(microseconds: 100),
           child: Align(
             alignment: AlignmentDirectional.bottomStart,

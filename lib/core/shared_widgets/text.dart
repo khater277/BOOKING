@@ -7,12 +7,14 @@ class LargeHeadText extends StatelessWidget {
   final double? size;
   final bool isEllipsis;
   final int maxLines;
+  final Color? color;
   const LargeHeadText(
       {super.key,
       required this.text,
       this.size,
       this.isEllipsis = true,
-      this.maxLines = 1});
+      this.maxLines = 1,
+      this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,7 @@ class LargeHeadText extends StatelessWidget {
       text,
       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
             fontSize: size ?? FontSize.s16,
+            color: color ?? Theme.of(context).textTheme.bodyLarge!.color,
           ),
       maxLines: maxLines,
       overflow: isEllipsis ? TextOverflow.ellipsis : null,
@@ -103,7 +106,8 @@ class SecondaryText extends StatelessWidget {
   final bool isLight;
   final bool isButton;
   final bool isEllipsis;
-  final int maxLines;
+  final int? maxLines;
+  final Color? color;
   const SecondaryText({
     super.key,
     required this.text,
@@ -112,7 +116,8 @@ class SecondaryText extends StatelessWidget {
     this.isLight = false,
     this.isButton = false,
     this.isEllipsis = true,
-    this.maxLines = 10,
+    this.maxLines,
+    this.color,
   });
 
   @override
@@ -122,9 +127,14 @@ class SecondaryText extends StatelessWidget {
       style: Theme.of(context).textTheme.bodySmall!.copyWith(
           fontSize: size ?? FontSize.s14,
           fontWeight: isButton ? FontWeightManager.semiBold : null,
-          color: isLight
-              ? Theme.of(context).textTheme.bodySmall!.color!.withOpacity(0.8)
-              : null),
+          color: color ??
+              (isLight
+                  ? Theme.of(context)
+                      .textTheme
+                      .bodySmall!
+                      .color!
+                      .withOpacity(0.8)
+                  : null)),
       textAlign: center ? TextAlign.center : null,
       overflow: isEllipsis ? TextOverflow.ellipsis : null,
       maxLines: maxLines,

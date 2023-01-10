@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 
 class CustomNetworkImage extends StatelessWidget {
   final String imageUrl;
-  const CustomNetworkImage({super.key, required this.imageUrl});
+  final BoxFit fit;
+  const CustomNetworkImage(
+      {super.key, required this.imageUrl, required this.fit});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class CustomNetworkImage extends StatelessWidget {
         return Image.asset(AppImages.error);
       },
       placeholderFit: BoxFit.contain,
-      fit: BoxFit.fill,
+      fit: fit,
     );
   }
 }

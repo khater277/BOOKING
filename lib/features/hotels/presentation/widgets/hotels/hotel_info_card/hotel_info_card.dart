@@ -13,7 +13,8 @@ class HotelInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Go.to(context: context, screen: const HotelDetailsScreen()),
+      onTap: () =>
+          Go.to(context: context, screen: HotelDetailsScreen(hotel: hotel)),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: AppWidth.w20),
         child: ClipRRect(

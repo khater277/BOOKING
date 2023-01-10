@@ -25,6 +25,10 @@ class AppWidth {
   static double w30 = 30.w;
   static double w40 = 40.w;
   static double w50 = 50.w;
+  static double w60 = 60.w;
+  static double w70 = 70.w;
+  static double w80 = 80.w;
+  static double w90 = 90.w;
   static double w100 = 100.w;
   static double w115 = 115.w;
   static double w120 = 120.w;

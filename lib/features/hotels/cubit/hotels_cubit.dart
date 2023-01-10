@@ -17,12 +17,18 @@ class HotelsCubit extends Cubit<HotelsStates> {
   static HotelsCubit get(context) => BlocProvider.of<HotelsCubit>(context);
 
   PageController pageController = PageController();
-  ScrollController scrollController = ScrollController();
-  // void disposeControllers() {
-  //   pageController.dispose();
-  //   // scrollController.dispose();
-  //   emit(HotelsDisposeControllers());
-  // }
+  ScrollController hotelsScrollController = ScrollController();
+  ScrollController hotelDetailsScrollController = ScrollController();
+
+  void disposeHotelDetails() {
+    hotelDetailsOpacity = 0;
+    emit(DisposeHotelDetails());
+  }
+
+  void disposeControllers() {
+    pageController.dispose();
+    hotelsScrollController.dispose();
+  }
 
   List<HotelPageViewModel> pageViewData = [
     HotelPageViewModel(
@@ -43,10 +49,6 @@ class HotelsCubit extends Cubit<HotelsStates> {
   ];
 
   int currentIndex = 0;
-  // void changePageView({required int index}) {
-  //   currentIndex = index;
-  //   emit(HotelsChangePageView());
-  // }
 
   void changePageView({int? index}) {
     if (index != null) {
@@ -65,44 +67,62 @@ class HotelsCubit extends Cubit<HotelsStates> {
     emit(HotelsChangePageView());
   }
 
-  double opacity = 0;
-  void determineContentOpacity(BuildContext context) {
+  double hotelsOpacity = 0;
+
+  void determineHotelsOpacity(BuildContext context) {
     /*
         490 refers to total pixels 320 expandedHeight +
         150 collapsedHeight + 20 sizedbox
       */
-    double x = (scrollController.position.pixels) /
+    double x = (hotelsScrollController.position.pixels) /
         (MediaQuery.of(context).size.height - AppHeight.h490);
-    opacity = x >= 1
+    hotelsOpacity = x >= 1
+        ? 1
+        : x <= 0
+            ? 0.0
+            : x;
+  }
+
+  void changeHotelsOpacityValue(BuildContext context) {
+    hotelsOpacity = 0;
+    hotelsScrollController.addListener(() {
+      determineHotelsOpacity(context);
+      emit(HotelsChangeOpacityValue());
+    });
+  }
+
+  double hotelDetailsOpacity = 0;
+  void determineHotelDetailsOpacity(BuildContext context) {
+    /*
+        490 refers to total pixels 320 expandedHeight +
+        150 collapsedHeight + 20 sizedbox
+      */
+    double x = (hotelDetailsScrollController.position.pixels) /
+        (MediaQuery.of(context).size.height * 0.5);
+
+    hotelDetailsOpacity = x >= 1
         ? 1
         : x <= 0
             ? 0.0
             : x;
 
-    emit(HotelsDetermineContentOpacity());
+    print("=========>$hotelDetailsOpacity");
   }
 
-  void zeroOpacity() {
-    opacity = 0;
-    emit(HotelsDetermineContentOpacity());
+  void changeHotelDetailsOpacityValue(BuildContext context) {
+    hotelsOpacity = 0;
+    hotelDetailsScrollController.addListener(() {
+      determineHotelDetailsOpacity(context);
+      emit(HotelsChangeOpacityValue());
+    });
   }
-
-  // code ,name ,description,countryCode,coordinates,address ,city,email,phones,facilities,images,
-
-  // void addListenerToController() {
-  // scrollController.addListener(getSomeHotels);
-  // emit(AddListenerToController());
-  // }
 
   bool hasNextPage = true;
   HotelsResponseModel? allHotels;
-  // List<Hotel> hotels = [];
-  // int from = 0;
-  // int to = 10;
   void getHotels() async {
     if (HiveHelper.getAllHotels() == null) {
       emit(GetHotelsLoading());
-      scrollController.addListener(getSomeHotels);
+      hotelsScrollController.addListener(getSomeHotels);
       HotelsBodyModel hotelsBodyModel = const HotelsBodyModel(
         language: 'ENG',
         from: 1,
@@ -121,7 +141,7 @@ class HotelsCubit extends Cubit<HotelsStates> {
         },
       );
     } else {
-      scrollController.addListener(getSomeHotels);
+      hotelsScrollController.addListener(getSomeHotels);
       emit(GetHotelsSuccess());
     }
   }
@@ -133,7 +153,7 @@ class HotelsCubit extends Cubit<HotelsStates> {
   int to = 10;
 
   void resetHotelsCubitValues() {
-    opacity = 0;
+    hotelsOpacity = 0;
     someHotels = HiveHelper.getAllHotels() != null
         ? HiveHelper.getAllHotels()!.hotels!.sublist(0, 10)
         : [];
@@ -146,7 +166,7 @@ class HotelsCubit extends Cubit<HotelsStates> {
     if (hasNextPage == true &&
         state is! GetHotelsLoading &&
         state is! GetMoreHotelsLoading &&
-        scrollController.position.extentAfter < 300) {
+        hotelsScrollController.position.extentAfter < 300) {
       emit(GetMoreHotelsLoading());
       try {
         List<Hotel> fetchedList =
@@ -166,6 +186,5 @@ class HotelsCubit extends Cubit<HotelsStates> {
         emit(GetMoreHotelsError());
       }
     }
-    // someHotels = [];
   }
 }

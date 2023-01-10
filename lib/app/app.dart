@@ -32,8 +32,10 @@ class MyApp extends StatelessWidget {
                 create: (BuildContext context) => di<LoginCubit>(),
               ),
               BlocProvider(
-                create: (BuildContext context) =>
-                    di<HotelsCubit>()..getHotels(),
+                create: (BuildContext context) => di<HotelsCubit>()
+                  ..getHotels()
+                  ..changeHotelsOpacityValue(context)
+                  ..changeHotelDetailsOpacityValue(context),
               ),
               BlocProvider(
                 create: (BuildContext context) => di<HomeCubit>(),

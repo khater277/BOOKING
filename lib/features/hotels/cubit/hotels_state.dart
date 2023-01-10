@@ -8,7 +8,7 @@ class HotelsChangePageView extends HotelsStates {}
 
 class HotelsPageViewGoRight extends HotelsStates {}
 
-class HotelsDetermineContentOpacity extends HotelsStates {}
+class HotelsChangeOpacityValue extends HotelsStates {}
 
 class HotelsJumToCurrentIndex extends HotelsStates {}
 
@@ -25,3 +25,5 @@ class GetMoreHotelsSuccess extends HotelsStates {}
 class GetMoreHotelsError extends HotelsStates {}
 
 class ResetHotelsCubitValues extends HotelsStates {}
+
+class DisposeHotelDetails extends HotelsStates {}
