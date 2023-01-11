@@ -1,9 +1,5 @@
-import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_colors.dart';
-import 'package:booking/core/utils/app_fonts.dart';
-import 'package:booking/core/utils/app_images.dart';
 import 'package:booking/core/utils/app_values.dart';
-import 'package:booking/core/utils/font_styles.dart';
 import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
 import 'package:booking/features/hotels/cubit/hotels_state.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';

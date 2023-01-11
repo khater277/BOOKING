@@ -3,7 +3,7 @@ import 'package:booking/core/utils/app_images.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/hotels/cubit/hotels_state.dart';
 import 'package:booking/features/hotels/data/models/facilities_body_model/facilities_body_model/facilities_body_model.dart';
-import 'package:booking/features/hotels/data/models/facilities_response_model/facilites_response_model/facilities_response_model.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/facilities_response_model.dart';
 import 'package:booking/features/hotels/data/models/hotel_page_view/hotel_page_view_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_body_model/hotels_body_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
@@ -113,7 +113,7 @@ class HotelsCubit extends Cubit<HotelsStates> {
             ? 0.0
             : x;
 
-    print("=========>$hotelDetailsOpacity");
+    debugPrint("=========>$hotelDetailsOpacity");
   }
 
   void changeHotelDetailsOpacityValue(BuildContext context) {
@@ -170,11 +170,11 @@ class HotelsCubit extends Cubit<HotelsStates> {
     if (HiveHelper.getAllFacilities() == null) {
       final response = await getFacilitiesUseCase.call(facilitiesBodyModel);
       response.fold((failure) {
-        print("ERROR IN GET FACILITIES ===> ${failure.getMessage()}");
+        debugPrint("ERROR IN GET FACILITIES ===> ${failure.getMessage()}");
         emit(HotelsError());
       }, (facilitiesResponseModel) {
         allFacilities = facilitiesResponseModel;
-        print(
+        debugPrint(
             "GET FACILITIES DONE===> ${facilitiesResponseModel.facilities!.length}");
       });
     }

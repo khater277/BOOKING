@@ -1,4 +1,4 @@
-import 'package:booking/features/hotels/data/models/facilities_response_model/facilites_response_model/facility_info.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/facility_info.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 

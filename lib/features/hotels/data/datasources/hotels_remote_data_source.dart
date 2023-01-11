@@ -1,6 +1,6 @@
 import 'package:booking/core/api/dio_helper/dio_helper.dart';
 import 'package:booking/features/hotels/data/models/facilities_body_model/facilities_body_model/facilities_body_model.dart';
-import 'package:booking/features/hotels/data/models/facilities_response_model/facilites_response_model/facilities_response_model.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/facilities_response_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_body_model/hotels_body_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotels_response_model.dart';
 

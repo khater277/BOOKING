@@ -1,8 +1,8 @@
 import 'package:booking/core/hive/keys.dart';
 import 'package:booking/features/auth/data/models/current_user/current_user.dart';
-import 'package:booking/features/hotels/data/models/facilities_response_model/facilites_response_model/description.dart';
-import 'package:booking/features/hotels/data/models/facilities_response_model/facilites_response_model/facilities_response_model.dart';
-import 'package:booking/features/hotels/data/models/facilities_response_model/facilites_response_model/facility_info.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/description.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/facilities_response_model.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/facility_info.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/address.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/city.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/coordinates.dart';

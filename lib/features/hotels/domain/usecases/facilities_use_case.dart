@@ -1,7 +1,7 @@
 import 'package:booking/core/base_usecase/base_usecase.dart';
 import 'package:booking/core/errors/failures.dart';
 import 'package:booking/features/hotels/data/models/facilities_body_model/facilities_body_model/facilities_body_model.dart';
-import 'package:booking/features/hotels/data/models/facilities_response_model/facilites_response_model/facilities_response_model.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/facilities_response_model.dart';
 import 'package:booking/features/hotels/domain/repositories/hotels_repository.dart';
 import 'package:dartz/dartz.dart';
 
