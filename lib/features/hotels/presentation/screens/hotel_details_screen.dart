@@ -1,12 +1,16 @@
 import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_colors.dart';
+import 'package:booking/core/utils/app_fonts.dart';
+import 'package:booking/core/utils/app_images.dart';
 import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/core/utils/font_styles.dart';
 import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
 import 'package:booking/features/hotels/cubit/hotels_state.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_details/app_bar/app_bar.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_details/body/hotel_description.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_details/body/hotel_details_head.dart';
+import 'package:booking/features/hotels/presentation/widgets/hotel_details/body/hotel_photos/hotel_photos.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -41,6 +45,7 @@ class _HotelDetailsScreenState extends State<HotelDetailsScreen> {
           return Scaffold(
             body: CustomScrollView(
               controller: cubit.hotelDetailsScrollController,
+              shrinkWrap: true,
               physics: const BouncingScrollPhysics(),
               slivers: [
                 HotelDetailsAppBar(hotel: widget.hotel),
@@ -61,22 +66,14 @@ class _HotelDetailsScreenState extends State<HotelDetailsScreen> {
                             color: AppColors.grey.withOpacity(0.2),
                           ),
                         ),
-                        // Column(
-                        //   mainAxisSize: MainAxisSize.min,
-                        //   children: [
-                        //     Flexible(
-                        //       child: SecondaryText(
-                        //         text: widget.hotel.description!.content!,
-                        //         isLight: true,
-                        //         isButton: true,
-                        //         c
-                        //       ),
-                        //     ),
-                        //   ],
-                        // )
-                        // Text(widget.hotel.description!.content!)
                         HotelDescription(
-                            description: widget.hotel.description!.content!)
+                          description: widget.hotel.description!.content!,
+                        ),
+                        SizedBox(height: AppHeight.h20),
+                        HotelPhotos(
+                          images: widget.hotel.images!.toSet().toList(),
+                        ),
+                        SizedBox(height: AppHeight.h50),
                       ],
                     ),
                   ),

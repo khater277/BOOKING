@@ -1,32 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'name.dart';
+part of 'facilities_response_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class NameAdapter extends TypeAdapter<Name> {
+class FacilitiesResponseModelAdapter
+    extends TypeAdapter<FacilitiesResponseModel> {
   @override
-  final int typeId = 13;
+  final int typeId = 17;
 
   @override
-  Name read(BinaryReader reader) {
+  FacilitiesResponseModel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Name(
-      content: fields[0] as String?,
+    return FacilitiesResponseModel(
+      facilities: (fields[0] as List?)?.cast<FacilityInfo>(),
     );
   }
 
   @override
-  void write(BinaryWriter writer, Name obj) {
+  void write(BinaryWriter writer, FacilitiesResponseModel obj) {
     writer
       ..writeByte(1)
       ..writeByte(0)
-      ..write(obj.content);
+      ..write(obj.facilities);
   }
 
   @override
@@ -35,7 +36,7 @@ class NameAdapter extends TypeAdapter<Name> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is NameAdapter &&
+      other is FacilitiesResponseModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -44,10 +45,16 @@ class NameAdapter extends TypeAdapter<Name> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Name _$$_NameFromJson(Map<String, dynamic> json) => _$_Name(
-      content: json['content'] as String?,
+_$_FacilitiesResponseModel _$$_FacilitiesResponseModelFromJson(
+        Map<String, dynamic> json) =>
+    _$_FacilitiesResponseModel(
+      facilities: (json['facilities'] as List<dynamic>?)
+          ?.map((e) => FacilityInfo.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
-Map<String, dynamic> _$$_NameToJson(_$_Name instance) => <String, dynamic>{
-      'content': instance.content,
+Map<String, dynamic> _$$_FacilitiesResponseModelToJson(
+        _$_FacilitiesResponseModel instance) =>
+    <String, dynamic>{
+      'facilities': instance.facilities,
     };

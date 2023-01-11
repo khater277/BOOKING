@@ -33,7 +33,9 @@ class MyApp extends StatelessWidget {
               ),
               BlocProvider(
                 create: (BuildContext context) => di<HotelsCubit>()
-                  ..getHotels()
+                  ..getInit()
+                  // ..getHotels()
+                  // ..getFacilities()
                   ..changeHotelsOpacityValue(context)
                   ..changeHotelDetailsOpacityValue(context),
               ),

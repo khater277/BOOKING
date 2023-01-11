@@ -124,6 +124,13 @@ class AppSize {
   static double s50 = 50.sp;
   static double s60 = 60.sp;
   static double s70 = 70.sp;
+  static double s80 = 80.sp;
+  static double s90 = 90.sp;
+  static double s100 = 100.sp;
+  static double s110 = 110.sp;
+  static double s120 = 120.sp;
+  static double s130 = 130.sp;
+  static double s140 = 140.sp;
   static double s150 = 150.sp;
   static double s250 = 250.sp;
 }

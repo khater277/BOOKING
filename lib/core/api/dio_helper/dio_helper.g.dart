@@ -24,9 +24,9 @@ class _DioHelper implements DioHelper {
   Future<HotelsResponseModel> getAllHotels({required hotelsBodyModel}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(hotelsBodyModel);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(hotelsBodyModel.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HotelsResponseModel>(Options(
       method: 'GET',
@@ -41,6 +41,31 @@ class _DioHelper implements DioHelper {
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = HotelsResponseModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<FacilitiesResponseModel> getAllFacilities(
+      {required facilitiesBodyModel}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(facilitiesBodyModel);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<FacilitiesResponseModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'types/facilities',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = FacilitiesResponseModel.fromJson(_result.data!);
     return value;
   }
 

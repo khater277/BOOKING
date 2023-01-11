@@ -1,5 +1,5 @@
 import 'package:booking/core/api/end_points.dart';
-import 'package:booking/features/hotels/data/models/hotels_body_model/hotels_body_model.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/facilites_response_model/facilities_response_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotels_response_model.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
@@ -12,14 +12,11 @@ abstract class DioHelper {
 
   @GET(EndPoints.hotels)
   Future<HotelsResponseModel> getAllHotels({
-    @Body() required HotelsBodyModel hotelsBodyModel,
+    @Queries() required Map<String, dynamic> hotelsBodyModel,
+  });
+
+  @GET(EndPoints.allFacilities)
+  Future<FacilitiesResponseModel> getAllFacilities({
+    @Queries() required Map<String, dynamic> facilitiesBodyModel,
   });
 }
-
-// {
-//     "name": "asd1",
-//     "email": "1234@yahoo.com",
-//     "password": "123456",
-//     "password_confirmation": "123456",
-//     "image": ""
-// }

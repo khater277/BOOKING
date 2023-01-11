@@ -1,31 +1,34 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'name.dart';
+part of 'description.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class NameAdapter extends TypeAdapter<Name> {
+class FacilityDescriptionAdapter extends TypeAdapter<FacilityDescription> {
   @override
-  final int typeId = 13;
+  final int typeId = 16;
 
   @override
-  Name read(BinaryReader reader) {
+  FacilityDescription read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Name(
-      content: fields[0] as String?,
+    return FacilityDescription(
+      languageCode: fields[0] as String?,
+      content: fields[1] as String?,
     );
   }
 
   @override
-  void write(BinaryWriter writer, Name obj) {
+  void write(BinaryWriter writer, FacilityDescription obj) {
     writer
-      ..writeByte(1)
+      ..writeByte(2)
       ..writeByte(0)
+      ..write(obj.languageCode)
+      ..writeByte(1)
       ..write(obj.content);
   }
 
@@ -35,7 +38,7 @@ class NameAdapter extends TypeAdapter<Name> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is NameAdapter &&
+      other is FacilityDescriptionAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -44,10 +47,16 @@ class NameAdapter extends TypeAdapter<Name> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Name _$$_NameFromJson(Map<String, dynamic> json) => _$_Name(
+_$_FacilityDescription _$$_FacilityDescriptionFromJson(
+        Map<String, dynamic> json) =>
+    _$_FacilityDescription(
+      languageCode: json['languageCode'] as String?,
       content: json['content'] as String?,
     );
 
-Map<String, dynamic> _$$_NameToJson(_$_Name instance) => <String, dynamic>{
+Map<String, dynamic> _$$_FacilityDescriptionToJson(
+        _$_FacilityDescription instance) =>
+    <String, dynamic>{
+      'languageCode': instance.languageCode,
       'content': instance.content,
     };

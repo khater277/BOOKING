@@ -1,5 +1,8 @@
 import 'package:booking/core/hive/keys.dart';
 import 'package:booking/features/auth/data/models/current_user/current_user.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/facilites_response_model/description.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/facilites_response_model/facilities_response_model.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/facilites_response_model/facility_info.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/address.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/city.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/coordinates.dart';
@@ -16,6 +19,7 @@ class HiveHelper {
   static Box<CurrentUser>? currentUser;
   static Box<HotelsResponseModel>? allHotelsData;
   static Box<Coordinates>? userLocation;
+  static Box<FacilitiesResponseModel>? facilities;
 
   static Future<void> init() async {
     await Hive.initFlutter();
@@ -32,11 +36,15 @@ class HiveHelper {
     Hive.registerAdapter(ImageAdapter());
     Hive.registerAdapter(NameAdapter());
     Hive.registerAdapter(PhoneAdapter());
+    Hive.registerAdapter(FacilitiesResponseModelAdapter());
+    Hive.registerAdapter(FacilityInfoAdapter());
+    Hive.registerAdapter(FacilityDescriptionAdapter());
 
     /// Open Boxes
     currentUser = await Hive.openBox(HiveKeys.currentUser);
     allHotelsData = await Hive.openBox(HiveKeys.allHotelsData);
     userLocation = await Hive.openBox(HiveKeys.userLocation);
+    facilities = await Hive.openBox(HiveKeys.facilities);
   }
 
   // USER
@@ -72,5 +80,15 @@ class HiveHelper {
 
   static Coordinates? getUserLocation() {
     return userLocation!.get(HiveKeys.userLocation);
+  }
+
+  // FACILITIES
+  static Future<void> setAllFacilities(
+      {required FacilitiesResponseModel facilitiesResponseModel}) {
+    return facilities!.put(HiveKeys.facilities, facilitiesResponseModel);
+  }
+
+  static FacilitiesResponseModel? getAllFacilities() {
+    return facilities!.get(HiveKeys.facilities);
   }
 }

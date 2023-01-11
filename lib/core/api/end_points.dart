@@ -6,4 +6,5 @@ class EndPoints {
   static const String hotels = "hotels";
   static const String register = "auth/register";
   static const String login = "auth/login";
+  static const String allFacilities = "types/facilities";
 }

@@ -2,17 +2,24 @@ import 'package:booking/core/hive/hive_helper.dart';
 import 'package:booking/core/utils/app_images.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/hotels/cubit/hotels_state.dart';
+import 'package:booking/features/hotels/data/models/facilities_body_model/facilities_body_model/facilities_body_model.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/facilites_response_model/facilities_response_model.dart';
 import 'package:booking/features/hotels/data/models/hotel_page_view/hotel_page_view_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_body_model/hotels_body_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotels_response_model.dart';
+import 'package:booking/features/hotels/domain/usecases/facilities_use_case.dart';
 import 'package:booking/features/hotels/domain/usecases/hotel_usecases.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HotelsCubit extends Cubit<HotelsStates> {
   final GetHotelsUseCase getHotelsUseCase;
-  HotelsCubit({required this.getHotelsUseCase}) : super(HotelsInitial());
+  final GetFacilitiesUseCase getFacilitiesUseCase;
+  HotelsCubit({
+    required this.getHotelsUseCase,
+    required this.getFacilitiesUseCase,
+  }) : super(HotelsInitial());
 
   static HotelsCubit get(context) => BlocProvider.of<HotelsCubit>(context);
 
@@ -117,11 +124,21 @@ class HotelsCubit extends Cubit<HotelsStates> {
     });
   }
 
+  void getInit() async {
+    emit(GetHotelsLoading());
+
+    hotelsScrollController.addListener(getSomeHotels);
+
+    await getHotels();
+    await getFacilities();
+
+    emit(GetHotelsSuccess());
+  }
+
   bool hasNextPage = true;
   HotelsResponseModel? allHotels;
-  void getHotels() async {
+  Future<void> getHotels() async {
     if (HiveHelper.getAllHotels() == null) {
-      emit(GetHotelsLoading());
       hotelsScrollController.addListener(getSomeHotels);
       HotelsBodyModel hotelsBodyModel = const HotelsBodyModel(
         language: 'ENG',
@@ -135,14 +152,31 @@ class HotelsCubit extends Cubit<HotelsStates> {
           emit(HotelsError());
         },
         (hotelsResponseModel) async {
+          debugPrint("GET HOTELS SUCCESS====>${hotelsResponseModel.total}");
           allHotels = HiveHelper.getAllHotels();
           someHotels = allHotels!.hotels!.sublist(0, 10);
-          emit(GetHotelsSuccess());
         },
       );
-    } else {
-      hotelsScrollController.addListener(getSomeHotels);
-      emit(GetHotelsSuccess());
+    }
+  }
+
+  FacilitiesResponseModel? allFacilities;
+  Future<void> getFacilities() async {
+    FacilitiesBodyModel facilitiesBodyModel = FacilitiesBodyModel(
+      fields: 'all',
+      from: '1',
+      to: '573',
+    );
+    if (HiveHelper.getAllFacilities() == null) {
+      final response = await getFacilitiesUseCase.call(facilitiesBodyModel);
+      response.fold((failure) {
+        print("ERROR IN GET FACILITIES ===> ${failure.getMessage()}");
+        emit(HotelsError());
+      }, (facilitiesResponseModel) {
+        allFacilities = facilitiesResponseModel;
+        print(
+            "GET FACILITIES DONE===> ${facilitiesResponseModel.facilities!.length}");
+      });
     }
   }
 

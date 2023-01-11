@@ -14,9 +14,10 @@ import 'package:booking/features/auth/domain/usecases/google_sign_in_use_case.da
 import 'package:booking/features/booking/cubit/booking_cubit.dart';
 import 'package:booking/features/home/cubit/home_cubit.dart';
 import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
-import 'package:booking/features/hotels/data/datasources/remote/hotels_remote_data_source.dart';
+import 'package:booking/features/hotels/data/datasources/hotels_remote_data_source.dart';
 import 'package:booking/features/hotels/data/repositories/hotels_repository_impl.dart';
 import 'package:booking/features/hotels/domain/repositories/hotels_repository.dart';
+import 'package:booking/features/hotels/domain/usecases/facilities_use_case.dart';
 import 'package:booking/features/hotels/domain/usecases/hotel_usecases.dart';
 import 'package:booking/features/profile/cubit/profile_cubit.dart';
 import 'package:dio/dio.dart';
@@ -33,8 +34,10 @@ void setupGetIt() {
         googleSignInUseCase: di(),
         facebookSignInUseCase: di(),
       ));
-  di.registerLazySingleton<HotelsCubit>(
-      () => HotelsCubit(getHotelsUseCase: di()));
+  di.registerLazySingleton<HotelsCubit>(() => HotelsCubit(
+        getHotelsUseCase: di(),
+        getFacilitiesUseCase: di(),
+      ));
   di.registerLazySingleton<HomeCubit>(() => HomeCubit());
   di.registerLazySingleton<BookingCubit>(() => BookingCubit());
   di.registerLazySingleton<ProfileCubit>(() => ProfileCubit());
@@ -58,6 +61,8 @@ void setupGetIt() {
       () => LoginUseCase(authRepository: di()));
   di.registerLazySingleton<GetHotelsUseCase>(
       () => GetHotelsUseCase(hotelsRepository: di()));
+  di.registerLazySingleton<GetFacilitiesUseCase>(
+      () => GetFacilitiesUseCase(hotelsRepository: di()));
 
   di.registerLazySingleton<GoogleSignInUseCase>(
       () => GoogleSignInUseCase(authRepository: di()));

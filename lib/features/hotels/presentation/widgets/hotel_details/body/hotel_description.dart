@@ -18,7 +18,7 @@ class HotelDescription extends StatelessWidget {
       children: [
         LargeHeadText(
           text: "Description",
-          size: FontSize.s14,
+          size: FontSize.s15,
         ),
         SizedBox(height: AppHeight.h5),
         ReadMoreText(
@@ -29,12 +29,13 @@ class HotelDescription extends StatelessWidget {
           trimExpandedText: 'Show less',
           style: Theme.of(context).textTheme.bodySmall!.copyWith(
                 fontSize: FontSize.s14,
-                fontWeight: FontWeightManager.semiBold,
+                fontWeight: FontWeightManager.medium,
                 color: Theme.of(context)
                     .textTheme
                     .bodySmall!
                     .color!
                     .withOpacity(0.8),
+                wordSpacing: 2.0,
               ),
           moreStyle: getSemiBoldStyle(fontColor: AppColors.teal),
           lessStyle: getSemiBoldStyle(fontColor: AppColors.teal),

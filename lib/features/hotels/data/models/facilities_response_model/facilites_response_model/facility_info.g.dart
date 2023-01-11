@@ -1,47 +1,41 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'facility.dart';
+part of 'facility_info.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class FacilityAdapter extends TypeAdapter<Facility> {
+class FacilityInfoAdapter extends TypeAdapter<FacilityInfo> {
   @override
-  final int typeId = 9;
+  final int typeId = 15;
 
   @override
-  Facility read(BinaryReader reader) {
+  FacilityInfo read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Facility(
-      facilityCode: fields[0] as int?,
+    return FacilityInfo(
+      code: fields[0] as int?,
       facilityGroupCode: fields[1] as int?,
-      order: fields[2] as int?,
-      indYesOrNo: fields[3] as bool?,
-      number: fields[4] as int?,
-      voucher: fields[5] as bool?,
+      facilityTypologyCode: fields[2] as int?,
+      description: fields[3] as FacilityDescription?,
     );
   }
 
   @override
-  void write(BinaryWriter writer, Facility obj) {
+  void write(BinaryWriter writer, FacilityInfo obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(4)
       ..writeByte(0)
-      ..write(obj.facilityCode)
+      ..write(obj.code)
       ..writeByte(1)
       ..write(obj.facilityGroupCode)
       ..writeByte(2)
-      ..write(obj.order)
+      ..write(obj.facilityTypologyCode)
       ..writeByte(3)
-      ..write(obj.indYesOrNo)
-      ..writeByte(4)
-      ..write(obj.number)
-      ..writeByte(5)
-      ..write(obj.voucher);
+      ..write(obj.description);
   }
 
   @override
@@ -50,7 +44,7 @@ class FacilityAdapter extends TypeAdapter<Facility> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is FacilityAdapter &&
+      other is FacilityInfoAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -59,21 +53,21 @@ class FacilityAdapter extends TypeAdapter<Facility> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Facility _$$_FacilityFromJson(Map<String, dynamic> json) => _$_Facility(
-      facilityCode: json['facilityCode'] as int?,
+_$_FacilityInfo _$$_FacilityInfoFromJson(Map<String, dynamic> json) =>
+    _$_FacilityInfo(
+      code: json['code'] as int?,
       facilityGroupCode: json['facilityGroupCode'] as int?,
-      order: json['order'] as int?,
-      indYesOrNo: json['indYesOrNo'] as bool?,
-      number: json['number'] as int?,
-      voucher: json['voucher'] as bool?,
+      facilityTypologyCode: json['facilityTypologyCode'] as int?,
+      description: json['description'] == null
+          ? null
+          : FacilityDescription.fromJson(
+              json['description'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_FacilityToJson(_$_Facility instance) =>
+Map<String, dynamic> _$$_FacilityInfoToJson(_$_FacilityInfo instance) =>
     <String, dynamic>{
-      'facilityCode': instance.facilityCode,
+      'code': instance.code,
       'facilityGroupCode': instance.facilityGroupCode,
-      'order': instance.order,
-      'indYesOrNo': instance.indYesOrNo,
-      'number': instance.number,
-      'voucher': instance.voucher,
+      'facilityTypologyCode': instance.facilityTypologyCode,
+      'description': instance.description,
     };
