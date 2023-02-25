@@ -1,3 +1,4 @@
+import 'package:booking/features/hotels/data/models/hotels_response_model/rooms/rooms.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 
@@ -14,6 +15,7 @@ class HotelsResponseModel with _$HotelsResponseModel {
     @HiveField(1) int? to,
     @HiveField(2) int? total,
     @HiveField(3) List<Hotel>? hotels,
+    @HiveField(4) Rooms? rooms,
   }) = _HotelsResponseModel;
 
   factory HotelsResponseModel.fromJson(Map<String, dynamic> json) =>

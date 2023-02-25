@@ -13,7 +13,7 @@ class _DioHelper implements DioHelper {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://api.test.hotelbeds.com/hotel-content-api/1.0/';
+    baseUrl ??= 'https://api.test.hotelbeds.com/';
   }
 
   final Dio _dio;
@@ -35,7 +35,7 @@ class _DioHelper implements DioHelper {
     )
             .compose(
               _dio.options,
-              'hotels',
+              'hotel-content-api/1.0/hotels',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -60,12 +60,86 @@ class _DioHelper implements DioHelper {
     )
             .compose(
               _dio.options,
-              'types/facilities',
+              'hotel-content-api/1.0/types/facilities',
               queryParameters: queryParameters,
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = FacilitiesResponseModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<CheckAvailabilityResponse> checkAvailability(
+      {required checkAvailabilityBody}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(checkAvailabilityBody.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<CheckAvailabilityResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'hotel-api/1.0/hotels',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = CheckAvailabilityResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<CheckRateResponse> checkRate({required checkRateBody}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(checkRateBody.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<CheckRateResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'hotel-api/1.0/checkrates',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = CheckRateResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<CreateBookingResponse> createBooking(
+      {required createBookingBody}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(createBookingBody.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<CreateBookingResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'hotel-api/1.0/bookings',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = CreateBookingResponse.fromJson(_result.data!);
     return value;
   }
 

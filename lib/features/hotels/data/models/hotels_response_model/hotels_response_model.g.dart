@@ -23,13 +23,14 @@ class HotelsResponseModelAdapter extends TypeAdapter<HotelsResponseModel> {
       to: fields[1] as int?,
       total: fields[2] as int?,
       hotels: (fields[3] as List?)?.cast<Hotel>(),
+      rooms: fields[4] as Rooms?,
     );
   }
 
   @override
   void write(BinaryWriter writer, HotelsResponseModel obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.from)
       ..writeByte(1)
@@ -37,7 +38,9 @@ class HotelsResponseModelAdapter extends TypeAdapter<HotelsResponseModel> {
       ..writeByte(2)
       ..write(obj.total)
       ..writeByte(3)
-      ..write(obj.hotels);
+      ..write(obj.hotels)
+      ..writeByte(4)
+      ..write(obj.rooms);
   }
 
   @override
@@ -64,6 +67,9 @@ _$_HotelsResponseModel _$$_HotelsResponseModelFromJson(
       hotels: (json['hotels'] as List<dynamic>?)
           ?.map((e) => Hotel.fromJson(e as Map<String, dynamic>))
           .toList(),
+      rooms: json['rooms'] == null
+          ? null
+          : Rooms.fromJson(json['rooms'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_HotelsResponseModelToJson(
@@ -73,4 +79,5 @@ Map<String, dynamic> _$$_HotelsResponseModelToJson(
       'to': instance.to,
       'total': instance.total,
       'hotels': instance.hotels,
+      'rooms': instance.rooms,
     };

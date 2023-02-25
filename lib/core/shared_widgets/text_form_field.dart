@@ -12,13 +12,15 @@ class Test {
 class CustomTextField extends StatelessWidget {
   final String hintText;
   final bool obscureText;
+  final bool readOnly;
   final int? maxlength;
   final String? validatorText;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
   final void Function()? suffixTap;
   final ValueChanged<String>? onChange;
-  final ValueChanged<String>? onFeildSubmitted;
+  final ValueChanged<String>? onFelidSubmitted;
+  final void Function()? onTap;
   final TextEditingController controller;
   final TextInputType inputType;
   final String? Function(String?)? validator;
@@ -28,10 +30,12 @@ class CustomTextField extends StatelessWidget {
     required this.hintText,
     this.maxlength,
     this.obscureText = false,
+    this.readOnly = false,
     required this.validatorText,
     required this.controller,
     this.onChange,
-    this.onFeildSubmitted,
+    this.onFelidSubmitted,
+    this.onTap,
     required this.inputType,
     this.prefixIcon,
     this.suffixIcon,
@@ -50,7 +54,9 @@ class CustomTextField extends StatelessWidget {
           fontColor: Theme.of(context).textTheme.bodyLarge!.color!),
       validator: validator,
       onChanged: onChange,
-      onFieldSubmitted: onFeildSubmitted,
+      onFieldSubmitted: onFelidSubmitted,
+      onTap: onTap,
+      readOnly: readOnly,
       decoration: InputDecoration(
           hintText: hintText,
           prefixIcon: prefixIcon != null

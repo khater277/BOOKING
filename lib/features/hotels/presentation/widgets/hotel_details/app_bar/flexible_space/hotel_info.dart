@@ -1,11 +1,13 @@
 import 'dart:ui';
 
+import 'package:booking/config/navigation.dart';
 import 'package:booking/core/shared_widgets/button.dart';
 import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_colors.dart';
 import 'package:booking/core/utils/app_fonts.dart';
 import 'package:booking/core/utils/app_functions.dart';
 import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/features/booking/presentation/screens/booking_details_screen.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_details/app_bar/flexible_space/hotel_address_and_location.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotels/hotel_info_card/hotel_night_price.dart';
@@ -72,7 +74,12 @@ class HotelInfoAppBar extends StatelessWidget {
                   SizedBox(height: AppHeight.h10),
                   CustomButton(
                     text: "Book Now",
-                    onPressed: () {},
+                    onPressed: () {
+                      Go.to(
+                        context: context,
+                        screen: const BookingDetailsScreen(),
+                      );
+                    },
                   ),
                 ],
               ),

@@ -13,6 +13,11 @@ import 'package:booking/features/hotels/data/models/hotels_response_model/hotels
 import 'package:booking/features/hotels/data/models/hotels_response_model/image.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/name.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/phone.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/rooms/room.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/rooms/room_facility.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/rooms/room_stay.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/rooms/room_stay_facility.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/rooms/rooms.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class HiveHelper {
@@ -39,6 +44,11 @@ class HiveHelper {
     Hive.registerAdapter(FacilitiesResponseModelAdapter());
     Hive.registerAdapter(FacilityInfoAdapter());
     Hive.registerAdapter(FacilityDescriptionAdapter());
+    Hive.registerAdapter(RoomFacilityAdapter());
+    Hive.registerAdapter(RoomStayFacilityAdapter());
+    Hive.registerAdapter(RoomStayAdapter());
+    Hive.registerAdapter(RoomAdapter());
+    Hive.registerAdapter(RoomsAdapter());
 
     /// Open Boxes
     currentUser = await Hive.openBox(HiveKeys.currentUser);

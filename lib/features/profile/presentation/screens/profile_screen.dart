@@ -14,26 +14,27 @@ class ProfileScreen extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         final ProfileCubit cubit = ProfileCubit.get(context);
-        return Scaffold(
-          body: SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: AppWidth.w15,
-              ).add(EdgeInsets.only(top: AppHeight.h30)),
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const ProfileHead(),
-                    SizedBox(height: AppHeight.h40),
-                    ProfileItemsList(cubit: cubit),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        );
+        return state.when(
+            initial: () => Scaffold(
+                  body: SafeArea(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: AppWidth.w15,
+                      ).add(EdgeInsets.only(top: AppHeight.h30)),
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const ProfileHead(),
+                            SizedBox(height: AppHeight.h40),
+                            ProfileItemsList(cubit: cubit),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ));
       },
     );
   }

@@ -1,21 +1,27 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:booking/core/hive/hive_helper.dart';
 import 'package:booking/core/utils/app_images.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/hotels/cubit/hotels_state.dart';
 import 'package:booking/features/hotels/data/models/facilities_body_model/facilities_body_model/facilities_body_model.dart';
 import 'package:booking/features/hotels/data/models/facilities_response_model/facilities_response_model.dart';
+import 'package:booking/features/hotels/data/models/facilities_response_model/facility_info.dart';
 import 'package:booking/features/hotels/data/models/hotel_page_view/hotel_page_view_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_body_model/hotels_body_model.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/facility.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotels_response_model.dart';
 import 'package:booking/features/hotels/domain/usecases/facilities_use_case.dart';
 import 'package:booking/features/hotels/domain/usecases/hotel_usecases.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HotelsCubit extends Cubit<HotelsStates> {
   final GetHotelsUseCase getHotelsUseCase;
   final GetFacilitiesUseCase getFacilitiesUseCase;
+
   HotelsCubit({
     required this.getHotelsUseCase,
     required this.getFacilitiesUseCase,
@@ -160,7 +166,7 @@ class HotelsCubit extends Cubit<HotelsStates> {
     }
   }
 
-  FacilitiesResponseModel? allFacilities;
+  FacilitiesResponseModel? allFacilities = HiveHelper.getAllFacilities();
   Future<void> getFacilities() async {
     FacilitiesBodyModel facilitiesBodyModel = FacilitiesBodyModel(
       fields: 'all',
@@ -178,6 +184,24 @@ class HotelsCubit extends Cubit<HotelsStates> {
             "GET FACILITIES DONE===> ${facilitiesResponseModel.facilities!.length}");
       });
     }
+  }
+
+  String getFacilityName({
+    required List<Facility> hotelFacilities,
+    required int index,
+  }) {
+    FacilityInfo? facilityInfo = allFacilities != null
+        ? allFacilities!.facilities!.firstWhereOrNull(
+            (element) => element.code == hotelFacilities[index].facilityCode)
+        : null;
+    String facilityName =
+        facilityInfo == null ? "unknown" : facilityInfo.description!.content!;
+
+    String num = hotelFacilities[index].number != null
+        ? hotelFacilities[index].number.toString()
+        : "";
+    return "$facilityName $num";
+    // return "${hotelFacilities.length} ${list.length}";
   }
 
   List<Hotel> someHotels = HiveHelper.getAllHotels() != null

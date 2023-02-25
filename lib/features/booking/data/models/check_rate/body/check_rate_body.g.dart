@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+// ignore_for_file: non_constant_identifier_names
+
+part of 'check_rate_body.dart';
+
+// **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class CheckRateBodyAdapter extends TypeAdapter<CheckRateBody> {
+  @override
+  final int typeId = 36;
+
+  @override
+  CheckRateBody read(BinaryReader reader) {
+    return CheckRateBody();
+  }
+
+  @override
+  void write(BinaryWriter writer, CheckRateBody obj) {
+    writer.writeByte(0);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CheckRateBodyAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$_CheckRateBody _$$_CheckRateBodyFromJson(Map<String, dynamic> json) =>
+    _$_CheckRateBody(
+      rateRooms: (json['rooms'] as List<dynamic>?)
+          ?.map((e) => RateRoom.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_CheckRateBodyToJson(_$_CheckRateBody instance) =>
+    <String, dynamic>{
+      'rooms': instance.rateRooms,
+    };

@@ -1,0 +1,60 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+// ignore_for_file: non_constant_identifier_names
+
+part of 'check_availability_body.dart';
+
+// **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class CheckAvailabilityBodyAdapter extends TypeAdapter<CheckAvailabilityBody> {
+  @override
+  final int typeId = 23;
+
+  @override
+  CheckAvailabilityBody read(BinaryReader reader) {
+    return CheckAvailabilityBody();
+  }
+
+  @override
+  void write(BinaryWriter writer, CheckAvailabilityBody obj) {
+    writer.writeByte(0);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CheckAvailabilityBodyAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$_CheckAvailabilityBody _$$_CheckAvailabilityBodyFromJson(
+        Map<String, dynamic> json) =>
+    _$_CheckAvailabilityBody(
+      stay: json['stay'] == null
+          ? null
+          : Stay.fromJson(json['stay'] as Map<String, dynamic>),
+      occupancies: (json['occupancies'] as List<dynamic>?)
+          ?.map((e) => Occupancy.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      availabilityBodyHotels: json['hotels'] == null
+          ? null
+          : Hotels.fromJson(json['hotels'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$_CheckAvailabilityBodyToJson(
+        _$_CheckAvailabilityBody instance) =>
+    <String, dynamic>{
+      'stay': instance.stay,
+      'occupancies': instance.occupancies,
+      'hotels': instance.availabilityBodyHotels,
+    };

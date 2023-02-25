@@ -28,6 +28,8 @@ mixin _$HotelsResponseModel {
   int? get total => throw _privateConstructorUsedError;
   @HiveField(3)
   List<Hotel>? get hotels => throw _privateConstructorUsedError;
+  @HiveField(4)
+  Rooms? get rooms => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,7 +46,10 @@ abstract class $HotelsResponseModelCopyWith<$Res> {
       {@HiveField(0) int? from,
       @HiveField(1) int? to,
       @HiveField(2) int? total,
-      @HiveField(3) List<Hotel>? hotels});
+      @HiveField(3) List<Hotel>? hotels,
+      @HiveField(4) Rooms? rooms});
+
+  $RoomsCopyWith<$Res>? get rooms;
 }
 
 /// @nodoc
@@ -62,6 +67,7 @@ class _$HotelsResponseModelCopyWithImpl<$Res>
     Object? to = freezed,
     Object? total = freezed,
     Object? hotels = freezed,
+    Object? rooms = freezed,
   }) {
     return _then(_value.copyWith(
       from: from == freezed
@@ -80,7 +86,22 @@ class _$HotelsResponseModelCopyWithImpl<$Res>
           ? _value.hotels
           : hotels // ignore: cast_nullable_to_non_nullable
               as List<Hotel>?,
+      rooms: rooms == freezed
+          ? _value.rooms
+          : rooms // ignore: cast_nullable_to_non_nullable
+              as Rooms?,
     ));
+  }
+
+  @override
+  $RoomsCopyWith<$Res>? get rooms {
+    if (_value.rooms == null) {
+      return null;
+    }
+
+    return $RoomsCopyWith<$Res>(_value.rooms!, (value) {
+      return _then(_value.copyWith(rooms: value));
+    });
   }
 }
 
@@ -95,7 +116,11 @@ abstract class _$$_HotelsResponseModelCopyWith<$Res>
       {@HiveField(0) int? from,
       @HiveField(1) int? to,
       @HiveField(2) int? total,
-      @HiveField(3) List<Hotel>? hotels});
+      @HiveField(3) List<Hotel>? hotels,
+      @HiveField(4) Rooms? rooms});
+
+  @override
+  $RoomsCopyWith<$Res>? get rooms;
 }
 
 /// @nodoc
@@ -115,6 +140,7 @@ class __$$_HotelsResponseModelCopyWithImpl<$Res>
     Object? to = freezed,
     Object? total = freezed,
     Object? hotels = freezed,
+    Object? rooms = freezed,
   }) {
     return _then(_$_HotelsResponseModel(
       from: from == freezed
@@ -133,6 +159,10 @@ class __$$_HotelsResponseModelCopyWithImpl<$Res>
           ? _value._hotels
           : hotels // ignore: cast_nullable_to_non_nullable
               as List<Hotel>?,
+      rooms: rooms == freezed
+          ? _value.rooms
+          : rooms // ignore: cast_nullable_to_non_nullable
+              as Rooms?,
     ));
   }
 }
@@ -144,7 +174,8 @@ class _$_HotelsResponseModel implements _HotelsResponseModel {
       {@HiveField(0) this.from,
       @HiveField(1) this.to,
       @HiveField(2) this.total,
-      @HiveField(3) final List<Hotel>? hotels})
+      @HiveField(3) final List<Hotel>? hotels,
+      @HiveField(4) this.rooms})
       : _hotels = hotels;
 
   factory _$_HotelsResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -170,8 +201,12 @@ class _$_HotelsResponseModel implements _HotelsResponseModel {
   }
 
   @override
+  @HiveField(4)
+  final Rooms? rooms;
+
+  @override
   String toString() {
-    return 'HotelsResponseModel(from: $from, to: $to, total: $total, hotels: $hotels)';
+    return 'HotelsResponseModel(from: $from, to: $to, total: $total, hotels: $hotels, rooms: $rooms)';
   }
 
   @override
@@ -182,7 +217,8 @@ class _$_HotelsResponseModel implements _HotelsResponseModel {
             const DeepCollectionEquality().equals(other.from, from) &&
             const DeepCollectionEquality().equals(other.to, to) &&
             const DeepCollectionEquality().equals(other.total, total) &&
-            const DeepCollectionEquality().equals(other._hotels, _hotels));
+            const DeepCollectionEquality().equals(other._hotels, _hotels) &&
+            const DeepCollectionEquality().equals(other.rooms, rooms));
   }
 
   @JsonKey(ignore: true)
@@ -192,7 +228,8 @@ class _$_HotelsResponseModel implements _HotelsResponseModel {
       const DeepCollectionEquality().hash(from),
       const DeepCollectionEquality().hash(to),
       const DeepCollectionEquality().hash(total),
-      const DeepCollectionEquality().hash(_hotels));
+      const DeepCollectionEquality().hash(_hotels),
+      const DeepCollectionEquality().hash(rooms));
 
   @JsonKey(ignore: true)
   @override
@@ -213,7 +250,8 @@ abstract class _HotelsResponseModel implements HotelsResponseModel {
       {@HiveField(0) final int? from,
       @HiveField(1) final int? to,
       @HiveField(2) final int? total,
-      @HiveField(3) final List<Hotel>? hotels}) = _$_HotelsResponseModel;
+      @HiveField(3) final List<Hotel>? hotels,
+      @HiveField(4) final Rooms? rooms}) = _$_HotelsResponseModel;
 
   factory _HotelsResponseModel.fromJson(Map<String, dynamic> json) =
       _$_HotelsResponseModel.fromJson;
@@ -230,6 +268,9 @@ abstract class _HotelsResponseModel implements HotelsResponseModel {
   @override
   @HiveField(3)
   List<Hotel>? get hotels;
+  @override
+  @HiveField(4)
+  Rooms? get rooms;
   @override
   @JsonKey(ignore: true)
   _$$_HotelsResponseModelCopyWith<_$_HotelsResponseModel> get copyWith =>

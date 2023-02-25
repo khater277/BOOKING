@@ -12,6 +12,12 @@ import 'package:booking/features/auth/domain/usecases/login_use_case.dart';
 import 'package:booking/features/auth/domain/usecases/register_use_case.dart';
 import 'package:booking/features/auth/domain/usecases/google_sign_in_use_case.dart';
 import 'package:booking/features/booking/cubit/booking_cubit.dart';
+import 'package:booking/features/booking/data/datasources/booking_remote_data_source.dart';
+import 'package:booking/features/booking/data/reposetories/booking_repository_impl.dart';
+import 'package:booking/features/booking/domain/repository/booking_repository.dart';
+import 'package:booking/features/booking/domain/usecases/check_availability_use_case.dart';
+import 'package:booking/features/booking/domain/usecases/check_rate_use_case.dart';
+import 'package:booking/features/booking/domain/usecases/create_booking_use_case.dart';
 import 'package:booking/features/home/cubit/home_cubit.dart';
 import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
 import 'package:booking/features/hotels/data/datasources/hotels_remote_data_source.dart';
@@ -39,7 +45,11 @@ void setupGetIt() {
         getFacilitiesUseCase: di(),
       ));
   di.registerLazySingleton<HomeCubit>(() => HomeCubit());
-  di.registerLazySingleton<BookingCubit>(() => BookingCubit());
+  di.registerLazySingleton<BookingCubit>(() => BookingCubit(
+        checkAvailabilityUseCase: di(),
+        checkRateUseCase: di(),
+        createBookingUseCase: di(),
+      ));
   di.registerLazySingleton<ProfileCubit>(() => ProfileCubit());
 
   /// DATA SOURCES
@@ -47,12 +57,16 @@ void setupGetIt() {
       () => AuthRemoteDataSourceImpl(dioHelper: di(), firebaseHelper: di()));
   di.registerLazySingleton<HotelsRemoteDataSource>(
       () => HotelsRemoteDataSourceImpl(dioHelper: di()));
+  di.registerLazySingleton<BookingRemoteDataSource>(
+      () => BookingRemoteDataSourceImpl(dioHelper: di()));
 
   /// REPOSITORIES
   di.registerLazySingleton<AuthRepository>(
       () => AuthRepositoryImpl(authRemoteDataSource: di()));
   di.registerLazySingleton<HotelsRepository>(
       () => HotelsRepositoryImpl(hotelsRemoteDataSource: di()));
+  di.registerLazySingleton<BookingRepository>(
+      () => BookingRepositoryImpl(bookingRemoteDataSource: di()));
 
   /// USECASES
   di.registerLazySingleton<RegisterUseCase>(
@@ -69,6 +83,13 @@ void setupGetIt() {
 
   di.registerLazySingleton<FacebookSignInUseCase>(
       () => FacebookSignInUseCase(authRepository: di()));
+
+  di.registerLazySingleton<CheckAvailabilityUseCase>(
+      () => CheckAvailabilityUseCase(bookingRepository: di()));
+  di.registerLazySingleton<CheckRateUseCase>(
+      () => CheckRateUseCase(bookingRepository: di()));
+  di.registerLazySingleton<CreateBookingUseCase>(
+      () => CreateBookingUseCase(bookingRepository: di()));
 
   /// DIO
   di.registerLazySingleton<DioHelper>(() => DioHelper(di()));

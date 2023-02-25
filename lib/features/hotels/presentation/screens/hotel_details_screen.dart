@@ -6,6 +6,7 @@ import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.
 import 'package:booking/features/hotels/presentation/widgets/hotel_details/app_bar/app_bar.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_details/body/hotel_description.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_details/body/hotel_details_head.dart';
+import 'package:booking/features/hotels/presentation/widgets/hotel_details/body/hotel_facilities.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_details/body/hotel_photos/hotel_photos.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -69,6 +70,10 @@ class _HotelDetailsScreenState extends State<HotelDetailsScreen> {
                         HotelPhotos(
                           images: widget.hotel.images!.toSet().toList(),
                         ),
+                        SizedBox(height: AppHeight.h50),
+                        HotelFacilities(
+                            cubit: cubit,
+                            hotelFacilities: widget.hotel.facilities!),
                         SizedBox(height: AppHeight.h50),
                       ],
                     ),

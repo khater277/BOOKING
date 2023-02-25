@@ -2,9 +2,7 @@
 
 import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
-import 'package:booking/features/hotels/data/models/facilities_response_model/facility_info.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/facility.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
 class HotelFacilities extends StatelessWidget {
@@ -15,14 +13,31 @@ class HotelFacilities extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int index = 8;
-    FacilityInfo? facilityInfo = cubit.allFacilities != null
-        ? cubit.allFacilities!.facilities!.firstWhereOrNull(
-            (element) => element.code == hotelFacilities[index].facilityCode)
-        : null;
-    String facilityName =
-        facilityInfo == null ? "unknown" : facilityInfo.description!.content!;
-
-    return LargeHeadText(text: facilityName);
+    return LargeHeadText(
+        text: cubit.getFacilityName(
+      hotelFacilities: hotelFacilities,
+      index: 8,
+    ));
+    // return GridView.builder(
+    //   shrinkWrap: true,
+    //   physics: const NeverScrollableScrollPhysics(),
+    //   gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+    //     maxCrossAxisExtent: 200,
+    //     mainAxisSpacing: 10,
+    //     crossAxisSpacing: 8,
+    //     childAspectRatio: 0.68,
+    //   ),
+    //   itemBuilder: (BuildContext context, int index) => LargeHeadText(
+    //       text: cubit.getFacilityName(
+    //     hotelFacilities: hotelFacilities,
+    //     index: 8,
+    //   )),
+    // );
   }
 }
+
+// LargeHeadText(
+//         text: cubit.getFacilityName(
+//       hotelFacilities: hotelFacilities,
+//       index: 8,
+//     ))

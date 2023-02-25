@@ -39,7 +39,7 @@ dependencies:
   dot_navigation_bar: ^1.0.1+4
   email_validator: ^2.1.17
   equatable: ^2.0.5
-  firebase_auth: ^4.2.4
+  firebase_auth: ^4.2.5
   firebase_core: ^2.4.1
   firebase_messaging: ^14.2.1
   firebase_storage: ^11.0.10
@@ -66,6 +66,7 @@ dependencies:
   readmore: ^2.2.0
   retrofit: ^3.0.1+1
   smooth_page_indicator: ^1.0.0+2
+  syncfusion_flutter_datepicker: ^20.4.48
   top_snackbar_flutter: ^2.1.1
 
 dev_dependencies:

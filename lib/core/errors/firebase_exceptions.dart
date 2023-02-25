@@ -71,6 +71,7 @@ class AuthExceptionHandler with _$AuthExceptionHandler {
   static String generateExceptionMessage(
       AuthExceptionHandler authExceptionHandler) {
     String errorMessage = "";
+
     authExceptionHandler.when(
       wrongPassword: () => errorMessage = "Your password is wrong.",
       emailAlreadyInUse: () => errorMessage =
