@@ -6,6 +6,11 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+enum Check {
+  IN,
+  OUT,
+}
+
 class Constants {
   static showFlushBar({
     required String title,

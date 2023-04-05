@@ -54,7 +54,8 @@ class HotelNameAndAddress extends StatelessWidget {
                       SizedBox(width: AppWidth.w5),
                       Flexible(
                           child: SecondaryText(
-                        text: "${address.number}, ${address.street}",
+                        text:
+                            "${address.number != null ? "${address.number}, " : ''}${address.street}",
                         isLight: true,
                         isButton: true,
                         // maxLines: 2,

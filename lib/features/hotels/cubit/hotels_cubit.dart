@@ -150,6 +150,7 @@ class HotelsCubit extends Cubit<HotelsStates> {
         language: 'ENG',
         from: 1,
         to: 500,
+        countryCode: 'EG',
       );
       final response = await getHotelsUseCase(hotelsBodyModel);
       response.fold(

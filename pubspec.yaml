@@ -37,6 +37,7 @@ dependencies:
   dartz: ^0.10.1
   dio: ^4.0.6
   dot_navigation_bar: ^1.0.1+4
+  dropdown_textfield: ^1.0.8
   email_validator: ^2.1.17
   equatable: ^2.0.5
   firebase_auth: ^4.2.5

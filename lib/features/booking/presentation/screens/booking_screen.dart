@@ -2,8 +2,8 @@ import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_fonts.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/booking/cubit/booking_cubit.dart';
-import 'package:booking/features/booking/presentation/widgets/bookings_list.dart';
-import 'package:booking/features/booking/presentation/widgets/tab_bar_head.dart';
+import 'package:booking/features/booking/presentation/widgets/booking/bookings_list.dart';
+import 'package:booking/features/booking/presentation/widgets/booking/tab_bar_head.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

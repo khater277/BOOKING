@@ -58,24 +58,25 @@ class CustomTextField extends StatelessWidget {
       onTap: onTap,
       readOnly: readOnly,
       decoration: InputDecoration(
-          hintText: hintText,
-          prefixIcon: prefixIcon != null
-              ? Icon(
-                  prefixIcon,
+        hintText: hintText,
+        prefixIcon: prefixIcon != null
+            ? Icon(
+                prefixIcon,
+                color: AppColors.teal,
+                size: AppSize.s20,
+              )
+            : null,
+        suffixIcon: suffixIcon != null
+            ? IconButton(
+                onPressed: suffixTap,
+                icon: Icon(
+                  suffixIcon,
                   color: AppColors.teal,
                   size: AppSize.s20,
-                )
-              : null,
-          suffixIcon: suffixIcon != null
-              ? IconButton(
-                  onPressed: suffixTap,
-                  icon: Icon(
-                    suffixIcon,
-                    color: AppColors.teal,
-                    size: AppSize.s20,
-                  ),
-                )
-              : null),
+                ),
+              )
+            : null,
+      ),
     );
   }
 }

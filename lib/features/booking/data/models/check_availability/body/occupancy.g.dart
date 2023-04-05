@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'occupancy.dart';
 
 // **************************************************************************
@@ -14,6 +12,10 @@ class OccupancyAdapter extends TypeAdapter<Occupancy> {
 
   @override
   Occupancy read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
     return Occupancy();
   }
 

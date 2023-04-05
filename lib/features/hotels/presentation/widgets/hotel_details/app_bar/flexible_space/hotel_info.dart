@@ -77,7 +77,7 @@ class HotelInfoAppBar extends StatelessWidget {
                     onPressed: () {
                       Go.to(
                         context: context,
-                        screen: const BookingDetailsScreen(),
+                        screen: BookingDetailsScreen(hotelId: hotel.code!),
                       );
                     },
                   ),

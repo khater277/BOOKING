@@ -25,7 +25,7 @@ class HotelInfoCard extends StatelessWidget {
             height: AppHeight.h140,
             child: Row(
               children: [
-                HotelImage(image: hotel.images![0].path!),
+                HotelImage(image: hotel.images![0].path ?? ""),
                 HotelDetails(hotel: hotel),
               ],
             ),

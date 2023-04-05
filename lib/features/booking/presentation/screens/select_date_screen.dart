@@ -2,22 +2,46 @@ import 'package:booking/config/navigation.dart';
 import 'package:booking/core/utils/app_colors.dart';
 import 'package:booking/core/utils/app_fonts.dart';
 import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/core/utils/constants.dart';
 import 'package:booking/core/utils/font_styles.dart';
+import 'package:booking/features/booking/cubit/booking_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
-class SelectDateScreen extends StatelessWidget {
-  const SelectDateScreen({super.key});
+class SelectDateScreen extends StatefulWidget {
+  final BookingCubit cubit;
+  final Check check;
+  const SelectDateScreen({
+    super.key,
+    required this.cubit,
+    required this.check,
+  });
+
+  @override
+  State<SelectDateScreen> createState() => _SelectDateScreenState();
+}
+
+class _SelectDateScreenState extends State<SelectDateScreen> {
+  @override
+  void initState() {
+    widget.cubit.initCalenderControllers();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    widget.cubit.disposeCalenderControllers();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    DateRangePickerController controller = DateRangePickerController();
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: AppHeight.h20),
         child: SfDateRangePicker(
-          controller: controller,
+          controller: widget.cubit.dateRangePickerController,
           showNavigationArrow: true,
           initialSelectedDate: DateTime.now(),
           minDate: DateTime.now(),
@@ -44,9 +68,12 @@ class SelectDateScreen extends StatelessWidget {
           selectionMode: DateRangePickerSelectionMode.single,
           showActionButtons: true,
           onSubmit: (dynamic value) {
+            DateTime date = value;
+            widget.cubit.selectDate(
+              date: date,
+              check: widget.check,
+            );
             Go.back(context: context);
-            // DateTime dateTime = value;
-            // cubit.selectedDateTime(dateTime);
           },
           onCancel: () {
             Go.back(context: context);

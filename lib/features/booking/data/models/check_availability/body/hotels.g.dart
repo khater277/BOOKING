@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'hotels.dart';
 
 // **************************************************************************
@@ -14,6 +12,10 @@ class HotelsAdapter extends TypeAdapter<Hotels> {
 
   @override
   Hotels read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
     return Hotels();
   }
 

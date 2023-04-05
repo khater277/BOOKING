@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'create_booking_body.dart';
 
 // **************************************************************************
@@ -14,6 +12,10 @@ class CreateBookingBodyAdapter extends TypeAdapter<CreateBookingBody> {
 
   @override
   CreateBookingBody read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
     return CreateBookingBody();
   }
 
