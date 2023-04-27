@@ -1,4 +1,4 @@
-class EndPoints {
+class BookingEndPoints {
   static const String baseUrl = "https://api.test.hotelbeds.com/";
   // "https://api.test.hotelbeds.com/hotel-content-api/1.0/";
   static const String apiKey = "50301855d8b7f2ec57633482fbba3c41";

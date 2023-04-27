@@ -1,32 +1,33 @@
-import 'package:booking/core/api/dio_helper/dio_helper.dart';
-import 'package:booking/features/hotels/data/models/facilities_body_model/facilities_body_model/facilities_body_model.dart';
+import 'package:booking/core/apis/booking/booking_api.dart';
+import 'package:booking/features/hotels/data/models/facilities_params_model/facilities_body_model/facilities_params_model.dart';
 import 'package:booking/features/hotels/data/models/facilities_response_model/facilities_response_model.dart';
-import 'package:booking/features/hotels/data/models/hotels_body_model/hotels_body_model.dart';
+import 'package:booking/features/hotels/data/models/hotels_params_model/hotels_params_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotels_response_model.dart';
 
 abstract class HotelsRemoteDataSource {
   Future<HotelsResponseModel> getHotels(
-      {required HotelsBodyModel hotelsBodyModel});
+      {required HotelsParamsModel hotelsParamsModel});
 
   Future<FacilitiesResponseModel> getFacilities(
-      {required FacilitiesBodyModel facilitiesBodyModel});
+      {required FacilitiesParamsModel facilitiesParamsModel});
 }
 
 class HotelsRemoteDataSourceImpl implements HotelsRemoteDataSource {
-  final DioHelper dioHelper;
+  final BookingApi bookingApi;
 
-  HotelsRemoteDataSourceImpl({required this.dioHelper});
+  HotelsRemoteDataSourceImpl({required this.bookingApi});
   @override
   Future<HotelsResponseModel> getHotels({
-    required HotelsBodyModel hotelsBodyModel,
+    required HotelsParamsModel hotelsParamsModel,
   }) {
-    return dioHelper.getAllHotels(hotelsBodyModel: hotelsBodyModel.toJson());
+    return bookingApi.getAllHotels(
+        hotelsParamsModel: hotelsParamsModel.toJson());
   }
 
   @override
   Future<FacilitiesResponseModel> getFacilities(
-      {required FacilitiesBodyModel facilitiesBodyModel}) {
-    return dioHelper.getAllFacilities(
-        facilitiesBodyModel: facilitiesBodyModel.toJson());
+      {required FacilitiesParamsModel facilitiesParamsModel}) {
+    return bookingApi.getAllFacilities(
+        facilitiesParamsModel: facilitiesParamsModel.toJson());
   }
 }

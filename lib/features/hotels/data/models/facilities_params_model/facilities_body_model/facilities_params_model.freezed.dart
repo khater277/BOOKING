@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'facilities_body_model.dart';
+part of 'facilities_params_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,38 +14,39 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-FacilitiesBodyModel _$FacilitiesBodyModelFromJson(Map<String, dynamic> json) {
-  return _FacilitiesBodyModel.fromJson(json);
+FacilitiesParamsModel _$FacilitiesParamsModelFromJson(
+    Map<String, dynamic> json) {
+  return _FacilitiesParamsModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$FacilitiesBodyModel {
+mixin _$FacilitiesParamsModel {
   String? get fields => throw _privateConstructorUsedError;
   String? get from => throw _privateConstructorUsedError;
   String? get to => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FacilitiesBodyModelCopyWith<FacilitiesBodyModel> get copyWith =>
+  $FacilitiesParamsModelCopyWith<FacilitiesParamsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FacilitiesBodyModelCopyWith<$Res> {
-  factory $FacilitiesBodyModelCopyWith(
-          FacilitiesBodyModel value, $Res Function(FacilitiesBodyModel) then) =
-      _$FacilitiesBodyModelCopyWithImpl<$Res>;
+abstract class $FacilitiesParamsModelCopyWith<$Res> {
+  factory $FacilitiesParamsModelCopyWith(FacilitiesParamsModel value,
+          $Res Function(FacilitiesParamsModel) then) =
+      _$FacilitiesParamsModelCopyWithImpl<$Res>;
   $Res call({String? fields, String? from, String? to});
 }
 
 /// @nodoc
-class _$FacilitiesBodyModelCopyWithImpl<$Res>
-    implements $FacilitiesBodyModelCopyWith<$Res> {
-  _$FacilitiesBodyModelCopyWithImpl(this._value, this._then);
+class _$FacilitiesParamsModelCopyWithImpl<$Res>
+    implements $FacilitiesParamsModelCopyWith<$Res> {
+  _$FacilitiesParamsModelCopyWithImpl(this._value, this._then);
 
-  final FacilitiesBodyModel _value;
+  final FacilitiesParamsModel _value;
   // ignore: unused_field
-  final $Res Function(FacilitiesBodyModel) _then;
+  final $Res Function(FacilitiesParamsModel) _then;
 
   @override
   $Res call({
@@ -71,25 +72,26 @@ class _$FacilitiesBodyModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_FacilitiesBodyModelCopyWith<$Res>
-    implements $FacilitiesBodyModelCopyWith<$Res> {
-  factory _$$_FacilitiesBodyModelCopyWith(_$_FacilitiesBodyModel value,
-          $Res Function(_$_FacilitiesBodyModel) then) =
-      __$$_FacilitiesBodyModelCopyWithImpl<$Res>;
+abstract class _$$_FacilitiesParamsModelCopyWith<$Res>
+    implements $FacilitiesParamsModelCopyWith<$Res> {
+  factory _$$_FacilitiesParamsModelCopyWith(_$_FacilitiesParamsModel value,
+          $Res Function(_$_FacilitiesParamsModel) then) =
+      __$$_FacilitiesParamsModelCopyWithImpl<$Res>;
   @override
   $Res call({String? fields, String? from, String? to});
 }
 
 /// @nodoc
-class __$$_FacilitiesBodyModelCopyWithImpl<$Res>
-    extends _$FacilitiesBodyModelCopyWithImpl<$Res>
-    implements _$$_FacilitiesBodyModelCopyWith<$Res> {
-  __$$_FacilitiesBodyModelCopyWithImpl(_$_FacilitiesBodyModel _value,
-      $Res Function(_$_FacilitiesBodyModel) _then)
-      : super(_value, (v) => _then(v as _$_FacilitiesBodyModel));
+class __$$_FacilitiesParamsModelCopyWithImpl<$Res>
+    extends _$FacilitiesParamsModelCopyWithImpl<$Res>
+    implements _$$_FacilitiesParamsModelCopyWith<$Res> {
+  __$$_FacilitiesParamsModelCopyWithImpl(_$_FacilitiesParamsModel _value,
+      $Res Function(_$_FacilitiesParamsModel) _then)
+      : super(_value, (v) => _then(v as _$_FacilitiesParamsModel));
 
   @override
-  _$_FacilitiesBodyModel get _value => super._value as _$_FacilitiesBodyModel;
+  _$_FacilitiesParamsModel get _value =>
+      super._value as _$_FacilitiesParamsModel;
 
   @override
   $Res call({
@@ -97,7 +99,7 @@ class __$$_FacilitiesBodyModelCopyWithImpl<$Res>
     Object? from = freezed,
     Object? to = freezed,
   }) {
-    return _then(_$_FacilitiesBodyModel(
+    return _then(_$_FacilitiesParamsModel(
       fields: fields == freezed
           ? _value.fields
           : fields // ignore: cast_nullable_to_non_nullable
@@ -116,11 +118,11 @@ class __$$_FacilitiesBodyModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FacilitiesBodyModel implements _FacilitiesBodyModel {
-  _$_FacilitiesBodyModel({this.fields, this.from, this.to});
+class _$_FacilitiesParamsModel implements _FacilitiesParamsModel {
+  _$_FacilitiesParamsModel({this.fields, this.from, this.to});
 
-  factory _$_FacilitiesBodyModel.fromJson(Map<String, dynamic> json) =>
-      _$$_FacilitiesBodyModelFromJson(json);
+  factory _$_FacilitiesParamsModel.fromJson(Map<String, dynamic> json) =>
+      _$$_FacilitiesParamsModelFromJson(json);
 
   @override
   final String? fields;
@@ -131,14 +133,14 @@ class _$_FacilitiesBodyModel implements _FacilitiesBodyModel {
 
   @override
   String toString() {
-    return 'FacilitiesBodyModel(fields: $fields, from: $from, to: $to)';
+    return 'FacilitiesParamsModel(fields: $fields, from: $from, to: $to)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FacilitiesBodyModel &&
+            other is _$_FacilitiesParamsModel &&
             const DeepCollectionEquality().equals(other.fields, fields) &&
             const DeepCollectionEquality().equals(other.from, from) &&
             const DeepCollectionEquality().equals(other.to, to));
@@ -154,26 +156,26 @@ class _$_FacilitiesBodyModel implements _FacilitiesBodyModel {
 
   @JsonKey(ignore: true)
   @override
-  _$$_FacilitiesBodyModelCopyWith<_$_FacilitiesBodyModel> get copyWith =>
-      __$$_FacilitiesBodyModelCopyWithImpl<_$_FacilitiesBodyModel>(
+  _$$_FacilitiesParamsModelCopyWith<_$_FacilitiesParamsModel> get copyWith =>
+      __$$_FacilitiesParamsModelCopyWithImpl<_$_FacilitiesParamsModel>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FacilitiesBodyModelToJson(
+    return _$$_FacilitiesParamsModelToJson(
       this,
     );
   }
 }
 
-abstract class _FacilitiesBodyModel implements FacilitiesBodyModel {
-  factory _FacilitiesBodyModel(
+abstract class _FacilitiesParamsModel implements FacilitiesParamsModel {
+  factory _FacilitiesParamsModel(
       {final String? fields,
       final String? from,
-      final String? to}) = _$_FacilitiesBodyModel;
+      final String? to}) = _$_FacilitiesParamsModel;
 
-  factory _FacilitiesBodyModel.fromJson(Map<String, dynamic> json) =
-      _$_FacilitiesBodyModel.fromJson;
+  factory _FacilitiesParamsModel.fromJson(Map<String, dynamic> json) =
+      _$_FacilitiesParamsModel.fromJson;
 
   @override
   String? get fields;
@@ -183,6 +185,6 @@ abstract class _FacilitiesBodyModel implements FacilitiesBodyModel {
   String? get to;
   @override
   @JsonKey(ignore: true)
-  _$$_FacilitiesBodyModelCopyWith<_$_FacilitiesBodyModel> get copyWith =>
+  _$$_FacilitiesParamsModelCopyWith<_$_FacilitiesParamsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

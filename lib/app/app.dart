@@ -1,13 +1,12 @@
 import 'package:booking/app/injector.dart';
 import 'package:booking/config/app_theme.dart';
-import 'package:booking/core/hive/hive_helper.dart';
 import 'package:booking/features/auth/cubit/login/login_cubit.dart';
 import 'package:booking/features/auth/cubit/register/register_cubit.dart';
-import 'package:booking/features/auth/presentation/screens/login_screen.dart';
 import 'package:booking/features/booking/cubit/booking_cubit.dart';
 import 'package:booking/features/home/cubit/home_cubit.dart';
-import 'package:booking/features/home/presentation/screens/home_screen.dart';
 import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
+import 'package:booking/features/maps/cubit/maps_cubit.dart';
+import 'package:booking/features/maps/presentation/screens/map_screen.dart';
 import 'package:booking/features/profile/cubit/profile_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -48,15 +47,20 @@ class MyApp extends StatelessWidget {
               BlocProvider(
                 create: (BuildContext context) => di<ProfileCubit>(),
               ),
+              BlocProvider(
+                create: (BuildContext context) => di<MapsCubit>()..setMarkers(),
+              ),
             ],
             child: MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: AppTheme.lightTheme(),
-              home: HiveHelper.getCurrentUser() == null
-                  ? const LoginScreen()
-                  : const HomeScreen(),
-              // const TestScreen(),
+              home:
+                  // HiveHelper.getCurrentUser() == null
+                  //     ? const LoginScreen()
+                  //     : const HomeScreen(),
+                  const MapScreen(),
               // const LoginScreen(),
+              // const TestScreen(title: "title")
             ),
           );
         });

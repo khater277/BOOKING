@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'dio_helper.dart';
+part of 'booking_api.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'dio_helper.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _DioHelper implements DioHelper {
-  _DioHelper(
+class _BookingApi implements BookingApi {
+  _BookingApi(
     this._dio, {
     this.baseUrl,
   }) {
@@ -21,10 +21,10 @@ class _DioHelper implements DioHelper {
   String? baseUrl;
 
   @override
-  Future<HotelsResponseModel> getAllHotels({required hotelsBodyModel}) async {
+  Future<HotelsResponseModel> getAllHotels({required hotelsParamsModel}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(hotelsBodyModel);
+    queryParameters.addAll(hotelsParamsModel);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -46,10 +46,10 @@ class _DioHelper implements DioHelper {
 
   @override
   Future<FacilitiesResponseModel> getAllFacilities(
-      {required facilitiesBodyModel}) async {
+      {required facilitiesParamsModel}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(facilitiesBodyModel);
+    queryParameters.addAll(facilitiesParamsModel);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(

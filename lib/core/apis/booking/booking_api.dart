@@ -1,4 +1,4 @@
-import 'package:booking/core/api/end_points.dart';
+import 'package:booking/core/apis/booking/booking_end_points.dart';
 import 'package:booking/features/booking/data/models/check_availability/body/check_availability_body.dart';
 import 'package:booking/features/booking/data/models/check_availability/response/check_availability_response.dart';
 import 'package:booking/features/booking/data/models/check_rate/body/check_rate_body.dart';
@@ -10,33 +10,33 @@ import 'package:booking/features/hotels/data/models/hotels_response_model/hotels
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
-part 'dio_helper.g.dart';
+part 'booking_api.g.dart';
 
-@RestApi(baseUrl: EndPoints.baseUrl)
-abstract class DioHelper {
-  factory DioHelper(Dio dio, {String baseUrl}) = _DioHelper;
+@RestApi(baseUrl: BookingEndPoints.baseUrl)
+abstract class BookingApi {
+  factory BookingApi(Dio dio, {String baseUrl}) = _BookingApi;
 
-  @GET(EndPoints.hotelContent + EndPoints.hotels)
+  @GET(BookingEndPoints.hotelContent + BookingEndPoints.hotels)
   Future<HotelsResponseModel> getAllHotels({
-    @Queries() required Map<String, dynamic> hotelsBodyModel,
+    @Queries() required Map<String, dynamic> hotelsParamsModel,
   });
 
-  @GET(EndPoints.hotelContent + EndPoints.allFacilities)
+  @GET(BookingEndPoints.hotelContent + BookingEndPoints.allFacilities)
   Future<FacilitiesResponseModel> getAllFacilities({
-    @Queries() required Map<String, dynamic> facilitiesBodyModel,
+    @Queries() required Map<String, dynamic> facilitiesParamsModel,
   });
 
-  @POST(EndPoints.booking + EndPoints.checkAvailability)
+  @POST(BookingEndPoints.booking + BookingEndPoints.checkAvailability)
   Future<CheckAvailabilityResponse> checkAvailability({
     @Body() required CheckAvailabilityBody checkAvailabilityBody,
   });
 
-  @POST(EndPoints.booking + EndPoints.checkRates)
+  @POST(BookingEndPoints.booking + BookingEndPoints.checkRates)
   Future<CheckRateResponse> checkRate({
     @Body() required CheckRateBody checkRateBody,
   });
 
-  @POST(EndPoints.booking + EndPoints.createBooking)
+  @POST(BookingEndPoints.booking + BookingEndPoints.createBooking)
   Future<CreateBookingResponse> createBooking({
     @Body() required CreateBookingBody createBookingBody,
   });

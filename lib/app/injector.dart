@@ -1,5 +1,7 @@
-import 'package:booking/core/api/dio_helper/dio_helper.dart';
-import 'package:booking/core/api/end_points.dart';
+import 'package:booking/core/apis/booking/booking_api.dart';
+import 'package:booking/core/apis/booking/booking_end_points.dart';
+import 'package:booking/core/apis/maps/maps_api.dart';
+import 'package:booking/core/apis/maps/maps_end_points.dart';
 import 'package:booking/core/firebase/firebase_helper.dart';
 import 'package:booking/core/utils/app_functions.dart';
 import 'package:booking/features/auth/cubit/login/login_cubit.dart';
@@ -13,7 +15,7 @@ import 'package:booking/features/auth/domain/usecases/register_use_case.dart';
 import 'package:booking/features/auth/domain/usecases/google_sign_in_use_case.dart';
 import 'package:booking/features/booking/cubit/booking_cubit.dart';
 import 'package:booking/features/booking/data/datasources/booking_remote_data_source.dart';
-import 'package:booking/features/booking/data/reposetories/booking_repository_impl.dart';
+import 'package:booking/features/booking/data/repositories/booking_repository_impl.dart';
 import 'package:booking/features/booking/domain/repository/booking_repository.dart';
 import 'package:booking/features/booking/domain/usecases/check_availability_use_case.dart';
 import 'package:booking/features/booking/domain/usecases/check_rate_use_case.dart';
@@ -25,6 +27,11 @@ import 'package:booking/features/hotels/data/repositories/hotels_repository_impl
 import 'package:booking/features/hotels/domain/repositories/hotels_repository.dart';
 import 'package:booking/features/hotels/domain/usecases/facilities_use_case.dart';
 import 'package:booking/features/hotels/domain/usecases/hotel_usecases.dart';
+import 'package:booking/features/maps/cubit/maps_cubit.dart';
+import 'package:booking/features/maps/data/datasources/maps_remote_data_source.dart';
+import 'package:booking/features/maps/data/repositories/maps_repository_impl.dart';
+import 'package:booking/features/maps/domain/repositories/maps_repository.dart';
+import 'package:booking/features/maps/domain/usecases/places_suggestions_usecase.dart';
 import 'package:booking/features/profile/cubit/profile_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -51,14 +58,20 @@ void setupGetIt() {
         createBookingUseCase: di(),
       ));
   di.registerLazySingleton<ProfileCubit>(() => ProfileCubit());
+  di.registerLazySingleton<MapsCubit>(() => MapsCubit(
+        placesSuggestionUsecase: di(),
+        hotelsCubit: di(),
+      ));
 
   /// DATA SOURCES
   di.registerLazySingleton<AuthRemoteDataSource>(
-      () => AuthRemoteDataSourceImpl(dioHelper: di(), firebaseHelper: di()));
+      () => AuthRemoteDataSourceImpl(bookingApi: di(), firebaseHelper: di()));
   di.registerLazySingleton<HotelsRemoteDataSource>(
-      () => HotelsRemoteDataSourceImpl(dioHelper: di()));
+      () => HotelsRemoteDataSourceImpl(bookingApi: di()));
   di.registerLazySingleton<BookingRemoteDataSource>(
-      () => BookingRemoteDataSourceImpl(dioHelper: di()));
+      () => BookingRemoteDataSourceImpl(bookingApi: di()));
+  di.registerLazySingleton<MapsRemoteDataSource>(
+      () => MapsRemoteDataSourceImpl(mapsApi: di()));
 
   /// REPOSITORIES
   di.registerLazySingleton<AuthRepository>(
@@ -67,6 +80,8 @@ void setupGetIt() {
       () => HotelsRepositoryImpl(hotelsRemoteDataSource: di()));
   di.registerLazySingleton<BookingRepository>(
       () => BookingRepositoryImpl(bookingRemoteDataSource: di()));
+  di.registerLazySingleton<MapsRepository>(
+      () => MapsRepositoryImpl(mapsRemoteDataSource: di()));
 
   /// USECASES
   di.registerLazySingleton<RegisterUseCase>(
@@ -90,28 +105,64 @@ void setupGetIt() {
       () => CheckRateUseCase(bookingRepository: di()));
   di.registerLazySingleton<CreateBookingUseCase>(
       () => CreateBookingUseCase(bookingRepository: di()));
+  di.registerLazySingleton<PlacesSuggestionsUsecase>(
+      () => PlacesSuggestionsUsecase(mapsRepository: di()));
 
-  /// DIO
-  di.registerLazySingleton<DioHelper>(() => DioHelper(di()));
-  di.registerLazySingleton<Dio>(() => _createAndSetupDio());
+  /// APIs
+  di.registerLazySingleton<BookingApi>(
+      () => BookingApi(di(instanceName: 'booking-dio')));
+  di.registerLazySingleton<MapsApi>(
+      () => MapsApi(di(instanceName: 'maps-dio')));
+
+  /// DIOs
+  di.registerLazySingleton<Dio>(
+    () => _createAndSetupBookingDio(),
+    instanceName: 'booking-dio',
+  );
+  di.registerLazySingleton<Dio>(
+    () => _createAndSetupMapsDio(),
+    instanceName: 'maps-dio',
+  );
 
   /// FIREBASE
   di.registerLazySingleton<FirebaseHelper>(() => FirebaseHelperImpl());
 }
 
-Dio _createAndSetupDio() {
+Dio _createAndSetupBookingDio() {
   Dio dio = Dio();
 
   dio.options
-    ..baseUrl = EndPoints.baseUrl
+    ..baseUrl = BookingEndPoints.baseUrl
     ..responseType = ResponseType.plain
     ..headers = {
-      'Api-key': EndPoints.apiKey,
+      'Api-key': BookingEndPoints.apiKey,
       'X-Signature': AppFunctions.generateSHA256(),
       'Content-Type': 'application/json',
       'Accept-Encoding': 'gzip',
     }
     // ..connectTimeout = 20 * 1000
+    ..followRedirects = false;
+
+  dio.interceptors.add(
+    LogInterceptor(
+        request: true,
+        requestBody: true,
+        requestHeader: true,
+        responseBody: true,
+        responseHeader: true,
+        error: true),
+  );
+
+  return dio;
+}
+
+Dio _createAndSetupMapsDio() {
+  Dio dio = Dio();
+
+  dio.options
+    ..baseUrl = MapsEndPoints.baseUrl
+    ..responseType = ResponseType.plain
+    ..connectTimeout = 20 * 1000
     ..followRedirects = false;
 
   dio.interceptors.add(

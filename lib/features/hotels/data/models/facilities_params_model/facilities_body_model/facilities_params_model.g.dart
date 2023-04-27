@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'facilities_body_model.dart';
+part of 'facilities_params_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FacilitiesBodyModel _$$_FacilitiesBodyModelFromJson(
+_$_FacilitiesParamsModel _$$_FacilitiesParamsModelFromJson(
         Map<String, dynamic> json) =>
-    _$_FacilitiesBodyModel(
+    _$_FacilitiesParamsModel(
       fields: json['fields'] as String?,
       from: json['from'] as String?,
       to: json['to'] as String?,
     );
 
-Map<String, dynamic> _$$_FacilitiesBodyModelToJson(
-        _$_FacilitiesBodyModel instance) =>
+Map<String, dynamic> _$$_FacilitiesParamsModelToJson(
+        _$_FacilitiesParamsModel instance) =>
     <String, dynamic>{
       'fields': instance.fields,
       'from': instance.from,

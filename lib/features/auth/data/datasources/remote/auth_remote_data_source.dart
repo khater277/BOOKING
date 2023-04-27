@@ -1,4 +1,4 @@
-import 'package:booking/core/api/dio_helper/dio_helper.dart';
+import 'package:booking/core/apis/booking/booking_api.dart';
 import 'package:booking/core/firebase/firebase_helper.dart';
 import 'package:booking/features/auth/data/models/auth_body/body/auth_body.dart';
 import 'package:booking/features/auth/data/models/current_user/current_user.dart';
@@ -14,11 +14,11 @@ abstract class AuthRemoteDataSource {
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
-  final DioHelper dioHelper;
+  final BookingApi bookingApi;
   final FirebaseHelper firebaseHelper;
 
   AuthRemoteDataSourceImpl(
-      {required this.dioHelper, required this.firebaseHelper});
+      {required this.bookingApi, required this.firebaseHelper});
 
   /// REGISTER
   @override

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'hotels_body_model.dart';
+part of 'hotels_params_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-HotelsBodyModel _$HotelsBodyModelFromJson(Map<String, dynamic> json) {
-  return _HotelsBodyModel.fromJson(json);
+HotelsParamsModel _$HotelsParamsModelFromJson(Map<String, dynamic> json) {
+  return _HotelsParamsModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$HotelsBodyModel {
+mixin _$HotelsParamsModel {
   List<int>? get codes => throw _privateConstructorUsedError;
   String? get countryCode => throw _privateConstructorUsedError;
   int? get from => throw _privateConstructorUsedError;
@@ -28,15 +28,15 @@ mixin _$HotelsBodyModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $HotelsBodyModelCopyWith<HotelsBodyModel> get copyWith =>
+  $HotelsParamsModelCopyWith<HotelsParamsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HotelsBodyModelCopyWith<$Res> {
-  factory $HotelsBodyModelCopyWith(
-          HotelsBodyModel value, $Res Function(HotelsBodyModel) then) =
-      _$HotelsBodyModelCopyWithImpl<$Res>;
+abstract class $HotelsParamsModelCopyWith<$Res> {
+  factory $HotelsParamsModelCopyWith(
+          HotelsParamsModel value, $Res Function(HotelsParamsModel) then) =
+      _$HotelsParamsModelCopyWithImpl<$Res>;
   $Res call(
       {List<int>? codes,
       String? countryCode,
@@ -46,13 +46,13 @@ abstract class $HotelsBodyModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HotelsBodyModelCopyWithImpl<$Res>
-    implements $HotelsBodyModelCopyWith<$Res> {
-  _$HotelsBodyModelCopyWithImpl(this._value, this._then);
+class _$HotelsParamsModelCopyWithImpl<$Res>
+    implements $HotelsParamsModelCopyWith<$Res> {
+  _$HotelsParamsModelCopyWithImpl(this._value, this._then);
 
-  final HotelsBodyModel _value;
+  final HotelsParamsModel _value;
   // ignore: unused_field
-  final $Res Function(HotelsBodyModel) _then;
+  final $Res Function(HotelsParamsModel) _then;
 
   @override
   $Res call({
@@ -88,11 +88,11 @@ class _$HotelsBodyModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_HotelsBodyModelCopyWith<$Res>
-    implements $HotelsBodyModelCopyWith<$Res> {
-  factory _$$_HotelsBodyModelCopyWith(
-          _$_HotelsBodyModel value, $Res Function(_$_HotelsBodyModel) then) =
-      __$$_HotelsBodyModelCopyWithImpl<$Res>;
+abstract class _$$_HotelsParamsModelCopyWith<$Res>
+    implements $HotelsParamsModelCopyWith<$Res> {
+  factory _$$_HotelsParamsModelCopyWith(_$_HotelsParamsModel value,
+          $Res Function(_$_HotelsParamsModel) then) =
+      __$$_HotelsParamsModelCopyWithImpl<$Res>;
   @override
   $Res call(
       {List<int>? codes,
@@ -103,15 +103,15 @@ abstract class _$$_HotelsBodyModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_HotelsBodyModelCopyWithImpl<$Res>
-    extends _$HotelsBodyModelCopyWithImpl<$Res>
-    implements _$$_HotelsBodyModelCopyWith<$Res> {
-  __$$_HotelsBodyModelCopyWithImpl(
-      _$_HotelsBodyModel _value, $Res Function(_$_HotelsBodyModel) _then)
-      : super(_value, (v) => _then(v as _$_HotelsBodyModel));
+class __$$_HotelsParamsModelCopyWithImpl<$Res>
+    extends _$HotelsParamsModelCopyWithImpl<$Res>
+    implements _$$_HotelsParamsModelCopyWith<$Res> {
+  __$$_HotelsParamsModelCopyWithImpl(
+      _$_HotelsParamsModel _value, $Res Function(_$_HotelsParamsModel) _then)
+      : super(_value, (v) => _then(v as _$_HotelsParamsModel));
 
   @override
-  _$_HotelsBodyModel get _value => super._value as _$_HotelsBodyModel;
+  _$_HotelsParamsModel get _value => super._value as _$_HotelsParamsModel;
 
   @override
   $Res call({
@@ -121,7 +121,7 @@ class __$$_HotelsBodyModelCopyWithImpl<$Res>
     Object? to = freezed,
     Object? language = freezed,
   }) {
-    return _then(_$_HotelsBodyModel(
+    return _then(_$_HotelsParamsModel(
       codes: codes == freezed
           ? _value._codes
           : codes // ignore: cast_nullable_to_non_nullable
@@ -148,8 +148,8 @@ class __$$_HotelsBodyModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_HotelsBodyModel implements _HotelsBodyModel {
-  const _$_HotelsBodyModel(
+class _$_HotelsParamsModel implements _HotelsParamsModel {
+  const _$_HotelsParamsModel(
       {final List<int>? codes,
       this.countryCode,
       this.from,
@@ -157,8 +157,8 @@ class _$_HotelsBodyModel implements _HotelsBodyModel {
       this.language})
       : _codes = codes;
 
-  factory _$_HotelsBodyModel.fromJson(Map<String, dynamic> json) =>
-      _$$_HotelsBodyModelFromJson(json);
+  factory _$_HotelsParamsModel.fromJson(Map<String, dynamic> json) =>
+      _$$_HotelsParamsModelFromJson(json);
 
   final List<int>? _codes;
   @override
@@ -180,14 +180,14 @@ class _$_HotelsBodyModel implements _HotelsBodyModel {
 
   @override
   String toString() {
-    return 'HotelsBodyModel(codes: $codes, countryCode: $countryCode, from: $from, to: $to, language: $language)';
+    return 'HotelsParamsModel(codes: $codes, countryCode: $countryCode, from: $from, to: $to, language: $language)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HotelsBodyModel &&
+            other is _$_HotelsParamsModel &&
             const DeepCollectionEquality().equals(other._codes, _codes) &&
             const DeepCollectionEquality()
                 .equals(other.countryCode, countryCode) &&
@@ -208,27 +208,28 @@ class _$_HotelsBodyModel implements _HotelsBodyModel {
 
   @JsonKey(ignore: true)
   @override
-  _$$_HotelsBodyModelCopyWith<_$_HotelsBodyModel> get copyWith =>
-      __$$_HotelsBodyModelCopyWithImpl<_$_HotelsBodyModel>(this, _$identity);
+  _$$_HotelsParamsModelCopyWith<_$_HotelsParamsModel> get copyWith =>
+      __$$_HotelsParamsModelCopyWithImpl<_$_HotelsParamsModel>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HotelsBodyModelToJson(
+    return _$$_HotelsParamsModelToJson(
       this,
     );
   }
 }
 
-abstract class _HotelsBodyModel implements HotelsBodyModel {
-  const factory _HotelsBodyModel(
+abstract class _HotelsParamsModel implements HotelsParamsModel {
+  const factory _HotelsParamsModel(
       {final List<int>? codes,
       final String? countryCode,
       final int? from,
       final int? to,
-      final String? language}) = _$_HotelsBodyModel;
+      final String? language}) = _$_HotelsParamsModel;
 
-  factory _HotelsBodyModel.fromJson(Map<String, dynamic> json) =
-      _$_HotelsBodyModel.fromJson;
+  factory _HotelsParamsModel.fromJson(Map<String, dynamic> json) =
+      _$_HotelsParamsModel.fromJson;
 
   @override
   List<int>? get codes;
@@ -242,6 +243,6 @@ abstract class _HotelsBodyModel implements HotelsBodyModel {
   String? get language;
   @override
   @JsonKey(ignore: true)
-  _$$_HotelsBodyModelCopyWith<_$_HotelsBodyModel> get copyWith =>
+  _$$_HotelsParamsModelCopyWith<_$_HotelsParamsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -4,11 +4,11 @@ import 'package:booking/core/hive/hive_helper.dart';
 import 'package:booking/core/utils/app_images.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/hotels/cubit/hotels_state.dart';
-import 'package:booking/features/hotels/data/models/facilities_body_model/facilities_body_model/facilities_body_model.dart';
+import 'package:booking/features/hotels/data/models/facilities_params_model/facilities_body_model/facilities_params_model.dart';
 import 'package:booking/features/hotels/data/models/facilities_response_model/facilities_response_model.dart';
 import 'package:booking/features/hotels/data/models/facilities_response_model/facility_info.dart';
 import 'package:booking/features/hotels/data/models/hotel_page_view/hotel_page_view_model.dart';
-import 'package:booking/features/hotels/data/models/hotels_body_model/hotels_body_model.dart';
+import 'package:booking/features/hotels/data/models/hotels_params_model/hotels_params_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/facility.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotels_response_model.dart';
@@ -146,13 +146,13 @@ class HotelsCubit extends Cubit<HotelsStates> {
   Future<void> getHotels() async {
     if (HiveHelper.getAllHotels() == null) {
       hotelsScrollController.addListener(getSomeHotels);
-      HotelsBodyModel hotelsBodyModel = const HotelsBodyModel(
+      HotelsParamsModel hotelsParamsModel = const HotelsParamsModel(
         language: 'ENG',
         from: 1,
         to: 500,
         countryCode: 'EG',
       );
-      final response = await getHotelsUseCase(hotelsBodyModel);
+      final response = await getHotelsUseCase(hotelsParamsModel);
       response.fold(
         (failure) {
           debugPrint("ERROR====>${failure.getMessage()}");
@@ -169,13 +169,13 @@ class HotelsCubit extends Cubit<HotelsStates> {
 
   FacilitiesResponseModel? allFacilities = HiveHelper.getAllFacilities();
   Future<void> getFacilities() async {
-    FacilitiesBodyModel facilitiesBodyModel = FacilitiesBodyModel(
+    FacilitiesParamsModel facilitiesParamsModel = FacilitiesParamsModel(
       fields: 'all',
       from: '1',
       to: '573',
     );
     if (HiveHelper.getAllFacilities() == null) {
-      final response = await getFacilitiesUseCase.call(facilitiesBodyModel);
+      final response = await getFacilitiesUseCase.call(facilitiesParamsModel);
       response.fold((failure) {
         debugPrint("ERROR IN GET FACILITIES ===> ${failure.getMessage()}");
         emit(HotelsError());

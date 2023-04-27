@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:booking/core/api/end_points.dart';
+import 'package:booking/core/apis/booking/booking_end_points.dart';
 import 'package:booking/core/hive/hive_helper.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/coordinates.dart';
 import 'package:crypto/crypto.dart';
@@ -24,7 +24,8 @@ class AppFunctions {
   static String generateSHA256() {
     String timeStamp =
         (DateTime.now().millisecondsSinceEpoch / 1000).round().toString();
-    final input = utf8.encode(EndPoints.apiKey + EndPoints.secret + timeStamp);
+    final input = utf8
+        .encode(BookingEndPoints.apiKey + BookingEndPoints.secret + timeStamp);
     return sha256.convert(input).toString();
   }
 

@@ -20,15 +20,17 @@ class BookingDetailsScreen extends StatefulWidget {
 }
 
 class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
+  BookingCubit? bookingCubit;
   @override
   void initState() {
-    BookingCubit.get(context).initBookingDetailsControllers();
+    bookingCubit = BookingCubit.get(context);
+    bookingCubit!.initBookingDetailsControllers();
     super.initState();
   }
 
   @override
   void dispose() {
-    BookingCubit.get(context).disposeBookingDetailsControllers();
+    bookingCubit!.disposeBookingDetailsControllers();
     super.dispose();
   }
 

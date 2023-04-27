@@ -1,0 +1,17 @@
+part of 'maps_cubit.dart';
+
+@freezed
+class MapsState with _$MapsState {
+  const factory MapsState.initial() = _Initial;
+  const factory MapsState.getPlacesSuggestionsLoading() =
+      _GetPlacesSuggestionsLoading;
+  const factory MapsState.getPlacesSuggestionsSuccess() =
+      _GetPlacesSuggestionsSuccess;
+  const factory MapsState.getPlacesSuggestionsError() =
+      _GetPlacesSuggestionsError;
+  const factory MapsState.createMap() = _CreateMap;
+  const factory MapsState.setMapMarkers() = _SetMapMarkers;
+  const factory MapsState.jumpToPosition() = _JumpToPosition;
+  const factory MapsState.searchHotelLoading() = _SearchHotelLoading;
+  const factory MapsState.searchHotel() = _SearchHotel;
+}
