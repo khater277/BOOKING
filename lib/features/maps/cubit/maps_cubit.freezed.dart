@@ -23,10 +23,14 @@ mixin _$MapsState {
     required TResult Function() getPlacesSuggestionsSuccess,
     required TResult Function() getPlacesSuggestionsError,
     required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
     required TResult Function() setMapMarkers,
     required TResult Function() jumpToPosition,
     required TResult Function() searchHotelLoading,
     required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,10 +40,14 @@ mixin _$MapsState {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,10 +57,14 @@ mixin _$MapsState {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,10 +78,15 @@ mixin _$MapsState {
     required TResult Function(_GetPlacesSuggestionsError value)
         getPlacesSuggestionsError,
     required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
     required TResult Function(_SetMapMarkers value) setMapMarkers,
     required TResult Function(_JumpToPosition value) jumpToPosition,
     required TResult Function(_SearchHotelLoading value) searchHotelLoading,
     required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,10 +99,14 @@ mixin _$MapsState {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -98,10 +119,14 @@ mixin _$MapsState {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -166,10 +191,14 @@ class _$_Initial implements _Initial {
     required TResult Function() getPlacesSuggestionsSuccess,
     required TResult Function() getPlacesSuggestionsError,
     required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
     required TResult Function() setMapMarkers,
     required TResult Function() jumpToPosition,
     required TResult Function() searchHotelLoading,
     required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
   }) {
     return initial();
   }
@@ -182,10 +211,14 @@ class _$_Initial implements _Initial {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
   }) {
     return initial?.call();
   }
@@ -198,10 +231,14 @@ class _$_Initial implements _Initial {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -221,10 +258,15 @@ class _$_Initial implements _Initial {
     required TResult Function(_GetPlacesSuggestionsError value)
         getPlacesSuggestionsError,
     required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
     required TResult Function(_SetMapMarkers value) setMapMarkers,
     required TResult Function(_JumpToPosition value) jumpToPosition,
     required TResult Function(_SearchHotelLoading value) searchHotelLoading,
     required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
   }) {
     return initial(this);
   }
@@ -240,10 +282,14 @@ class _$_Initial implements _Initial {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
   }) {
     return initial?.call(this);
   }
@@ -259,10 +305,14 @@ class _$_Initial implements _Initial {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -326,10 +376,14 @@ class _$_GetPlacesSuggestionsLoading implements _GetPlacesSuggestionsLoading {
     required TResult Function() getPlacesSuggestionsSuccess,
     required TResult Function() getPlacesSuggestionsError,
     required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
     required TResult Function() setMapMarkers,
     required TResult Function() jumpToPosition,
     required TResult Function() searchHotelLoading,
     required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
   }) {
     return getPlacesSuggestionsLoading();
   }
@@ -342,10 +396,14 @@ class _$_GetPlacesSuggestionsLoading implements _GetPlacesSuggestionsLoading {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
   }) {
     return getPlacesSuggestionsLoading?.call();
   }
@@ -358,10 +416,14 @@ class _$_GetPlacesSuggestionsLoading implements _GetPlacesSuggestionsLoading {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
     required TResult orElse(),
   }) {
     if (getPlacesSuggestionsLoading != null) {
@@ -381,10 +443,15 @@ class _$_GetPlacesSuggestionsLoading implements _GetPlacesSuggestionsLoading {
     required TResult Function(_GetPlacesSuggestionsError value)
         getPlacesSuggestionsError,
     required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
     required TResult Function(_SetMapMarkers value) setMapMarkers,
     required TResult Function(_JumpToPosition value) jumpToPosition,
     required TResult Function(_SearchHotelLoading value) searchHotelLoading,
     required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
   }) {
     return getPlacesSuggestionsLoading(this);
   }
@@ -400,10 +467,14 @@ class _$_GetPlacesSuggestionsLoading implements _GetPlacesSuggestionsLoading {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
   }) {
     return getPlacesSuggestionsLoading?.call(this);
   }
@@ -419,10 +490,14 @@ class _$_GetPlacesSuggestionsLoading implements _GetPlacesSuggestionsLoading {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
     required TResult orElse(),
   }) {
     if (getPlacesSuggestionsLoading != null) {
@@ -486,10 +561,14 @@ class _$_GetPlacesSuggestionsSuccess implements _GetPlacesSuggestionsSuccess {
     required TResult Function() getPlacesSuggestionsSuccess,
     required TResult Function() getPlacesSuggestionsError,
     required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
     required TResult Function() setMapMarkers,
     required TResult Function() jumpToPosition,
     required TResult Function() searchHotelLoading,
     required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
   }) {
     return getPlacesSuggestionsSuccess();
   }
@@ -502,10 +581,14 @@ class _$_GetPlacesSuggestionsSuccess implements _GetPlacesSuggestionsSuccess {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
   }) {
     return getPlacesSuggestionsSuccess?.call();
   }
@@ -518,10 +601,14 @@ class _$_GetPlacesSuggestionsSuccess implements _GetPlacesSuggestionsSuccess {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
     required TResult orElse(),
   }) {
     if (getPlacesSuggestionsSuccess != null) {
@@ -541,10 +628,15 @@ class _$_GetPlacesSuggestionsSuccess implements _GetPlacesSuggestionsSuccess {
     required TResult Function(_GetPlacesSuggestionsError value)
         getPlacesSuggestionsError,
     required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
     required TResult Function(_SetMapMarkers value) setMapMarkers,
     required TResult Function(_JumpToPosition value) jumpToPosition,
     required TResult Function(_SearchHotelLoading value) searchHotelLoading,
     required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
   }) {
     return getPlacesSuggestionsSuccess(this);
   }
@@ -560,10 +652,14 @@ class _$_GetPlacesSuggestionsSuccess implements _GetPlacesSuggestionsSuccess {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
   }) {
     return getPlacesSuggestionsSuccess?.call(this);
   }
@@ -579,10 +675,14 @@ class _$_GetPlacesSuggestionsSuccess implements _GetPlacesSuggestionsSuccess {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
     required TResult orElse(),
   }) {
     if (getPlacesSuggestionsSuccess != null) {
@@ -646,10 +746,14 @@ class _$_GetPlacesSuggestionsError implements _GetPlacesSuggestionsError {
     required TResult Function() getPlacesSuggestionsSuccess,
     required TResult Function() getPlacesSuggestionsError,
     required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
     required TResult Function() setMapMarkers,
     required TResult Function() jumpToPosition,
     required TResult Function() searchHotelLoading,
     required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
   }) {
     return getPlacesSuggestionsError();
   }
@@ -662,10 +766,14 @@ class _$_GetPlacesSuggestionsError implements _GetPlacesSuggestionsError {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
   }) {
     return getPlacesSuggestionsError?.call();
   }
@@ -678,10 +786,14 @@ class _$_GetPlacesSuggestionsError implements _GetPlacesSuggestionsError {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
     required TResult orElse(),
   }) {
     if (getPlacesSuggestionsError != null) {
@@ -701,10 +813,15 @@ class _$_GetPlacesSuggestionsError implements _GetPlacesSuggestionsError {
     required TResult Function(_GetPlacesSuggestionsError value)
         getPlacesSuggestionsError,
     required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
     required TResult Function(_SetMapMarkers value) setMapMarkers,
     required TResult Function(_JumpToPosition value) jumpToPosition,
     required TResult Function(_SearchHotelLoading value) searchHotelLoading,
     required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
   }) {
     return getPlacesSuggestionsError(this);
   }
@@ -720,10 +837,14 @@ class _$_GetPlacesSuggestionsError implements _GetPlacesSuggestionsError {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
   }) {
     return getPlacesSuggestionsError?.call(this);
   }
@@ -739,10 +860,14 @@ class _$_GetPlacesSuggestionsError implements _GetPlacesSuggestionsError {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
     required TResult orElse(),
   }) {
     if (getPlacesSuggestionsError != null) {
@@ -801,10 +926,14 @@ class _$_CreateMap implements _CreateMap {
     required TResult Function() getPlacesSuggestionsSuccess,
     required TResult Function() getPlacesSuggestionsError,
     required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
     required TResult Function() setMapMarkers,
     required TResult Function() jumpToPosition,
     required TResult Function() searchHotelLoading,
     required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
   }) {
     return createMap();
   }
@@ -817,10 +946,14 @@ class _$_CreateMap implements _CreateMap {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
   }) {
     return createMap?.call();
   }
@@ -833,10 +966,14 @@ class _$_CreateMap implements _CreateMap {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
     required TResult orElse(),
   }) {
     if (createMap != null) {
@@ -856,10 +993,15 @@ class _$_CreateMap implements _CreateMap {
     required TResult Function(_GetPlacesSuggestionsError value)
         getPlacesSuggestionsError,
     required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
     required TResult Function(_SetMapMarkers value) setMapMarkers,
     required TResult Function(_JumpToPosition value) jumpToPosition,
     required TResult Function(_SearchHotelLoading value) searchHotelLoading,
     required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
   }) {
     return createMap(this);
   }
@@ -875,10 +1017,14 @@ class _$_CreateMap implements _CreateMap {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
   }) {
     return createMap?.call(this);
   }
@@ -894,10 +1040,14 @@ class _$_CreateMap implements _CreateMap {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
     required TResult orElse(),
   }) {
     if (createMap != null) {
@@ -909,6 +1059,367 @@ class _$_CreateMap implements _CreateMap {
 
 abstract class _CreateMap implements MapsState {
   const factory _CreateMap() = _$_CreateMap;
+}
+
+/// @nodoc
+abstract class _$$_MoveCameraOnMapCopyWith<$Res> {
+  factory _$$_MoveCameraOnMapCopyWith(
+          _$_MoveCameraOnMap value, $Res Function(_$_MoveCameraOnMap) then) =
+      __$$_MoveCameraOnMapCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_MoveCameraOnMapCopyWithImpl<$Res>
+    extends _$MapsStateCopyWithImpl<$Res>
+    implements _$$_MoveCameraOnMapCopyWith<$Res> {
+  __$$_MoveCameraOnMapCopyWithImpl(
+      _$_MoveCameraOnMap _value, $Res Function(_$_MoveCameraOnMap) _then)
+      : super(_value, (v) => _then(v as _$_MoveCameraOnMap));
+
+  @override
+  _$_MoveCameraOnMap get _value => super._value as _$_MoveCameraOnMap;
+}
+
+/// @nodoc
+
+class _$_MoveCameraOnMap implements _MoveCameraOnMap {
+  const _$_MoveCameraOnMap();
+
+  @override
+  String toString() {
+    return 'MapsState.moveCameraOnMap()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_MoveCameraOnMap);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlacesSuggestionsLoading,
+    required TResult Function() getPlacesSuggestionsSuccess,
+    required TResult Function() getPlacesSuggestionsError,
+    required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
+    required TResult Function() setMapMarkers,
+    required TResult Function() jumpToPosition,
+    required TResult Function() searchHotelLoading,
+    required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
+  }) {
+    return moveCameraOnMap();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlacesSuggestionsLoading,
+    TResult Function()? getPlacesSuggestionsSuccess,
+    TResult Function()? getPlacesSuggestionsError,
+    TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
+    TResult Function()? setMapMarkers,
+    TResult Function()? jumpToPosition,
+    TResult Function()? searchHotelLoading,
+    TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
+  }) {
+    return moveCameraOnMap?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlacesSuggestionsLoading,
+    TResult Function()? getPlacesSuggestionsSuccess,
+    TResult Function()? getPlacesSuggestionsError,
+    TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
+    TResult Function()? setMapMarkers,
+    TResult Function()? jumpToPosition,
+    TResult Function()? searchHotelLoading,
+    TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
+    required TResult orElse(),
+  }) {
+    if (moveCameraOnMap != null) {
+      return moveCameraOnMap();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetPlacesSuggestionsLoading value)
+        getPlacesSuggestionsLoading,
+    required TResult Function(_GetPlacesSuggestionsSuccess value)
+        getPlacesSuggestionsSuccess,
+    required TResult Function(_GetPlacesSuggestionsError value)
+        getPlacesSuggestionsError,
+    required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
+    required TResult Function(_SetMapMarkers value) setMapMarkers,
+    required TResult Function(_JumpToPosition value) jumpToPosition,
+    required TResult Function(_SearchHotelLoading value) searchHotelLoading,
+    required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
+  }) {
+    return moveCameraOnMap(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetPlacesSuggestionsLoading value)?
+        getPlacesSuggestionsLoading,
+    TResult Function(_GetPlacesSuggestionsSuccess value)?
+        getPlacesSuggestionsSuccess,
+    TResult Function(_GetPlacesSuggestionsError value)?
+        getPlacesSuggestionsError,
+    TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
+    TResult Function(_SetMapMarkers value)? setMapMarkers,
+    TResult Function(_JumpToPosition value)? jumpToPosition,
+    TResult Function(_SearchHotelLoading value)? searchHotelLoading,
+    TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
+  }) {
+    return moveCameraOnMap?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetPlacesSuggestionsLoading value)?
+        getPlacesSuggestionsLoading,
+    TResult Function(_GetPlacesSuggestionsSuccess value)?
+        getPlacesSuggestionsSuccess,
+    TResult Function(_GetPlacesSuggestionsError value)?
+        getPlacesSuggestionsError,
+    TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
+    TResult Function(_SetMapMarkers value)? setMapMarkers,
+    TResult Function(_JumpToPosition value)? jumpToPosition,
+    TResult Function(_SearchHotelLoading value)? searchHotelLoading,
+    TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
+    required TResult orElse(),
+  }) {
+    if (moveCameraOnMap != null) {
+      return moveCameraOnMap(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MoveCameraOnMap implements MapsState {
+  const factory _MoveCameraOnMap() = _$_MoveCameraOnMap;
+}
+
+/// @nodoc
+abstract class _$$_TapOnMapCopyWith<$Res> {
+  factory _$$_TapOnMapCopyWith(
+          _$_TapOnMap value, $Res Function(_$_TapOnMap) then) =
+      __$$_TapOnMapCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_TapOnMapCopyWithImpl<$Res> extends _$MapsStateCopyWithImpl<$Res>
+    implements _$$_TapOnMapCopyWith<$Res> {
+  __$$_TapOnMapCopyWithImpl(
+      _$_TapOnMap _value, $Res Function(_$_TapOnMap) _then)
+      : super(_value, (v) => _then(v as _$_TapOnMap));
+
+  @override
+  _$_TapOnMap get _value => super._value as _$_TapOnMap;
+}
+
+/// @nodoc
+
+class _$_TapOnMap implements _TapOnMap {
+  const _$_TapOnMap();
+
+  @override
+  String toString() {
+    return 'MapsState.tapOnMap()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_TapOnMap);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlacesSuggestionsLoading,
+    required TResult Function() getPlacesSuggestionsSuccess,
+    required TResult Function() getPlacesSuggestionsError,
+    required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
+    required TResult Function() setMapMarkers,
+    required TResult Function() jumpToPosition,
+    required TResult Function() searchHotelLoading,
+    required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
+  }) {
+    return tapOnMap();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlacesSuggestionsLoading,
+    TResult Function()? getPlacesSuggestionsSuccess,
+    TResult Function()? getPlacesSuggestionsError,
+    TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
+    TResult Function()? setMapMarkers,
+    TResult Function()? jumpToPosition,
+    TResult Function()? searchHotelLoading,
+    TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
+  }) {
+    return tapOnMap?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlacesSuggestionsLoading,
+    TResult Function()? getPlacesSuggestionsSuccess,
+    TResult Function()? getPlacesSuggestionsError,
+    TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
+    TResult Function()? setMapMarkers,
+    TResult Function()? jumpToPosition,
+    TResult Function()? searchHotelLoading,
+    TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
+    required TResult orElse(),
+  }) {
+    if (tapOnMap != null) {
+      return tapOnMap();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetPlacesSuggestionsLoading value)
+        getPlacesSuggestionsLoading,
+    required TResult Function(_GetPlacesSuggestionsSuccess value)
+        getPlacesSuggestionsSuccess,
+    required TResult Function(_GetPlacesSuggestionsError value)
+        getPlacesSuggestionsError,
+    required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
+    required TResult Function(_SetMapMarkers value) setMapMarkers,
+    required TResult Function(_JumpToPosition value) jumpToPosition,
+    required TResult Function(_SearchHotelLoading value) searchHotelLoading,
+    required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
+  }) {
+    return tapOnMap(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetPlacesSuggestionsLoading value)?
+        getPlacesSuggestionsLoading,
+    TResult Function(_GetPlacesSuggestionsSuccess value)?
+        getPlacesSuggestionsSuccess,
+    TResult Function(_GetPlacesSuggestionsError value)?
+        getPlacesSuggestionsError,
+    TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
+    TResult Function(_SetMapMarkers value)? setMapMarkers,
+    TResult Function(_JumpToPosition value)? jumpToPosition,
+    TResult Function(_SearchHotelLoading value)? searchHotelLoading,
+    TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
+  }) {
+    return tapOnMap?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetPlacesSuggestionsLoading value)?
+        getPlacesSuggestionsLoading,
+    TResult Function(_GetPlacesSuggestionsSuccess value)?
+        getPlacesSuggestionsSuccess,
+    TResult Function(_GetPlacesSuggestionsError value)?
+        getPlacesSuggestionsError,
+    TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
+    TResult Function(_SetMapMarkers value)? setMapMarkers,
+    TResult Function(_JumpToPosition value)? jumpToPosition,
+    TResult Function(_SearchHotelLoading value)? searchHotelLoading,
+    TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
+    required TResult orElse(),
+  }) {
+    if (tapOnMap != null) {
+      return tapOnMap(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TapOnMap implements MapsState {
+  const factory _TapOnMap() = _$_TapOnMap;
 }
 
 /// @nodoc
@@ -956,10 +1467,14 @@ class _$_SetMapMarkers implements _SetMapMarkers {
     required TResult Function() getPlacesSuggestionsSuccess,
     required TResult Function() getPlacesSuggestionsError,
     required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
     required TResult Function() setMapMarkers,
     required TResult Function() jumpToPosition,
     required TResult Function() searchHotelLoading,
     required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
   }) {
     return setMapMarkers();
   }
@@ -972,10 +1487,14 @@ class _$_SetMapMarkers implements _SetMapMarkers {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
   }) {
     return setMapMarkers?.call();
   }
@@ -988,10 +1507,14 @@ class _$_SetMapMarkers implements _SetMapMarkers {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
     required TResult orElse(),
   }) {
     if (setMapMarkers != null) {
@@ -1011,10 +1534,15 @@ class _$_SetMapMarkers implements _SetMapMarkers {
     required TResult Function(_GetPlacesSuggestionsError value)
         getPlacesSuggestionsError,
     required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
     required TResult Function(_SetMapMarkers value) setMapMarkers,
     required TResult Function(_JumpToPosition value) jumpToPosition,
     required TResult Function(_SearchHotelLoading value) searchHotelLoading,
     required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
   }) {
     return setMapMarkers(this);
   }
@@ -1030,10 +1558,14 @@ class _$_SetMapMarkers implements _SetMapMarkers {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
   }) {
     return setMapMarkers?.call(this);
   }
@@ -1049,10 +1581,14 @@ class _$_SetMapMarkers implements _SetMapMarkers {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
     required TResult orElse(),
   }) {
     if (setMapMarkers != null) {
@@ -1112,10 +1648,14 @@ class _$_JumpToPosition implements _JumpToPosition {
     required TResult Function() getPlacesSuggestionsSuccess,
     required TResult Function() getPlacesSuggestionsError,
     required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
     required TResult Function() setMapMarkers,
     required TResult Function() jumpToPosition,
     required TResult Function() searchHotelLoading,
     required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
   }) {
     return jumpToPosition();
   }
@@ -1128,10 +1668,14 @@ class _$_JumpToPosition implements _JumpToPosition {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
   }) {
     return jumpToPosition?.call();
   }
@@ -1144,10 +1688,14 @@ class _$_JumpToPosition implements _JumpToPosition {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
     required TResult orElse(),
   }) {
     if (jumpToPosition != null) {
@@ -1167,10 +1715,15 @@ class _$_JumpToPosition implements _JumpToPosition {
     required TResult Function(_GetPlacesSuggestionsError value)
         getPlacesSuggestionsError,
     required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
     required TResult Function(_SetMapMarkers value) setMapMarkers,
     required TResult Function(_JumpToPosition value) jumpToPosition,
     required TResult Function(_SearchHotelLoading value) searchHotelLoading,
     required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
   }) {
     return jumpToPosition(this);
   }
@@ -1186,10 +1739,14 @@ class _$_JumpToPosition implements _JumpToPosition {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
   }) {
     return jumpToPosition?.call(this);
   }
@@ -1205,10 +1762,14 @@ class _$_JumpToPosition implements _JumpToPosition {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
     required TResult orElse(),
   }) {
     if (jumpToPosition != null) {
@@ -1268,10 +1829,14 @@ class _$_SearchHotelLoading implements _SearchHotelLoading {
     required TResult Function() getPlacesSuggestionsSuccess,
     required TResult Function() getPlacesSuggestionsError,
     required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
     required TResult Function() setMapMarkers,
     required TResult Function() jumpToPosition,
     required TResult Function() searchHotelLoading,
     required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
   }) {
     return searchHotelLoading();
   }
@@ -1284,10 +1849,14 @@ class _$_SearchHotelLoading implements _SearchHotelLoading {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
   }) {
     return searchHotelLoading?.call();
   }
@@ -1300,10 +1869,14 @@ class _$_SearchHotelLoading implements _SearchHotelLoading {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
     required TResult orElse(),
   }) {
     if (searchHotelLoading != null) {
@@ -1323,10 +1896,15 @@ class _$_SearchHotelLoading implements _SearchHotelLoading {
     required TResult Function(_GetPlacesSuggestionsError value)
         getPlacesSuggestionsError,
     required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
     required TResult Function(_SetMapMarkers value) setMapMarkers,
     required TResult Function(_JumpToPosition value) jumpToPosition,
     required TResult Function(_SearchHotelLoading value) searchHotelLoading,
     required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
   }) {
     return searchHotelLoading(this);
   }
@@ -1342,10 +1920,14 @@ class _$_SearchHotelLoading implements _SearchHotelLoading {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
   }) {
     return searchHotelLoading?.call(this);
   }
@@ -1361,10 +1943,14 @@ class _$_SearchHotelLoading implements _SearchHotelLoading {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
     required TResult orElse(),
   }) {
     if (searchHotelLoading != null) {
@@ -1423,10 +2009,14 @@ class _$_SearchHotel implements _SearchHotel {
     required TResult Function() getPlacesSuggestionsSuccess,
     required TResult Function() getPlacesSuggestionsError,
     required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
     required TResult Function() setMapMarkers,
     required TResult Function() jumpToPosition,
     required TResult Function() searchHotelLoading,
     required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
   }) {
     return searchHotel();
   }
@@ -1439,10 +2029,14 @@ class _$_SearchHotel implements _SearchHotel {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
   }) {
     return searchHotel?.call();
   }
@@ -1455,10 +2049,14 @@ class _$_SearchHotel implements _SearchHotel {
     TResult Function()? getPlacesSuggestionsSuccess,
     TResult Function()? getPlacesSuggestionsError,
     TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
     TResult Function()? setMapMarkers,
     TResult Function()? jumpToPosition,
     TResult Function()? searchHotelLoading,
     TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
     required TResult orElse(),
   }) {
     if (searchHotel != null) {
@@ -1478,10 +2076,15 @@ class _$_SearchHotel implements _SearchHotel {
     required TResult Function(_GetPlacesSuggestionsError value)
         getPlacesSuggestionsError,
     required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
     required TResult Function(_SetMapMarkers value) setMapMarkers,
     required TResult Function(_JumpToPosition value) jumpToPosition,
     required TResult Function(_SearchHotelLoading value) searchHotelLoading,
     required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
   }) {
     return searchHotel(this);
   }
@@ -1497,10 +2100,14 @@ class _$_SearchHotel implements _SearchHotel {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
   }) {
     return searchHotel?.call(this);
   }
@@ -1516,10 +2123,14 @@ class _$_SearchHotel implements _SearchHotel {
     TResult Function(_GetPlacesSuggestionsError value)?
         getPlacesSuggestionsError,
     TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
     TResult Function(_SetMapMarkers value)? setMapMarkers,
     TResult Function(_JumpToPosition value)? jumpToPosition,
     TResult Function(_SearchHotelLoading value)? searchHotelLoading,
     TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
     required TResult orElse(),
   }) {
     if (searchHotel != null) {
@@ -1531,4 +2142,368 @@ class _$_SearchHotel implements _SearchHotel {
 
 abstract class _SearchHotel implements MapsState {
   const factory _SearchHotel() = _$_SearchHotel;
+}
+
+/// @nodoc
+abstract class _$$_ChangeHotelCurrentIndexCopyWith<$Res> {
+  factory _$$_ChangeHotelCurrentIndexCopyWith(_$_ChangeHotelCurrentIndex value,
+          $Res Function(_$_ChangeHotelCurrentIndex) then) =
+      __$$_ChangeHotelCurrentIndexCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ChangeHotelCurrentIndexCopyWithImpl<$Res>
+    extends _$MapsStateCopyWithImpl<$Res>
+    implements _$$_ChangeHotelCurrentIndexCopyWith<$Res> {
+  __$$_ChangeHotelCurrentIndexCopyWithImpl(_$_ChangeHotelCurrentIndex _value,
+      $Res Function(_$_ChangeHotelCurrentIndex) _then)
+      : super(_value, (v) => _then(v as _$_ChangeHotelCurrentIndex));
+
+  @override
+  _$_ChangeHotelCurrentIndex get _value =>
+      super._value as _$_ChangeHotelCurrentIndex;
+}
+
+/// @nodoc
+
+class _$_ChangeHotelCurrentIndex implements _ChangeHotelCurrentIndex {
+  const _$_ChangeHotelCurrentIndex();
+
+  @override
+  String toString() {
+    return 'MapsState.changeHotelCurrentIndex()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ChangeHotelCurrentIndex);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlacesSuggestionsLoading,
+    required TResult Function() getPlacesSuggestionsSuccess,
+    required TResult Function() getPlacesSuggestionsError,
+    required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
+    required TResult Function() setMapMarkers,
+    required TResult Function() jumpToPosition,
+    required TResult Function() searchHotelLoading,
+    required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
+  }) {
+    return changeHotelCurrentIndex();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlacesSuggestionsLoading,
+    TResult Function()? getPlacesSuggestionsSuccess,
+    TResult Function()? getPlacesSuggestionsError,
+    TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
+    TResult Function()? setMapMarkers,
+    TResult Function()? jumpToPosition,
+    TResult Function()? searchHotelLoading,
+    TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
+  }) {
+    return changeHotelCurrentIndex?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlacesSuggestionsLoading,
+    TResult Function()? getPlacesSuggestionsSuccess,
+    TResult Function()? getPlacesSuggestionsError,
+    TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
+    TResult Function()? setMapMarkers,
+    TResult Function()? jumpToPosition,
+    TResult Function()? searchHotelLoading,
+    TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
+    required TResult orElse(),
+  }) {
+    if (changeHotelCurrentIndex != null) {
+      return changeHotelCurrentIndex();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetPlacesSuggestionsLoading value)
+        getPlacesSuggestionsLoading,
+    required TResult Function(_GetPlacesSuggestionsSuccess value)
+        getPlacesSuggestionsSuccess,
+    required TResult Function(_GetPlacesSuggestionsError value)
+        getPlacesSuggestionsError,
+    required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
+    required TResult Function(_SetMapMarkers value) setMapMarkers,
+    required TResult Function(_JumpToPosition value) jumpToPosition,
+    required TResult Function(_SearchHotelLoading value) searchHotelLoading,
+    required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
+  }) {
+    return changeHotelCurrentIndex(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetPlacesSuggestionsLoading value)?
+        getPlacesSuggestionsLoading,
+    TResult Function(_GetPlacesSuggestionsSuccess value)?
+        getPlacesSuggestionsSuccess,
+    TResult Function(_GetPlacesSuggestionsError value)?
+        getPlacesSuggestionsError,
+    TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
+    TResult Function(_SetMapMarkers value)? setMapMarkers,
+    TResult Function(_JumpToPosition value)? jumpToPosition,
+    TResult Function(_SearchHotelLoading value)? searchHotelLoading,
+    TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
+  }) {
+    return changeHotelCurrentIndex?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetPlacesSuggestionsLoading value)?
+        getPlacesSuggestionsLoading,
+    TResult Function(_GetPlacesSuggestionsSuccess value)?
+        getPlacesSuggestionsSuccess,
+    TResult Function(_GetPlacesSuggestionsError value)?
+        getPlacesSuggestionsError,
+    TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
+    TResult Function(_SetMapMarkers value)? setMapMarkers,
+    TResult Function(_JumpToPosition value)? jumpToPosition,
+    TResult Function(_SearchHotelLoading value)? searchHotelLoading,
+    TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
+    required TResult orElse(),
+  }) {
+    if (changeHotelCurrentIndex != null) {
+      return changeHotelCurrentIndex(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeHotelCurrentIndex implements MapsState {
+  const factory _ChangeHotelCurrentIndex() = _$_ChangeHotelCurrentIndex;
+}
+
+/// @nodoc
+abstract class _$$_AddPageRequestCopyWith<$Res> {
+  factory _$$_AddPageRequestCopyWith(
+          _$_AddPageRequest value, $Res Function(_$_AddPageRequest) then) =
+      __$$_AddPageRequestCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_AddPageRequestCopyWithImpl<$Res>
+    extends _$MapsStateCopyWithImpl<$Res>
+    implements _$$_AddPageRequestCopyWith<$Res> {
+  __$$_AddPageRequestCopyWithImpl(
+      _$_AddPageRequest _value, $Res Function(_$_AddPageRequest) _then)
+      : super(_value, (v) => _then(v as _$_AddPageRequest));
+
+  @override
+  _$_AddPageRequest get _value => super._value as _$_AddPageRequest;
+}
+
+/// @nodoc
+
+class _$_AddPageRequest implements _AddPageRequest {
+  const _$_AddPageRequest();
+
+  @override
+  String toString() {
+    return 'MapsState.addPageRequest()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_AddPageRequest);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlacesSuggestionsLoading,
+    required TResult Function() getPlacesSuggestionsSuccess,
+    required TResult Function() getPlacesSuggestionsError,
+    required TResult Function() createMap,
+    required TResult Function() moveCameraOnMap,
+    required TResult Function() tapOnMap,
+    required TResult Function() setMapMarkers,
+    required TResult Function() jumpToPosition,
+    required TResult Function() searchHotelLoading,
+    required TResult Function() searchHotel,
+    required TResult Function() changeHotelCurrentIndex,
+    required TResult Function() addPageRequest,
+  }) {
+    return addPageRequest();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlacesSuggestionsLoading,
+    TResult Function()? getPlacesSuggestionsSuccess,
+    TResult Function()? getPlacesSuggestionsError,
+    TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
+    TResult Function()? setMapMarkers,
+    TResult Function()? jumpToPosition,
+    TResult Function()? searchHotelLoading,
+    TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
+  }) {
+    return addPageRequest?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlacesSuggestionsLoading,
+    TResult Function()? getPlacesSuggestionsSuccess,
+    TResult Function()? getPlacesSuggestionsError,
+    TResult Function()? createMap,
+    TResult Function()? moveCameraOnMap,
+    TResult Function()? tapOnMap,
+    TResult Function()? setMapMarkers,
+    TResult Function()? jumpToPosition,
+    TResult Function()? searchHotelLoading,
+    TResult Function()? searchHotel,
+    TResult Function()? changeHotelCurrentIndex,
+    TResult Function()? addPageRequest,
+    required TResult orElse(),
+  }) {
+    if (addPageRequest != null) {
+      return addPageRequest();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetPlacesSuggestionsLoading value)
+        getPlacesSuggestionsLoading,
+    required TResult Function(_GetPlacesSuggestionsSuccess value)
+        getPlacesSuggestionsSuccess,
+    required TResult Function(_GetPlacesSuggestionsError value)
+        getPlacesSuggestionsError,
+    required TResult Function(_CreateMap value) createMap,
+    required TResult Function(_MoveCameraOnMap value) moveCameraOnMap,
+    required TResult Function(_TapOnMap value) tapOnMap,
+    required TResult Function(_SetMapMarkers value) setMapMarkers,
+    required TResult Function(_JumpToPosition value) jumpToPosition,
+    required TResult Function(_SearchHotelLoading value) searchHotelLoading,
+    required TResult Function(_SearchHotel value) searchHotel,
+    required TResult Function(_ChangeHotelCurrentIndex value)
+        changeHotelCurrentIndex,
+    required TResult Function(_AddPageRequest value) addPageRequest,
+  }) {
+    return addPageRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetPlacesSuggestionsLoading value)?
+        getPlacesSuggestionsLoading,
+    TResult Function(_GetPlacesSuggestionsSuccess value)?
+        getPlacesSuggestionsSuccess,
+    TResult Function(_GetPlacesSuggestionsError value)?
+        getPlacesSuggestionsError,
+    TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
+    TResult Function(_SetMapMarkers value)? setMapMarkers,
+    TResult Function(_JumpToPosition value)? jumpToPosition,
+    TResult Function(_SearchHotelLoading value)? searchHotelLoading,
+    TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
+  }) {
+    return addPageRequest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetPlacesSuggestionsLoading value)?
+        getPlacesSuggestionsLoading,
+    TResult Function(_GetPlacesSuggestionsSuccess value)?
+        getPlacesSuggestionsSuccess,
+    TResult Function(_GetPlacesSuggestionsError value)?
+        getPlacesSuggestionsError,
+    TResult Function(_CreateMap value)? createMap,
+    TResult Function(_MoveCameraOnMap value)? moveCameraOnMap,
+    TResult Function(_TapOnMap value)? tapOnMap,
+    TResult Function(_SetMapMarkers value)? setMapMarkers,
+    TResult Function(_JumpToPosition value)? jumpToPosition,
+    TResult Function(_SearchHotelLoading value)? searchHotelLoading,
+    TResult Function(_SearchHotel value)? searchHotel,
+    TResult Function(_ChangeHotelCurrentIndex value)? changeHotelCurrentIndex,
+    TResult Function(_AddPageRequest value)? addPageRequest,
+    required TResult orElse(),
+  }) {
+    if (addPageRequest != null) {
+      return addPageRequest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddPageRequest implements MapsState {
+  const factory _AddPageRequest() = _$_AddPageRequest;
 }

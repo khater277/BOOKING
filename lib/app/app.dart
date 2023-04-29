@@ -48,7 +48,9 @@ class MyApp extends StatelessWidget {
                 create: (BuildContext context) => di<ProfileCubit>(),
               ),
               BlocProvider(
-                create: (BuildContext context) => di<MapsCubit>()..setMarkers(),
+                create: (BuildContext context) => di<MapsCubit>()
+                  // ..changeMapScrollPosition(context)
+                  ..setMarkers(),
               ),
             ],
             child: MaterialApp(
@@ -60,7 +62,7 @@ class MyApp extends StatelessWidget {
                   //     : const HomeScreen(),
                   const MapScreen(),
               // const LoginScreen(),
-              // const TestScreen(title: "title")
+              // const TestScreen()
             ),
           );
         });

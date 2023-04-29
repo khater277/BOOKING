@@ -1,13 +1,9 @@
 import 'dart:async';
-import 'dart:convert';
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:booking/core/apis/maps/maps_end_points.dart';
 import 'package:booking/core/hive/hive_helper.dart';
-import 'package:booking/core/shared_widgets/text.dart';
-import 'package:booking/core/utils/app_colors.dart';
-import 'package:booking/core/utils/app_images.dart';
+import 'package:booking/core/shared_widgets/custom_info_window.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/coordinates.dart';
@@ -16,17 +12,15 @@ import 'package:booking/features/hotels/data/models/hotels_response_model/hotels
 import 'package:booking/features/maps/data/models/places_suggestions/places_suggestions.dart';
 import 'package:booking/features/maps/data/models/places_suggestions_params/places_suggestions_params.dart';
 import 'package:booking/features/maps/domain/usecases/places_suggestions_usecase.dart';
-import 'package:custom_map_markers/custom_map_markers.dart';
+import 'package:booking/features/maps/presentation/widgets/map_content/hotel_info_window.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 import 'package:uuid/uuid.dart';
 
@@ -53,37 +47,65 @@ class MapsCubit extends Cubit<MapsState> {
 
   void createMap({required GoogleMapController googleMapController}) {
     completer.complete(googleMapController);
+    infoWindowController.googleMapController = googleMapController;
     emit(const MapsState.createMap());
   }
 
-  Set<Marker> markers = {};
+  void tapOnMap() {
+    infoWindowController.hideInfoWindow!();
+    emit(const MapsState.tapOnMap());
+  }
 
+  void moveCameraOnMap() {
+    infoWindowController.onCameraMove!();
+    emit(const MapsState.moveCameraOnMap());
+  }
+
+  Set<Marker> markers = {};
+  List<CustomInfoWindowController> windowsControllers = [];
+  CustomInfoWindowController infoWindowController =
+      CustomInfoWindowController();
   void setMarkers() async {
     for (int i = 0; i < hotels!.hotels!.length; i++) {
       final hotel = hotels!.hotels![i];
-      BitmapDescriptor markerbitmap = await bitmapDescriptorFromSvgAsset(
+      await addHotelMarker(
+        hotel: hotel,
         price: "200",
       );
-      markers.add(Marker(
-        markerId: MarkerId('${hotel.code}'),
-        position: LatLng(
-          hotel.coordinates!.latitude!,
-          hotel.coordinates!.longitude!,
-        ),
-        infoWindow: InfoWindow(
-          title: "${hotel.name!.content}",
-          snippet: "${hotel.address!.content}",
-        ),
-        icon: markerbitmap, //Icon for Marker
-      ));
     }
     emit(const MapsState.setMapMarkers());
+  }
+
+  Future<void> addHotelMarker({
+    required Hotel hotel,
+    required String price,
+  }) async {
+    markers.add(Marker(
+      markerId: MarkerId('${hotel.code}'),
+      position: LatLng(
+        hotel.coordinates!.latitude!,
+        hotel.coordinates!.longitude!,
+      ),
+      onTap: () {
+        infoWindowController.addInfoWindow!(
+          HotelInfoWindow(hotelName: hotel.name!.content!),
+          LatLng(
+            hotel.coordinates!.latitude!,
+            hotel.coordinates!.longitude!,
+          ),
+        );
+      },
+      icon: await bitmapDescriptorFromSvgAsset(
+        price: price,
+      ), //Icon for Marker
+    ));
   }
 
   Future<BitmapDescriptor> bitmapDescriptorFromSvgAsset({
     required String price,
   }) async {
-    String svgStrings = '''
+    String svgStrings =
+        '''
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
  id="ed2zjlYqLD31" viewBox="0 0 1920 1080" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
  
@@ -130,10 +152,12 @@ class MapsCubit extends Cubit<MapsState> {
     tilt: 0.0,
     zoom: 17.0,
   );
-
+  ScrollController scrollController = ScrollController();
   void jumpToLocation({
     required Coordinates coordinates,
     bool fromSearch = false,
+    int? id,
+    BuildContext? context,
   }) async {
     CameraPosition currentCameraPosition = CameraPosition(
       target: LatLng(
@@ -148,7 +172,18 @@ class MapsCubit extends Cubit<MapsState> {
     controller
         .animateCamera(CameraUpdate.newCameraPosition(currentCameraPosition));
 
-    if (fromSearch) floatingSearchBarController.close();
+    if (fromSearch) {
+      floatingSearchBarController.close();
+    }
+    if (id != null) {
+      final searchedHotel =
+          hotels!.hotels!.firstWhere((element) => element.code == id);
+      final index = hotels!.hotels!.indexOf(searchedHotel);
+      final widthPixels = index * (MediaQuery.of(context!).size.width * 0.8);
+      final paddingPixels = (AppWidth.w20 * index);
+      final position = widthPixels + paddingPixels;
+      scrollController.jumpTo(position);
+    }
 
     emit(const MapsState.jumpToPosition());
   }
@@ -184,5 +219,44 @@ class MapsCubit extends Cubit<MapsState> {
       print(placesSuggestions.predictions!.length);
       emit(const MapsState.getPlacesSuggestionsSuccess());
     });
+  }
+
+  int hotelCurrentIndex = 0;
+  ScrollController mapsScrollController = ScrollController();
+  void changeHotelCurrentIndex({required int index}) {
+    hotelCurrentIndex = index;
+    final currentHotel = hotels!.hotels![index];
+    jumpToLocation(coordinates: currentHotel.coordinates!);
+  }
+
+  int init = 0;
+  int end = 20;
+  int pageSize = 20;
+
+  PagingController<int, Hotel> pagingController =
+      PagingController(firstPageKey: 0);
+
+  void addPageRequest() {
+    pagingController.addPageRequestListener((pageKey) {
+      fetchPage(pageKey);
+      emit(const MapsState.addPageRequest());
+    });
+  }
+
+  Future<void> fetchPage(int pageKey) async {
+    try {
+      final newItems = hotels!.hotels!.sublist(init, end);
+      final isLastPage = newItems.length < pageSize;
+      if (isLastPage) {
+        pagingController.appendLastPage(newItems);
+      } else {
+        final nextPageKey = pageKey + newItems.length;
+        init += end;
+        end += pageSize;
+        pagingController.appendPage(newItems, nextPageKey);
+      }
+    } catch (error) {
+      pagingController.error = error;
+    }
   }
 }

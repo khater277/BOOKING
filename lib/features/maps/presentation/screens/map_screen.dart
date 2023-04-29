@@ -1,12 +1,11 @@
 // import 'dart:async';
 
-import 'package:booking/core/hive/hive_helper.dart';
-import 'package:booking/core/shared_widgets/text.dart';
-import 'package:booking/core/utils/app_colors.dart';
-import 'package:booking/features/hotels/data/models/hotels_response_model/coordinates.dart';
+import 'package:booking/core/shared_widgets/custom_info_window.dart';
+import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/maps/cubit/maps_cubit.dart';
-import 'package:booking/features/maps/presentation/widgets/map_floating_search.dart';
-import 'package:custom_map_markers/custom_map_markers.dart';
+import 'package:booking/features/maps/presentation/widgets/map_content/map_floating_search.dart';
+import 'package:booking/features/maps/presentation/widgets/map_content/mapp_hotels.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -24,6 +23,7 @@ class _MapScreenState extends State<MapScreen> {
     return BlocBuilder<MapsCubit, MapsState>(
       builder: (context, state) {
         final cubit = MapsCubit.get(context);
+        final List<Hotel> hotels = cubit.hotels!.hotels!.sublist(0, 10);
         return Scaffold(
           body: Stack(
             children: [
@@ -37,20 +37,22 @@ class _MapScreenState extends State<MapScreen> {
                 onMapCreated: (GoogleMapController googleMapController) {
                   cubit.createMap(googleMapController: googleMapController);
                 },
+                onTap: (position) => cubit.tapOnMap(),
+                onCameraMove: (position) => cubit.moveCameraOnMap(),
+              ),
+              CustomInfoWindow(
+                (top, left, width, height) => null,
+                controller: cubit.infoWindowController,
+                height: AppHeight.h60,
+                width: AppWidth.w200,
+                offset: AppSize.s60,
+              ),
+              MapsHotels(
+                hotels: hotels,
+                cubit: cubit,
               ),
               const MapFloatingSearch(),
             ],
-          ),
-          floatingActionButton: FloatingActionButton(
-            backgroundColor: AppColors.teal,
-            child: const Icon(
-              Icons.place,
-              color: AppColors.white,
-            ),
-            onPressed: () {
-              // cubit.setMarkers();
-              cubit.jumpToLocation(coordinates: HiveHelper.getUserLocation()!);
-            },
           ),
         );
       },

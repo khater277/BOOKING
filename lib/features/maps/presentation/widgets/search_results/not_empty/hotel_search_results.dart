@@ -23,9 +23,10 @@ class HotelSearchResults extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: AppHeight.h5),
                 child: GestureDetector(
                   onTap: () => cubit.jumpToLocation(
-                    coordinates: cubit.result[i].coordinates!,
-                    fromSearch: true,
-                  ),
+                      coordinates: cubit.result[i].coordinates!,
+                      fromSearch: true,
+                      context: context,
+                      id: cubit.result[i].code),
                   // Go.to(
                   //     context: context,
                   //     screen: HotelDetailsScreen(hotel: cubit.result[i])),

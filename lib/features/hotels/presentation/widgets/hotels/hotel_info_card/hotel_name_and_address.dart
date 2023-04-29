@@ -9,14 +9,14 @@ import 'package:flutter/material.dart';
 class HotelNameAndAddress extends StatelessWidget {
   final String name;
   final Address address;
-  final City city;
-  final String countryCode;
+  final City? city;
+  final String? countryCode;
   const HotelNameAndAddress(
       {super.key,
       required this.name,
       required this.address,
-      required this.city,
-      required this.countryCode});
+      this.city,
+      this.countryCode});
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +34,15 @@ class HotelNameAndAddress extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                SecondaryText(
-                  text:
-                      "${AppFunctions.generateCountryFlag(countryCode: countryCode)} ${city.content}",
-                  isLight: true,
-                  isButton: true,
-                  maxLines: 1,
-                  // size: addressSize,
-                ),
+                if (countryCode != null && city != null)
+                  SecondaryText(
+                    text:
+                        "${AppFunctions.generateCountryFlag(countryCode: countryCode!)} ${city!.content}",
+                    isLight: true,
+                    isButton: true,
+                    maxLines: 1,
+                    // size: addressSize,
+                  ),
                 SizedBox(height: AppHeight.h2),
                 Flexible(
                   child: Row(

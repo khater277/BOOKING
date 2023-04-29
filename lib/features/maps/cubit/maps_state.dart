@@ -10,8 +10,12 @@ class MapsState with _$MapsState {
   const factory MapsState.getPlacesSuggestionsError() =
       _GetPlacesSuggestionsError;
   const factory MapsState.createMap() = _CreateMap;
+  const factory MapsState.moveCameraOnMap() = _MoveCameraOnMap;
+  const factory MapsState.tapOnMap() = _TapOnMap;
   const factory MapsState.setMapMarkers() = _SetMapMarkers;
   const factory MapsState.jumpToPosition() = _JumpToPosition;
   const factory MapsState.searchHotelLoading() = _SearchHotelLoading;
   const factory MapsState.searchHotel() = _SearchHotel;
+  const factory MapsState.changeHotelCurrentIndex() = _ChangeHotelCurrentIndex;
+  const factory MapsState.addPageRequest() = _AddPageRequest;
 }

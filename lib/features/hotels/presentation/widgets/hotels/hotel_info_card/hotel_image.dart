@@ -5,13 +5,14 @@ import 'package:flutter/material.dart';
 
 class HotelImage extends StatelessWidget {
   final String image;
-  const HotelImage({super.key, required this.image});
+  final bool isMap;
+  const HotelImage({super.key, required this.image, this.isMap = false});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: AppWidth.w115,
-      height: AppHeight.h140,
+      height: isMap ? AppHeight.h120 : AppHeight.h140,
       child: ClipRRect(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(AppSize.s20),
