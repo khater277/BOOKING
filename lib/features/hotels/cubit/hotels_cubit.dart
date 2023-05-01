@@ -17,6 +17,7 @@ import 'package:booking/features/hotels/domain/usecases/hotel_usecases.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
 class HotelsCubit extends Cubit<HotelsStates> {
   final GetHotelsUseCase getHotelsUseCase;
@@ -164,6 +165,8 @@ class HotelsCubit extends Cubit<HotelsStates> {
           someHotels = allHotels!.hotels!.sublist(0, 10);
         },
       );
+    } else {
+      allHotels = HiveHelper.getAllHotels();
     }
   }
 
@@ -228,14 +231,19 @@ class HotelsCubit extends Cubit<HotelsStates> {
         hotelsScrollController.position.extentAfter < 300) {
       emit(GetMoreHotelsLoading());
       try {
+        if (someHotels.isNotEmpty) {
+          from += 10;
+          to += from;
+        }
+
         List<Hotel> fetchedList =
             HiveHelper.getSomeHotels(from: from, to: to) ?? [];
         debugPrint("STATUS====>${fetchedList.isNotEmpty}");
         if (fetchedList.isNotEmpty &&
             to <= HiveHelper.getAllHotels()!.hotels!.length - 10) {
           someHotels.addAll(fetchedList);
-          from += 10;
-          to += 10;
+          // from += 10;
+          // to += from;
         } else {
           hasNextPage = false;
         }

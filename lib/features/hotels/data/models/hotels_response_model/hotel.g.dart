@@ -20,21 +20,22 @@ class HotelAdapter extends TypeAdapter<Hotel> {
       code: fields[0] as int?,
       name: fields[1] as Name?,
       description: fields[2] as Description?,
-      countryCode: fields[3] as String?,
-      coordinates: fields[4] as Coordinates?,
-      address: fields[5] as Address?,
-      city: fields[6] as City?,
-      email: fields[7] as String?,
-      phones: (fields[8] as List?)?.cast<Phone>(),
-      facilities: (fields[9] as List?)?.cast<Facility>(),
-      images: (fields[10] as List?)?.cast<Image>(),
+      categoryCode: fields[3] as String?,
+      countryCode: fields[4] as String?,
+      coordinates: fields[5] as Coordinates?,
+      address: fields[6] as Address?,
+      city: fields[7] as City?,
+      email: fields[8] as String?,
+      phones: (fields[9] as List?)?.cast<Phone>(),
+      facilities: (fields[10] as List?)?.cast<Facility>(),
+      images: (fields[11] as List?)?.cast<Image>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, Hotel obj) {
     writer
-      ..writeByte(11)
+      ..writeByte(12)
       ..writeByte(0)
       ..write(obj.code)
       ..writeByte(1)
@@ -42,20 +43,22 @@ class HotelAdapter extends TypeAdapter<Hotel> {
       ..writeByte(2)
       ..write(obj.description)
       ..writeByte(3)
-      ..write(obj.countryCode)
+      ..write(obj.categoryCode)
       ..writeByte(4)
-      ..write(obj.coordinates)
+      ..write(obj.countryCode)
       ..writeByte(5)
-      ..write(obj.address)
+      ..write(obj.coordinates)
       ..writeByte(6)
-      ..write(obj.city)
+      ..write(obj.address)
       ..writeByte(7)
-      ..write(obj.email)
+      ..write(obj.city)
       ..writeByte(8)
-      ..write(obj.phones)
+      ..write(obj.email)
       ..writeByte(9)
-      ..write(obj.facilities)
+      ..write(obj.phones)
       ..writeByte(10)
+      ..write(obj.facilities)
+      ..writeByte(11)
       ..write(obj.images);
   }
 
@@ -82,6 +85,7 @@ _$_Hotel _$$_HotelFromJson(Map<String, dynamic> json) => _$_Hotel(
       description: json['description'] == null
           ? null
           : Description.fromJson(json['description'] as Map<String, dynamic>),
+      categoryCode: json['categoryCode'] as String?,
       countryCode: json['countryCode'] as String?,
       coordinates: json['coordinates'] == null
           ? null
@@ -108,6 +112,7 @@ Map<String, dynamic> _$$_HotelToJson(_$_Hotel instance) => <String, dynamic>{
       'code': instance.code,
       'name': instance.name,
       'description': instance.description,
+      'categoryCode': instance.categoryCode,
       'countryCode': instance.countryCode,
       'coordinates': instance.coordinates,
       'address': instance.address,

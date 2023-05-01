@@ -7,7 +7,7 @@ import 'package:booking/core/utils/app_colors.dart';
 import 'package:booking/core/utils/app_fonts.dart';
 import 'package:booking/core/utils/app_functions.dart';
 import 'package:booking/core/utils/app_values.dart';
-import 'package:booking/features/booking/presentation/screens/booking_details_screen.dart';
+import 'package:booking/features/create_booking/presentation/screens/create_booking_screen.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotel_details/app_bar/flexible_space/hotel_address_and_location.dart';
 import 'package:booking/features/hotels/presentation/widgets/hotels/hotel_info_card/hotel_night_price.dart';
@@ -64,11 +64,14 @@ class HotelInfoAppBar extends StatelessWidget {
                                   "${AppFunctions.formatDistance(distance: AppFunctions.determineDistanceToHotel(coordinates: hotel.coordinates!))} away from you",
                             ),
                             SizedBox(height: AppHeight.h8),
-                            const HotelRating(),
+                            HotelRating(
+                                rate: double.parse(hotel.categoryCode![0])),
                           ],
                         ),
                       ),
-                      const HotelNightPrice(isHotelDetails: true),
+                      HotelStars(
+                          rate: double.parse(hotel.categoryCode![0]),
+                          isHotelDetails: true),
                     ],
                   ),
                   SizedBox(height: AppHeight.h10),
@@ -77,7 +80,7 @@ class HotelInfoAppBar extends StatelessWidget {
                     onPressed: () {
                       Go.to(
                         context: context,
-                        screen: BookingDetailsScreen(hotelId: hotel.code!),
+                        screen: CreateBookingScreen(hotelId: hotel.code!),
                       );
                     },
                   ),

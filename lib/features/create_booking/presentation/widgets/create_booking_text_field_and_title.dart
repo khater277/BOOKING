@@ -2,19 +2,19 @@ import 'package:booking/config/navigation.dart';
 import 'package:booking/core/shared_widgets/text_form_field.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/core/utils/constants.dart';
-import 'package:booking/features/booking/cubit/booking_cubit.dart';
 import 'package:booking/features/booking/presentation/screens/select_date_screen.dart';
-import 'package:booking/features/booking/presentation/widgets/booking_details/text_field_title.dart';
+import 'package:booking/features/create_booking/cubit/create_booking_cubit.dart';
+import 'package:booking/features/create_booking/presentation/widgets/create_text_field_title.dart';
 import 'package:flutter/material.dart';
 
-class BookingTextFieldAndTitle extends StatelessWidget {
-  final BookingCubit cubit;
+class CreateBookingTextFieldAndTitle extends StatelessWidget {
+  final CreateBookingCubit cubit;
   final TextEditingController controller;
   final String title;
   final String hint;
   final Check? check;
   final IconData icon;
-  const BookingTextFieldAndTitle({
+  const CreateBookingTextFieldAndTitle({
     super.key,
     required this.cubit,
     required this.controller,
@@ -30,11 +30,12 @@ class BookingTextFieldAndTitle extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        BookingTextFieldTitle(title: title),
+        CreateBookingTextFieldTitle(title: title),
         SizedBox(height: AppHeight.h5),
         CustomTextField(
           hintText: hint,
           validatorText: "validatorText",
+          validator: (value) => value!.isEmpty ? 'Email cannot be empty' : null,
           controller: controller,
           inputType: TextInputType.text,
           prefixIcon: icon,

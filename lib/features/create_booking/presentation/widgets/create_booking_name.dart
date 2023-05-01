@@ -1,18 +1,19 @@
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/booking/cubit/booking_cubit.dart';
-import 'package:booking/features/booking/presentation/widgets/booking_details/booking_text_field_and_title.dart';
+import 'package:booking/features/create_booking/cubit/create_booking_cubit.dart';
+import 'package:booking/features/create_booking/presentation/widgets/create_booking_text_field_and_title.dart';
 import 'package:flutter/material.dart';
 
-class BookingName extends StatelessWidget {
-  final BookingCubit cubit;
-  const BookingName({super.key, required this.cubit});
+class CreateBookingName extends StatelessWidget {
+  final CreateBookingCubit cubit;
+  const CreateBookingName({super.key, required this.cubit});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Flexible(
-          child: BookingTextFieldAndTitle(
+          child: CreateBookingTextFieldAndTitle(
             cubit: cubit,
             controller: cubit.firstNameController!,
             title: 'First Name',
@@ -23,7 +24,7 @@ class BookingName extends StatelessWidget {
         ),
         SizedBox(width: AppWidth.w10),
         Flexible(
-          child: BookingTextFieldAndTitle(
+          child: CreateBookingTextFieldAndTitle(
             cubit: cubit,
             controller: cubit.lastNameController!,
             title: 'Last Name',

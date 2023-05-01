@@ -5,11 +5,12 @@ import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/core/utils/constants.dart';
 import 'package:booking/core/utils/font_styles.dart';
 import 'package:booking/features/booking/cubit/booking_cubit.dart';
+import 'package:booking/features/create_booking/cubit/create_booking_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class SelectDateScreen extends StatefulWidget {
-  final BookingCubit cubit;
+  final CreateBookingCubit cubit;
   final Check check;
   const SelectDateScreen({
     super.key,

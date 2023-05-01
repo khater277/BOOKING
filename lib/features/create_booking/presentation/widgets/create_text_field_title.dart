@@ -3,9 +3,9 @@ import 'package:booking/core/utils/app_colors.dart';
 import 'package:booking/core/utils/app_fonts.dart';
 import 'package:flutter/material.dart';
 
-class BookingTextFieldTitle extends StatelessWidget {
+class CreateBookingTextFieldTitle extends StatelessWidget {
   final String title;
-  const BookingTextFieldTitle({super.key, required this.title});
+  const CreateBookingTextFieldTitle({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

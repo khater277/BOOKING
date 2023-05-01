@@ -2,6 +2,7 @@
 
 import 'package:booking/core/shared_widgets/custom_info_window.dart';
 import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/features/hotels/data/models/hotels_response_model/coordinates.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/maps/cubit/maps_cubit.dart';
 import 'package:booking/features/maps/presentation/widgets/map_content/map_floating_search.dart';
@@ -38,7 +39,16 @@ class _MapScreenState extends State<MapScreen> {
                   cubit.createMap(googleMapController: googleMapController);
                 },
                 onTap: (position) => cubit.tapOnMap(),
-                onCameraMove: (position) => cubit.moveCameraOnMap(),
+                onCameraMove: (position) => cubit.moveCameraOnMap(
+                  coordinates: Coordinates(
+                    latitude: double.parse(
+                        position.target.latitude.toStringAsFixed(3)),
+                    longitude: double.parse(
+                        position.target.longitude.toStringAsFixed(3)),
+                  ),
+                  context: context,
+                ),
+                // on
               ),
               CustomInfoWindow(
                 (top, left, width, height) => null,

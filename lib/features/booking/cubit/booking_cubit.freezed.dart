@@ -26,6 +26,7 @@ mixin _$BookingState {
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getAllHotelsPrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +39,7 @@ mixin _$BookingState {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +52,7 @@ mixin _$BookingState {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -67,6 +70,7 @@ mixin _$BookingState {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
+    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,6 +86,7 @@ mixin _$BookingState {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -97,6 +102,7 @@ mixin _$BookingState {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -165,6 +171,7 @@ class _$_Initial implements _Initial {
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getAllHotelsPrice,
   }) {
     return initial();
   }
@@ -180,6 +187,7 @@ class _$_Initial implements _Initial {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
   }) {
     return initial?.call();
   }
@@ -195,6 +203,7 @@ class _$_Initial implements _Initial {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -218,6 +227,7 @@ class _$_Initial implements _Initial {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
+    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
   }) {
     return initial(this);
   }
@@ -236,6 +246,7 @@ class _$_Initial implements _Initial {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
   }) {
     return initial?.call(this);
   }
@@ -254,6 +265,7 @@ class _$_Initial implements _Initial {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -316,6 +328,7 @@ class _$_InitTabController implements _InitTabController {
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getAllHotelsPrice,
   }) {
     return initTabController();
   }
@@ -331,6 +344,7 @@ class _$_InitTabController implements _InitTabController {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
   }) {
     return initTabController?.call();
   }
@@ -346,6 +360,7 @@ class _$_InitTabController implements _InitTabController {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (initTabController != null) {
@@ -369,6 +384,7 @@ class _$_InitTabController implements _InitTabController {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
+    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
   }) {
     return initTabController(this);
   }
@@ -387,6 +403,7 @@ class _$_InitTabController implements _InitTabController {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
   }) {
     return initTabController?.call(this);
   }
@@ -405,6 +422,7 @@ class _$_InitTabController implements _InitTabController {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (initTabController != null) {
@@ -467,6 +485,7 @@ class _$_ChangeTabBar implements _ChangeTabBar {
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getAllHotelsPrice,
   }) {
     return changeTabBar();
   }
@@ -482,6 +501,7 @@ class _$_ChangeTabBar implements _ChangeTabBar {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
   }) {
     return changeTabBar?.call();
   }
@@ -497,6 +517,7 @@ class _$_ChangeTabBar implements _ChangeTabBar {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (changeTabBar != null) {
@@ -520,6 +541,7 @@ class _$_ChangeTabBar implements _ChangeTabBar {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
+    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
   }) {
     return changeTabBar(this);
   }
@@ -538,6 +560,7 @@ class _$_ChangeTabBar implements _ChangeTabBar {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
   }) {
     return changeTabBar?.call(this);
   }
@@ -556,6 +579,7 @@ class _$_ChangeTabBar implements _ChangeTabBar {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (changeTabBar != null) {
@@ -617,6 +641,7 @@ class _$_SelectDate implements _SelectDate {
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getAllHotelsPrice,
   }) {
     return selectDate();
   }
@@ -632,6 +657,7 @@ class _$_SelectDate implements _SelectDate {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
   }) {
     return selectDate?.call();
   }
@@ -647,6 +673,7 @@ class _$_SelectDate implements _SelectDate {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (selectDate != null) {
@@ -670,6 +697,7 @@ class _$_SelectDate implements _SelectDate {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
+    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
   }) {
     return selectDate(this);
   }
@@ -688,6 +716,7 @@ class _$_SelectDate implements _SelectDate {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
   }) {
     return selectDate?.call(this);
   }
@@ -706,6 +735,7 @@ class _$_SelectDate implements _SelectDate {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (selectDate != null) {
@@ -770,6 +800,7 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getAllHotelsPrice,
   }) {
     return initCalenderControllers();
   }
@@ -785,6 +816,7 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
   }) {
     return initCalenderControllers?.call();
   }
@@ -800,6 +832,7 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (initCalenderControllers != null) {
@@ -823,6 +856,7 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
+    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
   }) {
     return initCalenderControllers(this);
   }
@@ -841,6 +875,7 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
   }) {
     return initCalenderControllers?.call(this);
   }
@@ -859,6 +894,7 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (initCalenderControllers != null) {
@@ -925,6 +961,7 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getAllHotelsPrice,
   }) {
     return disposeCalenderControllers();
   }
@@ -940,6 +977,7 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
   }) {
     return disposeCalenderControllers?.call();
   }
@@ -955,6 +993,7 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (disposeCalenderControllers != null) {
@@ -978,6 +1017,7 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
+    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
   }) {
     return disposeCalenderControllers(this);
   }
@@ -996,6 +1036,7 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
   }) {
     return disposeCalenderControllers?.call(this);
   }
@@ -1014,6 +1055,7 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (disposeCalenderControllers != null) {
@@ -1081,6 +1123,7 @@ class _$_InitBookingDetailsControllers
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getAllHotelsPrice,
   }) {
     return initBookingDetailsControllers();
   }
@@ -1096,6 +1139,7 @@ class _$_InitBookingDetailsControllers
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
   }) {
     return initBookingDetailsControllers?.call();
   }
@@ -1111,6 +1155,7 @@ class _$_InitBookingDetailsControllers
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (initBookingDetailsControllers != null) {
@@ -1134,6 +1179,7 @@ class _$_InitBookingDetailsControllers
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
+    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
   }) {
     return initBookingDetailsControllers(this);
   }
@@ -1152,6 +1198,7 @@ class _$_InitBookingDetailsControllers
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
   }) {
     return initBookingDetailsControllers?.call(this);
   }
@@ -1170,6 +1217,7 @@ class _$_InitBookingDetailsControllers
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (initBookingDetailsControllers != null) {
@@ -1238,6 +1286,7 @@ class _$_DisposeBookingDetailsControllers
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getAllHotelsPrice,
   }) {
     return disposeBookingDetailsControllers();
   }
@@ -1253,6 +1302,7 @@ class _$_DisposeBookingDetailsControllers
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
   }) {
     return disposeBookingDetailsControllers?.call();
   }
@@ -1268,6 +1318,7 @@ class _$_DisposeBookingDetailsControllers
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (disposeBookingDetailsControllers != null) {
@@ -1291,6 +1342,7 @@ class _$_DisposeBookingDetailsControllers
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
+    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
   }) {
     return disposeBookingDetailsControllers(this);
   }
@@ -1309,6 +1361,7 @@ class _$_DisposeBookingDetailsControllers
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
   }) {
     return disposeBookingDetailsControllers?.call(this);
   }
@@ -1327,6 +1380,7 @@ class _$_DisposeBookingDetailsControllers
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
     required TResult orElse(),
   }) {
     if (disposeBookingDetailsControllers != null) {
@@ -1339,4 +1393,161 @@ class _$_DisposeBookingDetailsControllers
 abstract class _DisposeBookingDetailsControllers implements BookingState {
   const factory _DisposeBookingDetailsControllers() =
       _$_DisposeBookingDetailsControllers;
+}
+
+/// @nodoc
+abstract class _$$_GetAllHotelsPriceCopyWith<$Res> {
+  factory _$$_GetAllHotelsPriceCopyWith(_$_GetAllHotelsPrice value,
+          $Res Function(_$_GetAllHotelsPrice) then) =
+      __$$_GetAllHotelsPriceCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_GetAllHotelsPriceCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res>
+    implements _$$_GetAllHotelsPriceCopyWith<$Res> {
+  __$$_GetAllHotelsPriceCopyWithImpl(
+      _$_GetAllHotelsPrice _value, $Res Function(_$_GetAllHotelsPrice) _then)
+      : super(_value, (v) => _then(v as _$_GetAllHotelsPrice));
+
+  @override
+  _$_GetAllHotelsPrice get _value => super._value as _$_GetAllHotelsPrice;
+}
+
+/// @nodoc
+
+class _$_GetAllHotelsPrice implements _GetAllHotelsPrice {
+  const _$_GetAllHotelsPrice();
+
+  @override
+  String toString() {
+    return 'BookingState.getAllHotelsPrice()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GetAllHotelsPrice);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() initTabController,
+    required TResult Function() changeTabBar,
+    required TResult Function() selectDate,
+    required TResult Function() initCalenderControllers,
+    required TResult Function() disposeCalenderControllers,
+    required TResult Function() initBookingDetailsControllers,
+    required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getAllHotelsPrice,
+  }) {
+    return getAllHotelsPrice();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
+  }) {
+    return getAllHotelsPrice?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getAllHotelsPrice,
+    required TResult orElse(),
+  }) {
+    if (getAllHotelsPrice != null) {
+      return getAllHotelsPrice();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBar value) changeTabBar,
+    required TResult Function(_SelectDate value) selectDate,
+    required TResult Function(_InitCalenderControllers value)
+        initCalenderControllers,
+    required TResult Function(_DisposeCalenderControllers value)
+        disposeCalenderControllers,
+    required TResult Function(_InitBookingDetailsControllers value)
+        initBookingDetailsControllers,
+    required TResult Function(_DisposeBookingDetailsControllers value)
+        disposeBookingDetailsControllers,
+    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
+  }) {
+    return getAllHotelsPrice(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+  }) {
+    return getAllHotelsPrice?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    required TResult orElse(),
+  }) {
+    if (getAllHotelsPrice != null) {
+      return getAllHotelsPrice(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAllHotelsPrice implements BookingState {
+  const factory _GetAllHotelsPrice() = _$_GetAllHotelsPrice;
 }

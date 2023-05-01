@@ -27,20 +27,22 @@ mixin _$Hotel {
   @HiveField(2)
   Description? get description => throw _privateConstructorUsedError;
   @HiveField(3)
-  String? get countryCode => throw _privateConstructorUsedError;
+  String? get categoryCode => throw _privateConstructorUsedError;
   @HiveField(4)
-  Coordinates? get coordinates => throw _privateConstructorUsedError;
+  String? get countryCode => throw _privateConstructorUsedError;
   @HiveField(5)
-  Address? get address => throw _privateConstructorUsedError;
+  Coordinates? get coordinates => throw _privateConstructorUsedError;
   @HiveField(6)
-  City? get city => throw _privateConstructorUsedError;
+  Address? get address => throw _privateConstructorUsedError;
   @HiveField(7)
-  String? get email => throw _privateConstructorUsedError;
+  City? get city => throw _privateConstructorUsedError;
   @HiveField(8)
-  List<Phone>? get phones => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
   @HiveField(9)
-  List<Facility>? get facilities => throw _privateConstructorUsedError;
+  List<Phone>? get phones => throw _privateConstructorUsedError;
   @HiveField(10)
+  List<Facility>? get facilities => throw _privateConstructorUsedError;
+  @HiveField(11)
   List<Image>? get images => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -56,14 +58,15 @@ abstract class $HotelCopyWith<$Res> {
       {@HiveField(0) int? code,
       @HiveField(1) Name? name,
       @HiveField(2) Description? description,
-      @HiveField(3) String? countryCode,
-      @HiveField(4) Coordinates? coordinates,
-      @HiveField(5) Address? address,
-      @HiveField(6) City? city,
-      @HiveField(7) String? email,
-      @HiveField(8) List<Phone>? phones,
-      @HiveField(9) List<Facility>? facilities,
-      @HiveField(10) List<Image>? images});
+      @HiveField(3) String? categoryCode,
+      @HiveField(4) String? countryCode,
+      @HiveField(5) Coordinates? coordinates,
+      @HiveField(6) Address? address,
+      @HiveField(7) City? city,
+      @HiveField(8) String? email,
+      @HiveField(9) List<Phone>? phones,
+      @HiveField(10) List<Facility>? facilities,
+      @HiveField(11) List<Image>? images});
 
   $NameCopyWith<$Res>? get name;
   $DescriptionCopyWith<$Res>? get description;
@@ -85,6 +88,7 @@ class _$HotelCopyWithImpl<$Res> implements $HotelCopyWith<$Res> {
     Object? code = freezed,
     Object? name = freezed,
     Object? description = freezed,
+    Object? categoryCode = freezed,
     Object? countryCode = freezed,
     Object? coordinates = freezed,
     Object? address = freezed,
@@ -107,6 +111,10 @@ class _$HotelCopyWithImpl<$Res> implements $HotelCopyWith<$Res> {
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as Description?,
+      categoryCode: categoryCode == freezed
+          ? _value.categoryCode
+          : categoryCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       countryCode: countryCode == freezed
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
@@ -207,14 +215,15 @@ abstract class _$$_HotelCopyWith<$Res> implements $HotelCopyWith<$Res> {
       {@HiveField(0) int? code,
       @HiveField(1) Name? name,
       @HiveField(2) Description? description,
-      @HiveField(3) String? countryCode,
-      @HiveField(4) Coordinates? coordinates,
-      @HiveField(5) Address? address,
-      @HiveField(6) City? city,
-      @HiveField(7) String? email,
-      @HiveField(8) List<Phone>? phones,
-      @HiveField(9) List<Facility>? facilities,
-      @HiveField(10) List<Image>? images});
+      @HiveField(3) String? categoryCode,
+      @HiveField(4) String? countryCode,
+      @HiveField(5) Coordinates? coordinates,
+      @HiveField(6) Address? address,
+      @HiveField(7) City? city,
+      @HiveField(8) String? email,
+      @HiveField(9) List<Phone>? phones,
+      @HiveField(10) List<Facility>? facilities,
+      @HiveField(11) List<Image>? images});
 
   @override
   $NameCopyWith<$Res>? get name;
@@ -242,6 +251,7 @@ class __$$_HotelCopyWithImpl<$Res> extends _$HotelCopyWithImpl<$Res>
     Object? code = freezed,
     Object? name = freezed,
     Object? description = freezed,
+    Object? categoryCode = freezed,
     Object? countryCode = freezed,
     Object? coordinates = freezed,
     Object? address = freezed,
@@ -264,6 +274,10 @@ class __$$_HotelCopyWithImpl<$Res> extends _$HotelCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as Description?,
+      categoryCode: categoryCode == freezed
+          ? _value.categoryCode
+          : categoryCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       countryCode: countryCode == freezed
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
@@ -307,14 +321,15 @@ class _$_Hotel implements _Hotel {
       {@HiveField(0) this.code,
       @HiveField(1) this.name,
       @HiveField(2) this.description,
-      @HiveField(3) this.countryCode,
-      @HiveField(4) this.coordinates,
-      @HiveField(5) this.address,
-      @HiveField(6) this.city,
-      @HiveField(7) this.email,
-      @HiveField(8) final List<Phone>? phones,
-      @HiveField(9) final List<Facility>? facilities,
-      @HiveField(10) final List<Image>? images})
+      @HiveField(3) this.categoryCode,
+      @HiveField(4) this.countryCode,
+      @HiveField(5) this.coordinates,
+      @HiveField(6) this.address,
+      @HiveField(7) this.city,
+      @HiveField(8) this.email,
+      @HiveField(9) final List<Phone>? phones,
+      @HiveField(10) final List<Facility>? facilities,
+      @HiveField(11) final List<Image>? images})
       : _phones = phones,
         _facilities = facilities,
         _images = images;
@@ -333,22 +348,25 @@ class _$_Hotel implements _Hotel {
   final Description? description;
   @override
   @HiveField(3)
-  final String? countryCode;
+  final String? categoryCode;
   @override
   @HiveField(4)
-  final Coordinates? coordinates;
+  final String? countryCode;
   @override
   @HiveField(5)
-  final Address? address;
+  final Coordinates? coordinates;
   @override
   @HiveField(6)
-  final City? city;
+  final Address? address;
   @override
   @HiveField(7)
+  final City? city;
+  @override
+  @HiveField(8)
   final String? email;
   final List<Phone>? _phones;
   @override
-  @HiveField(8)
+  @HiveField(9)
   List<Phone>? get phones {
     final value = _phones;
     if (value == null) return null;
@@ -358,7 +376,7 @@ class _$_Hotel implements _Hotel {
 
   final List<Facility>? _facilities;
   @override
-  @HiveField(9)
+  @HiveField(10)
   List<Facility>? get facilities {
     final value = _facilities;
     if (value == null) return null;
@@ -368,7 +386,7 @@ class _$_Hotel implements _Hotel {
 
   final List<Image>? _images;
   @override
-  @HiveField(10)
+  @HiveField(11)
   List<Image>? get images {
     final value = _images;
     if (value == null) return null;
@@ -378,7 +396,7 @@ class _$_Hotel implements _Hotel {
 
   @override
   String toString() {
-    return 'Hotel(code: $code, name: $name, description: $description, countryCode: $countryCode, coordinates: $coordinates, address: $address, city: $city, email: $email, phones: $phones, facilities: $facilities, images: $images)';
+    return 'Hotel(code: $code, name: $name, description: $description, categoryCode: $categoryCode, countryCode: $countryCode, coordinates: $coordinates, address: $address, city: $city, email: $email, phones: $phones, facilities: $facilities, images: $images)';
   }
 
   @override
@@ -390,6 +408,8 @@ class _$_Hotel implements _Hotel {
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
+            const DeepCollectionEquality()
+                .equals(other.categoryCode, categoryCode) &&
             const DeepCollectionEquality()
                 .equals(other.countryCode, countryCode) &&
             const DeepCollectionEquality()
@@ -410,6 +430,7 @@ class _$_Hotel implements _Hotel {
       const DeepCollectionEquality().hash(code),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(categoryCode),
       const DeepCollectionEquality().hash(countryCode),
       const DeepCollectionEquality().hash(coordinates),
       const DeepCollectionEquality().hash(address),
@@ -437,14 +458,15 @@ abstract class _Hotel implements Hotel {
       {@HiveField(0) final int? code,
       @HiveField(1) final Name? name,
       @HiveField(2) final Description? description,
-      @HiveField(3) final String? countryCode,
-      @HiveField(4) final Coordinates? coordinates,
-      @HiveField(5) final Address? address,
-      @HiveField(6) final City? city,
-      @HiveField(7) final String? email,
-      @HiveField(8) final List<Phone>? phones,
-      @HiveField(9) final List<Facility>? facilities,
-      @HiveField(10) final List<Image>? images}) = _$_Hotel;
+      @HiveField(3) final String? categoryCode,
+      @HiveField(4) final String? countryCode,
+      @HiveField(5) final Coordinates? coordinates,
+      @HiveField(6) final Address? address,
+      @HiveField(7) final City? city,
+      @HiveField(8) final String? email,
+      @HiveField(9) final List<Phone>? phones,
+      @HiveField(10) final List<Facility>? facilities,
+      @HiveField(11) final List<Image>? images}) = _$_Hotel;
 
   factory _Hotel.fromJson(Map<String, dynamic> json) = _$_Hotel.fromJson;
 
@@ -459,27 +481,30 @@ abstract class _Hotel implements Hotel {
   Description? get description;
   @override
   @HiveField(3)
-  String? get countryCode;
+  String? get categoryCode;
   @override
   @HiveField(4)
-  Coordinates? get coordinates;
+  String? get countryCode;
   @override
   @HiveField(5)
-  Address? get address;
+  Coordinates? get coordinates;
   @override
   @HiveField(6)
-  City? get city;
+  Address? get address;
   @override
   @HiveField(7)
-  String? get email;
+  City? get city;
   @override
   @HiveField(8)
-  List<Phone>? get phones;
+  String? get email;
   @override
   @HiveField(9)
-  List<Facility>? get facilities;
+  List<Phone>? get phones;
   @override
   @HiveField(10)
+  List<Facility>? get facilities;
+  @override
+  @HiveField(11)
   List<Image>? get images;
   @override
   @JsonKey(ignore: true)

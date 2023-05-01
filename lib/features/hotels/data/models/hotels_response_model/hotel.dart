@@ -20,14 +20,15 @@ class Hotel with _$Hotel {
     @HiveField(0) int? code,
     @HiveField(1) Name? name,
     @HiveField(2) Description? description,
-    @HiveField(3) String? countryCode,
-    @HiveField(4) Coordinates? coordinates,
-    @HiveField(5) Address? address,
-    @HiveField(6) City? city,
-    @HiveField(7) String? email,
-    @HiveField(8) List<Phone>? phones,
-    @HiveField(9) List<Facility>? facilities,
-    @HiveField(10) List<Image>? images,
+    @HiveField(3) String? categoryCode,
+    @HiveField(4) String? countryCode,
+    @HiveField(5) Coordinates? coordinates,
+    @HiveField(6) Address? address,
+    @HiveField(7) City? city,
+    @HiveField(8) String? email,
+    @HiveField(9) List<Phone>? phones,
+    @HiveField(10) List<Facility>? facilities,
+    @HiveField(11) List<Image>? images,
   }) = _Hotel;
 
   factory Hotel.fromJson(Map<String, dynamic> json) => _$HotelFromJson(json);

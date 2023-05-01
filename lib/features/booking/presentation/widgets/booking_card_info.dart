@@ -69,7 +69,8 @@ class BookingCardInfo extends StatelessWidget {
                                 SizedBox(height: AppHeight.h8),
                                 Row(
                                   children: [
-                                    const Expanded(child: HotelRating()),
+                                    const Expanded(
+                                        child: HotelRating(rate: 3.5)),
                                     Flexible(
                                         child: Text(
                                       "Rank : 64",
@@ -84,7 +85,7 @@ class BookingCardInfo extends StatelessWidget {
                               ],
                             ),
                           ),
-                          const HotelNightPrice(isBooking: true),
+                          const HotelStars(rate: 4.5, isBooking: true),
                         ],
                       ),
                     ),

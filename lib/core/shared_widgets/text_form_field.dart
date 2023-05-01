@@ -3,12 +3,6 @@ import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/core/utils/font_styles.dart';
 import 'package:flutter/material.dart';
 
-class Test {
-  final String name;
-
-  Test(this.name);
-}
-
 class CustomTextField extends StatelessWidget {
   final String hintText;
   final bool obscureText;

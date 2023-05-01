@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 import 'package:booking/core/apis/maps/maps_end_points.dart';
 import 'package:booking/core/hive/hive_helper.dart';
 import 'package:booking/core/shared_widgets/custom_info_window.dart';
+import 'package:booking/core/utils/app_images.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/coordinates.dart';
@@ -23,7 +24,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 import 'package:uuid/uuid.dart';
-
+import 'package:collection/collection.dart';
 part 'maps_cubit.freezed.dart';
 part 'maps_state.dart';
 
@@ -56,9 +57,28 @@ class MapsCubit extends Cubit<MapsState> {
     emit(const MapsState.tapOnMap());
   }
 
-  void moveCameraOnMap() {
+  void moveCameraOnMap(
+      {required Coordinates coordinates, required BuildContext context}) {
     infoWindowController.onCameraMove!();
-    emit(const MapsState.moveCameraOnMap());
+
+    final hotel = hotels!.hotels!.firstWhereOrNull((element) =>
+        Coordinates(
+          latitude:
+              double.parse(element.coordinates!.latitude!.toStringAsFixed(3)),
+          longitude:
+              double.parse(element.coordinates!.longitude!.toStringAsFixed(3)),
+        ) ==
+        coordinates);
+
+    if (hotel != null) {
+      jumpToLocation(
+        coordinates: coordinates,
+        id: hotel.code!,
+        context: context,
+      );
+    } else {
+      emit(const MapsState.moveCameraOnMap());
+    }
   }
 
   Set<Marker> markers = {};
@@ -68,9 +88,20 @@ class MapsCubit extends Cubit<MapsState> {
   void setMarkers() async {
     for (int i = 0; i < hotels!.hotels!.length; i++) {
       final hotel = hotels!.hotels![i];
+      int stars = 0;
+      try {
+        stars = int.parse(hotel.categoryCode![0]);
+      } catch (e) {
+        stars = 4;
+        // print('hotel.categoryCode![0]')
+        print("=========>${hotel.code}");
+        print("=========>${hotel.categoryCode![0]}");
+        print("=========>${hotel.name!.content}");
+      }
       await addHotelMarker(
         hotel: hotel,
-        price: "200",
+        stars: int.parse(
+            hotel.categoryCode!.endsWith('EST') ? hotel.categoryCode![0] : '4'),
       );
     }
     emit(const MapsState.setMapMarkers());
@@ -78,7 +109,7 @@ class MapsCubit extends Cubit<MapsState> {
 
   Future<void> addHotelMarker({
     required Hotel hotel,
-    required String price,
+    required int stars,
   }) async {
     markers.add(Marker(
       markerId: MarkerId('${hotel.code}'),
@@ -96,37 +127,23 @@ class MapsCubit extends Cubit<MapsState> {
         );
       },
       icon: await bitmapDescriptorFromSvgAsset(
-        price: price,
+        stars: stars,
       ), //Icon for Marker
     ));
   }
 
   Future<BitmapDescriptor> bitmapDescriptorFromSvgAsset({
-    required String price,
+    required int stars,
   }) async {
-    String svgStrings =
-        '''
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
- id="ed2zjlYqLD31" viewBox="0 0 1920 1080" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
- 
- <rect xmlns="http://www.w3.org/2000/svg" 
- width="1374.822191" height="617.581793" 
- rx="300" ry="300" transform="translate(251.778094 86.031295)" 
- fill="#4fbe9e" stroke-width="0"/>
- 
- <text dx="-70.0" dy="0" font-family="&quot;ed2zjlYqLD31:::Montserrat&quot;" font-size="155" font-weight="700" transform="matrix(1.929848 0 0 1.87804 727.600721 493.31223)" fill="#fff" stroke-width="0"><tspan y="0" font-weight="600" stroke-width="0"><![CDATA[
-\$$price
-]]>
-</tspan>
-</text>
-
-<line x1="0" y1="-162.84495" x2="0" y2="162.844949"
- transform="translate(972.290185 854.167853)" 
- fill="none" stroke="#4fbe9e" stroke-width="65"/>
-
- <ellipse xmlns="http://www.w3.org/2000/svg" rx="55.305832" ry="48.419049" transform="translate(972.290185 1017.012802)" fill="#4fbe9e" stroke-width="0"/>
-</svg>
-        ''';
+    String svgStrings = stars == 1
+        ? AppImages.star1
+        : stars == 2
+            ? AppImages.star2
+            : stars == 3
+                ? AppImages.star3
+                : stars == 4
+                    ? AppImages.star4
+                    : AppImages.star5;
 
     DrawableRoot svgDrawableRoot = await svg.fromSvgString(
       svgStrings,

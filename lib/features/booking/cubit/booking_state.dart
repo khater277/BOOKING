@@ -14,4 +14,5 @@ class BookingState with _$BookingState {
       _InitBookingDetailsControllers;
   const factory BookingState.disposeBookingDetailsControllers() =
       _DisposeBookingDetailsControllers;
+  const factory BookingState.getAllHotelsPrice() = _GetAllHotelsPrice;
 }

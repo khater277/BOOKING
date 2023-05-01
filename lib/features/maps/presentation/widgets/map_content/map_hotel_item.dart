@@ -40,7 +40,9 @@ class MapHotelItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     HotelImage(
-                      image: hotel.images![0].path ?? "",
+                      image: hotel.images == null
+                          ? ""
+                          : hotel.images![0].path ?? "",
                       isMap: true,
                     ),
                     Expanded(
@@ -53,6 +55,7 @@ class MapHotelItem extends StatelessWidget {
                           children: [
                             Expanded(
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Flexible(
                                     child: LargeHeadText(
@@ -83,7 +86,12 @@ class MapHotelItem extends StatelessWidget {
                                       coordinates: hotel.coordinates!),
                                 ),
                                 SizedBox(width: AppWidth.w3),
-                                const HotelNightPrice(),
+                                HotelStars(
+                                    rate: double.parse(
+                                        hotel.categoryCode!.endsWith('EST')
+                                            ? hotel.categoryCode![0]
+                                            : '4'),
+                                    isMap: true),
                               ],
                             )
                           ],

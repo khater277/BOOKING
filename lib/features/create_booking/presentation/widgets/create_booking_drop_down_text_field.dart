@@ -4,12 +4,12 @@ import 'package:booking/core/utils/app_fonts.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 
-class BookingDropDownTextField extends StatelessWidget {
+class CreateBookingDropDownTextField extends StatelessWidget {
   final SingleValueDropDownController controller;
   final List<DropDownValueModel> list;
   final String hintText;
   final IconData icon;
-  const BookingDropDownTextField({
+  const CreateBookingDropDownTextField({
     super.key,
     required this.icon,
     required this.controller,

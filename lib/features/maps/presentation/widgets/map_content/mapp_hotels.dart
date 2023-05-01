@@ -33,21 +33,32 @@ class _MapsHotelsState extends State<MapsHotels> {
         alignment: Alignment.bottomCenter,
         child: SizedBox(
           height: AppHeight.h120,
-          child: PagedListView<int, Hotel>(
-            scrollController: widget.cubit.scrollController,
-            pagingController: widget.cubit.pagingController,
+          child: ListView.builder(
+            controller: widget.cubit.scrollController,
+            // pagingController: widget.cubit.pagingController,
+            itemCount: widget.cubit.hotels!.hotels!.length,
             physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
-            builderDelegate: PagedChildBuilderDelegate<Hotel>(
-              itemBuilder: (context, item, index) => VisibilityDetector(
-                  key: Key(index.toString()),
-                  onVisibilityChanged: (VisibilityInfo info) {
-                    if (info.visibleFraction == 1) {
-                      widget.cubit.changeHotelCurrentIndex(index: index);
-                    }
-                  },
-                  child: MapHotelItem(hotel: item)),
+            itemBuilder: (context, index) => VisibilityDetector(
+              key: Key(index.toString()),
+              onVisibilityChanged: (VisibilityInfo info) {
+                if (info.visibleFraction == 1) {
+                  widget.cubit.changeHotelCurrentIndex(index: index);
+                }
+              },
+              child: MapHotelItem(hotel: widget.cubit.hotels!.hotels![index]),
             ),
+            // builderDelegate: PagedChildBuilderDelegate<Hotel>(
+            //   itemBuilder: (context, item, index) => VisibilityDetector(
+            //     key: Key(index.toString()),
+            //     onVisibilityChanged: (VisibilityInfo info) {
+            //       if (info.visibleFraction == 1) {
+            //         widget.cubit.changeHotelCurrentIndex(index: index);
+            //       }
+            //     },
+            //     child: MapHotelItem(hotel: item),
+            //   ),
+            // ),
           ),
         ));
   }

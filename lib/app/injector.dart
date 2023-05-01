@@ -13,13 +13,18 @@ import 'package:booking/features/auth/domain/usecases/facebook_sign_in_use_case.
 import 'package:booking/features/auth/domain/usecases/login_use_case.dart';
 import 'package:booking/features/auth/domain/usecases/register_use_case.dart';
 import 'package:booking/features/auth/domain/usecases/google_sign_in_use_case.dart';
+import 'package:booking/features/available_rooms/cubit/available_rooms_cubit.dart';
 import 'package:booking/features/booking/cubit/booking_cubit.dart';
 import 'package:booking/features/booking/data/datasources/booking_remote_data_source.dart';
 import 'package:booking/features/booking/data/repositories/booking_repository_impl.dart';
 import 'package:booking/features/booking/domain/repository/booking_repository.dart';
-import 'package:booking/features/booking/domain/usecases/check_availability_use_case.dart';
+import 'package:booking/features/create_booking/data/datasources/create_biiking_remote_data_source.dart';
+import 'package:booking/features/create_booking/data/repositories/create_booking_repository_impl.dart';
+import 'package:booking/features/create_booking/domain/repositories/create_booking_repository.dart';
+import 'package:booking/features/create_booking/domain/usecases/check_availability_use_case.dart';
 import 'package:booking/features/booking/domain/usecases/check_rate_use_case.dart';
 import 'package:booking/features/booking/domain/usecases/create_booking_use_case.dart';
+import 'package:booking/features/create_booking/cubit/create_booking_cubit.dart';
 import 'package:booking/features/home/cubit/home_cubit.dart';
 import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
 import 'package:booking/features/hotels/data/datasources/hotels_remote_data_source.dart';
@@ -55,8 +60,13 @@ void setupGetIt() {
   di.registerLazySingleton<BookingCubit>(() => BookingCubit(
         checkAvailabilityUseCase: di(),
         checkRateUseCase: di(),
+      ));
+  di.registerLazySingleton<CreateBookingCubit>(() => CreateBookingCubit(
+        checkAvailabilityUseCase: di(),
+        checkRateUseCase: di(),
         createBookingUseCase: di(),
       ));
+  di.registerLazySingleton<AvailableRoomsCubit>(() => AvailableRoomsCubit());
   di.registerLazySingleton<ProfileCubit>(() => ProfileCubit());
   di.registerLazySingleton<MapsCubit>(() => MapsCubit(
         placesSuggestionUsecase: di(),
@@ -70,6 +80,8 @@ void setupGetIt() {
       () => HotelsRemoteDataSourceImpl(bookingApi: di()));
   di.registerLazySingleton<BookingRemoteDataSource>(
       () => BookingRemoteDataSourceImpl(bookingApi: di()));
+  di.registerLazySingleton<CreateBookingRemoteDataSource>(
+      () => CreateBookingRemoteDataSourceImpl(bookingApi: di()));
   di.registerLazySingleton<MapsRemoteDataSource>(
       () => MapsRemoteDataSourceImpl(mapsApi: di()));
 
@@ -80,6 +92,8 @@ void setupGetIt() {
       () => HotelsRepositoryImpl(hotelsRemoteDataSource: di()));
   di.registerLazySingleton<BookingRepository>(
       () => BookingRepositoryImpl(bookingRemoteDataSource: di()));
+  di.registerLazySingleton<CreateBookingRepository>(
+      () => CreateBookingRepositoryImpl(createBookingRemoteDataSource: di()));
   di.registerLazySingleton<MapsRepository>(
       () => MapsRepositoryImpl(mapsRemoteDataSource: di()));
 
@@ -100,7 +114,7 @@ void setupGetIt() {
       () => FacebookSignInUseCase(authRepository: di()));
 
   di.registerLazySingleton<CheckAvailabilityUseCase>(
-      () => CheckAvailabilityUseCase(bookingRepository: di()));
+      () => CheckAvailabilityUseCase(createBookingRepository: di()));
   di.registerLazySingleton<CheckRateUseCase>(
       () => CheckRateUseCase(bookingRepository: di()));
   di.registerLazySingleton<CreateBookingUseCase>(

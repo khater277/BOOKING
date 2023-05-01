@@ -27,3 +27,5 @@ class GetMoreHotelsError extends HotelsStates {}
 class ResetHotelsCubitValues extends HotelsStates {}
 
 class DisposeHotelDetails extends HotelsStates {}
+
+class AddPageRequest extends HotelsStates {}

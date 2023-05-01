@@ -30,19 +30,14 @@ class HotelDetails extends StatelessWidget {
               countryCode: hotel.countryCode!,
             ),
             SizedBox(height: AppHeight.h5),
-            Row(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      HotelLocation(coordinates: hotel.coordinates!),
-                      const HotelRating(),
-                    ],
-                  ),
-                ),
-                SizedBox(width: AppWidth.w3),
-                const HotelNightPrice(),
+                HotelLocation(coordinates: hotel.coordinates!),
+                HotelRating(
+                    rate: double.parse(hotel.categoryCode!.endsWith('EST')
+                        ? hotel.categoryCode![0]
+                        : '4')),
               ],
             )
           ],

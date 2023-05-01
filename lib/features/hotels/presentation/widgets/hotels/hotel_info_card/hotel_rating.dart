@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class HotelRating extends StatelessWidget {
-  const HotelRating({super.key});
+  final double rate;
+  final bool isMap;
+  const HotelRating({super.key, required this.rate, this.isMap = false});
 
   @override
   Widget build(BuildContext context) {
     return RatingBar.builder(
-      initialRating: 3.5,
+      initialRating: rate,
       minRating: 1,
       direction: Axis.horizontal,
       allowHalfRating: true,
@@ -19,7 +21,7 @@ class HotelRating extends StatelessWidget {
         Icons.star,
         color: AppColors.teal,
       ),
-      itemSize: AppSize.s20,
+      itemSize: isMap ? AppSize.s15 : AppSize.s20,
       onRatingUpdate: (rating) {
         debugPrint(rating.toString());
       },

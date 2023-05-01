@@ -32,7 +32,7 @@ class _MapFloatingSearchState extends State<MapFloatingSearch> {
           border: const BorderSide(style: BorderStyle.none),
           margins: EdgeInsets.fromLTRB(
             AppWidth.w20,
-            AppHeight.h50,
+            AppHeight.h30,
             AppWidth.w20,
             // 15.0,
             AppHeight.h20,

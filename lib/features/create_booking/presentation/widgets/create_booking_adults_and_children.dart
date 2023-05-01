@@ -1,11 +1,11 @@
 import 'package:booking/core/utils/app_values.dart';
-import 'package:booking/features/booking/cubit/booking_cubit.dart';
-import 'package:booking/features/booking/presentation/widgets/booking_details/drop_down_text_field_with_title.dart';
+import 'package:booking/features/create_booking/cubit/create_booking_cubit.dart';
+import 'package:booking/features/create_booking/presentation/widgets/drop_down_text_field_with_title.dart';
 import 'package:flutter/material.dart';
 
-class BookingAdultsAndChildren extends StatelessWidget {
-  final BookingCubit cubit;
-  const BookingAdultsAndChildren({super.key, required this.cubit});
+class CreateBookingAdultsAndChildren extends StatelessWidget {
+  final CreateBookingCubit cubit;
+  const CreateBookingAdultsAndChildren({super.key, required this.cubit});
 
   @override
   Widget build(BuildContext context) {

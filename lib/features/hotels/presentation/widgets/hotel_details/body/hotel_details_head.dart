@@ -59,7 +59,7 @@ class HotelDetailsHead extends StatelessWidget {
             ],
           ),
         ),
-        const HotelNightPrice(),
+        HotelStars(rate: double.parse(hotel.categoryCode![0])),
       ],
     );
   }

@@ -6,8 +6,7 @@ import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
 import 'package:flutter/material.dart';
 
 class BestDealsHead extends StatelessWidget {
-  final HotelsCubit cubit;
-  const BestDealsHead({super.key, required this.cubit});
+  const BestDealsHead({super.key});
 
   @override
   Widget build(BuildContext context) {
