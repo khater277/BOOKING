@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'firebase_exceptions.freezed.dart';
+part 'auth_exceptions.freezed.dart';
 
 @freezed
 class AuthExceptionHandler with _$AuthExceptionHandler {

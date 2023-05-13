@@ -28,6 +28,7 @@ class FontSize {
   static double s17 = 17.sp;
   static double s18 = 18.sp;
   static double s20 = 20.sp;
+  static double s21 = 21.sp;
   static double s22 = 22.sp;
   static double s24 = 24.sp;
   static double s26 = 26.sp;

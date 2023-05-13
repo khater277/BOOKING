@@ -1,5 +1,6 @@
 import 'package:booking/core/hive/keys.dart';
 import 'package:booking/features/auth/data/models/current_user/current_user.dart';
+import 'package:booking/features/booking/data/models/booking_details_model/booking_details_model.dart';
 import 'package:booking/features/hotels/data/models/facilities_response_model/description.dart';
 import 'package:booking/features/hotels/data/models/facilities_response_model/facilities_response_model.dart';
 import 'package:booking/features/hotels/data/models/facilities_response_model/facility_info.dart';
@@ -25,6 +26,7 @@ class HiveHelper {
   static Box<HotelsResponseModel>? allHotelsData;
   static Box<Coordinates>? userLocation;
   static Box<FacilitiesResponseModel>? facilities;
+  static Box<BookingDetailsModel>? myBookings;
 
   static Future<void> init() async {
     await Hive.initFlutter();
@@ -49,12 +51,14 @@ class HiveHelper {
     Hive.registerAdapter(RoomStayAdapter());
     Hive.registerAdapter(RoomAdapter());
     Hive.registerAdapter(RoomsAdapter());
+    Hive.registerAdapter(BookingDetailsModelAdapter());
 
     /// Open Boxes
     currentUser = await Hive.openBox(HiveKeys.currentUser);
     allHotelsData = await Hive.openBox(HiveKeys.allHotelsData);
     userLocation = await Hive.openBox(HiveKeys.userLocation);
     facilities = await Hive.openBox(HiveKeys.facilities);
+    myBookings = await Hive.openBox(HiveKeys.myBookings);
   }
 
   // USER
@@ -100,5 +104,23 @@ class HiveHelper {
 
   static FacilitiesResponseModel? getAllFacilities() {
     return facilities!.get(HiveKeys.facilities);
+  }
+
+  //MY BOOKINGS
+  static Future<void> setMyBookings(
+      {required String bookingId, required BookingDetailsModel myBooking}) {
+    return myBookings!.put(bookingId, myBooking);
+  }
+
+  static List<BookingDetailsModel>? getMyBookings() {
+    if (myBookings!.values.isNotEmpty) {
+      List<BookingDetailsModel> list = [];
+      for (var element in myBookings!.values) {
+        list.add(myBookings!.get(element.bookingId)!);
+      }
+      return list;
+    } else {
+      return null;
+    }
   }
 }

@@ -27,7 +27,7 @@ mixin _$CreateBookingState {
     required TResult Function() checkAvailableRoomsLoading,
     required TResult Function(String errorMsg) checkAvailableRoomsError,
     required TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)
         findAvailableRooms,
     required TResult Function() noAvailableRooms,
   }) =>
@@ -43,7 +43,7 @@ mixin _$CreateBookingState {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
   }) =>
@@ -59,7 +59,7 @@ mixin _$CreateBookingState {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
     required TResult orElse(),
@@ -190,7 +190,7 @@ class _$_Initial implements _Initial {
     required TResult Function() checkAvailableRoomsLoading,
     required TResult Function(String errorMsg) checkAvailableRoomsError,
     required TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)
         findAvailableRooms,
     required TResult Function() noAvailableRooms,
   }) {
@@ -209,7 +209,7 @@ class _$_Initial implements _Initial {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
   }) {
@@ -228,7 +228,7 @@ class _$_Initial implements _Initial {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
     required TResult orElse(),
@@ -363,7 +363,7 @@ class _$_SelectDate implements _SelectDate {
     required TResult Function() checkAvailableRoomsLoading,
     required TResult Function(String errorMsg) checkAvailableRoomsError,
     required TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)
         findAvailableRooms,
     required TResult Function() noAvailableRooms,
   }) {
@@ -382,7 +382,7 @@ class _$_SelectDate implements _SelectDate {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
   }) {
@@ -401,7 +401,7 @@ class _$_SelectDate implements _SelectDate {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
     required TResult orElse(),
@@ -538,7 +538,7 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
     required TResult Function() checkAvailableRoomsLoading,
     required TResult Function(String errorMsg) checkAvailableRoomsError,
     required TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)
         findAvailableRooms,
     required TResult Function() noAvailableRooms,
   }) {
@@ -557,7 +557,7 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
   }) {
@@ -576,7 +576,7 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
     required TResult orElse(),
@@ -715,7 +715,7 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
     required TResult Function() checkAvailableRoomsLoading,
     required TResult Function(String errorMsg) checkAvailableRoomsError,
     required TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)
         findAvailableRooms,
     required TResult Function() noAvailableRooms,
   }) {
@@ -734,7 +734,7 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
   }) {
@@ -753,7 +753,7 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
     required TResult orElse(),
@@ -893,7 +893,7 @@ class _$_InitBookingDetailsControllers
     required TResult Function() checkAvailableRoomsLoading,
     required TResult Function(String errorMsg) checkAvailableRoomsError,
     required TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)
         findAvailableRooms,
     required TResult Function() noAvailableRooms,
   }) {
@@ -912,7 +912,7 @@ class _$_InitBookingDetailsControllers
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
   }) {
@@ -931,7 +931,7 @@ class _$_InitBookingDetailsControllers
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
     required TResult orElse(),
@@ -1072,7 +1072,7 @@ class _$_DisposeBookingDetailsControllers
     required TResult Function() checkAvailableRoomsLoading,
     required TResult Function(String errorMsg) checkAvailableRoomsError,
     required TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)
         findAvailableRooms,
     required TResult Function() noAvailableRooms,
   }) {
@@ -1091,7 +1091,7 @@ class _$_DisposeBookingDetailsControllers
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
   }) {
@@ -1110,7 +1110,7 @@ class _$_DisposeBookingDetailsControllers
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
     required TResult orElse(),
@@ -1250,7 +1250,7 @@ class _$_CheckAvailableRoomsLoading implements _CheckAvailableRoomsLoading {
     required TResult Function() checkAvailableRoomsLoading,
     required TResult Function(String errorMsg) checkAvailableRoomsError,
     required TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)
         findAvailableRooms,
     required TResult Function() noAvailableRooms,
   }) {
@@ -1269,7 +1269,7 @@ class _$_CheckAvailableRoomsLoading implements _CheckAvailableRoomsLoading {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
   }) {
@@ -1288,7 +1288,7 @@ class _$_CheckAvailableRoomsLoading implements _CheckAvailableRoomsLoading {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
     required TResult orElse(),
@@ -1450,7 +1450,7 @@ class _$_CheckAvailableRoomsError implements _CheckAvailableRoomsError {
     required TResult Function() checkAvailableRoomsLoading,
     required TResult Function(String errorMsg) checkAvailableRoomsError,
     required TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)
         findAvailableRooms,
     required TResult Function() noAvailableRooms,
   }) {
@@ -1469,7 +1469,7 @@ class _$_CheckAvailableRoomsError implements _CheckAvailableRoomsError {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
   }) {
@@ -1488,7 +1488,7 @@ class _$_CheckAvailableRoomsError implements _CheckAvailableRoomsError {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
     required TResult orElse(),
@@ -1586,9 +1586,11 @@ abstract class _$$_FindAvailableRoomsCopyWith<$Res> {
       __$$_FindAvailableRoomsCopyWithImpl<$Res>;
   $Res call(
       {List<AvailableRoom> availableRooms,
-      CheckAvailabilityBody checkAvailabilityBody});
+      CheckAvailabilityBody checkAvailabilityBody,
+      Holder holder});
 
   $CheckAvailabilityBodyCopyWith<$Res> get checkAvailabilityBody;
+  $HolderCopyWith<$Res> get holder;
 }
 
 /// @nodoc
@@ -1606,6 +1608,7 @@ class __$$_FindAvailableRoomsCopyWithImpl<$Res>
   $Res call({
     Object? availableRooms = freezed,
     Object? checkAvailabilityBody = freezed,
+    Object? holder = freezed,
   }) {
     return _then(_$_FindAvailableRooms(
       availableRooms == freezed
@@ -1616,6 +1619,10 @@ class __$$_FindAvailableRoomsCopyWithImpl<$Res>
           ? _value.checkAvailabilityBody
           : checkAvailabilityBody // ignore: cast_nullable_to_non_nullable
               as CheckAvailabilityBody,
+      holder == freezed
+          ? _value.holder
+          : holder // ignore: cast_nullable_to_non_nullable
+              as Holder,
     ));
   }
 
@@ -1626,13 +1633,20 @@ class __$$_FindAvailableRoomsCopyWithImpl<$Res>
       return _then(_value.copyWith(checkAvailabilityBody: value));
     });
   }
+
+  @override
+  $HolderCopyWith<$Res> get holder {
+    return $HolderCopyWith<$Res>(_value.holder, (value) {
+      return _then(_value.copyWith(holder: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$_FindAvailableRooms implements _FindAvailableRooms {
-  const _$_FindAvailableRooms(
-      final List<AvailableRoom> availableRooms, this.checkAvailabilityBody)
+  const _$_FindAvailableRooms(final List<AvailableRoom> availableRooms,
+      this.checkAvailabilityBody, this.holder)
       : _availableRooms = availableRooms;
 
   final List<AvailableRoom> _availableRooms;
@@ -1644,10 +1658,12 @@ class _$_FindAvailableRooms implements _FindAvailableRooms {
 
   @override
   final CheckAvailabilityBody checkAvailabilityBody;
+  @override
+  final Holder holder;
 
   @override
   String toString() {
-    return 'CreateBookingState.findAvailableRooms(availableRooms: $availableRooms, checkAvailabilityBody: $checkAvailabilityBody)';
+    return 'CreateBookingState.findAvailableRooms(availableRooms: $availableRooms, checkAvailabilityBody: $checkAvailabilityBody, holder: $holder)';
   }
 
   @override
@@ -1658,14 +1674,16 @@ class _$_FindAvailableRooms implements _FindAvailableRooms {
             const DeepCollectionEquality()
                 .equals(other._availableRooms, _availableRooms) &&
             const DeepCollectionEquality()
-                .equals(other.checkAvailabilityBody, checkAvailabilityBody));
+                .equals(other.checkAvailabilityBody, checkAvailabilityBody) &&
+            const DeepCollectionEquality().equals(other.holder, holder));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_availableRooms),
-      const DeepCollectionEquality().hash(checkAvailabilityBody));
+      const DeepCollectionEquality().hash(checkAvailabilityBody),
+      const DeepCollectionEquality().hash(holder));
 
   @JsonKey(ignore: true)
   @override
@@ -1685,11 +1703,11 @@ class _$_FindAvailableRooms implements _FindAvailableRooms {
     required TResult Function() checkAvailableRoomsLoading,
     required TResult Function(String errorMsg) checkAvailableRoomsError,
     required TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)
         findAvailableRooms,
     required TResult Function() noAvailableRooms,
   }) {
-    return findAvailableRooms(availableRooms, checkAvailabilityBody);
+    return findAvailableRooms(availableRooms, checkAvailabilityBody, holder);
   }
 
   @override
@@ -1704,11 +1722,12 @@ class _$_FindAvailableRooms implements _FindAvailableRooms {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
   }) {
-    return findAvailableRooms?.call(availableRooms, checkAvailabilityBody);
+    return findAvailableRooms?.call(
+        availableRooms, checkAvailabilityBody, holder);
   }
 
   @override
@@ -1723,13 +1742,13 @@ class _$_FindAvailableRooms implements _FindAvailableRooms {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
     required TResult orElse(),
   }) {
     if (findAvailableRooms != null) {
-      return findAvailableRooms(availableRooms, checkAvailabilityBody);
+      return findAvailableRooms(availableRooms, checkAvailabilityBody, holder);
     }
     return orElse();
   }
@@ -1805,12 +1824,14 @@ class _$_FindAvailableRooms implements _FindAvailableRooms {
 }
 
 abstract class _FindAvailableRooms implements CreateBookingState {
-  const factory _FindAvailableRooms(final List<AvailableRoom> availableRooms,
-          final CheckAvailabilityBody checkAvailabilityBody) =
-      _$_FindAvailableRooms;
+  const factory _FindAvailableRooms(
+      final List<AvailableRoom> availableRooms,
+      final CheckAvailabilityBody checkAvailabilityBody,
+      final Holder holder) = _$_FindAvailableRooms;
 
   List<AvailableRoom> get availableRooms;
   CheckAvailabilityBody get checkAvailabilityBody;
+  Holder get holder;
   @JsonKey(ignore: true)
   _$$_FindAvailableRoomsCopyWith<_$_FindAvailableRooms> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1866,7 +1887,7 @@ class _$_NoAvailableRooms implements _NoAvailableRooms {
     required TResult Function() checkAvailableRoomsLoading,
     required TResult Function(String errorMsg) checkAvailableRoomsError,
     required TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)
         findAvailableRooms,
     required TResult Function() noAvailableRooms,
   }) {
@@ -1885,7 +1906,7 @@ class _$_NoAvailableRooms implements _NoAvailableRooms {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
   }) {
@@ -1904,7 +1925,7 @@ class _$_NoAvailableRooms implements _NoAvailableRooms {
     TResult Function()? checkAvailableRoomsLoading,
     TResult Function(String errorMsg)? checkAvailableRoomsError,
     TResult Function(List<AvailableRoom> availableRooms,
-            CheckAvailabilityBody checkAvailabilityBody)?
+            CheckAvailabilityBody checkAvailabilityBody, Holder holder)?
         findAvailableRooms,
     TResult Function()? noAvailableRooms,
     required TResult orElse(),

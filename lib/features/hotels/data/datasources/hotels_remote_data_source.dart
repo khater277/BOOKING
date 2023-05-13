@@ -1,4 +1,5 @@
 import 'package:booking/core/apis/booking/booking_api.dart';
+import 'package:booking/core/utils/app_functions.dart';
 import 'package:booking/features/hotels/data/models/facilities_params_model/facilities_body_model/facilities_params_model.dart';
 import 'package:booking/features/hotels/data/models/facilities_response_model/facilities_response_model.dart';
 import 'package:booking/features/hotels/data/models/hotels_params_model/hotels_params_model.dart';
@@ -21,13 +22,17 @@ class HotelsRemoteDataSourceImpl implements HotelsRemoteDataSource {
     required HotelsParamsModel hotelsParamsModel,
   }) {
     return bookingApi.getAllHotels(
-        hotelsParamsModel: hotelsParamsModel.toJson());
+      hotelsParamsModel: hotelsParamsModel.toJson(),
+      signature: AppFunctions.generateSHA256(),
+    );
   }
 
   @override
   Future<FacilitiesResponseModel> getFacilities(
       {required FacilitiesParamsModel facilitiesParamsModel}) {
     return bookingApi.getAllFacilities(
-        facilitiesParamsModel: facilitiesParamsModel.toJson());
+      facilitiesParamsModel: facilitiesParamsModel.toJson(),
+      signature: AppFunctions.generateSHA256(),
+    );
   }
 }

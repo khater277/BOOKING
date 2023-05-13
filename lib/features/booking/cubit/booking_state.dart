@@ -4,6 +4,7 @@ part of 'booking_cubit.dart';
 class BookingState with _$BookingState {
   const factory BookingState.initial() = _Initial;
   const factory BookingState.initTabController() = _InitTabController;
+  const factory BookingState.changeTabBarLoading() = _ChangeTabBarLoading;
   const factory BookingState.changeTabBar() = _ChangeTabBar;
   const factory BookingState.selectDate() = _SelectDate;
   const factory BookingState.initCalenderControllers() =
@@ -14,5 +15,8 @@ class BookingState with _$BookingState {
       _InitBookingDetailsControllers;
   const factory BookingState.disposeBookingDetailsControllers() =
       _DisposeBookingDetailsControllers;
-  const factory BookingState.getAllHotelsPrice() = _GetAllHotelsPrice;
+  const factory BookingState.getMyBookingLoading() = _GetMyBookingLoading;
+  const factory BookingState.getMyBookingSuccess() = _GetMyBookingSuccess;
+  const factory BookingState.getMyBookingError(final String errorMsg) =
+      _GetMyBookingError;
 }

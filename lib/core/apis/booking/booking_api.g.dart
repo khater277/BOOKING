@@ -21,11 +21,15 @@ class _BookingApi implements BookingApi {
   String? baseUrl;
 
   @override
-  Future<HotelsResponseModel> getAllHotels({required hotelsParamsModel}) async {
+  Future<HotelsResponseModel> getAllHotels({
+    required signature,
+    required hotelsParamsModel,
+  }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(hotelsParamsModel);
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'X-Signature': signature};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HotelsResponseModel>(Options(
@@ -45,12 +49,15 @@ class _BookingApi implements BookingApi {
   }
 
   @override
-  Future<FacilitiesResponseModel> getAllFacilities(
-      {required facilitiesParamsModel}) async {
+  Future<FacilitiesResponseModel> getAllFacilities({
+    required signature,
+    required facilitiesParamsModel,
+  }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(facilitiesParamsModel);
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'X-Signature': signature};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<FacilitiesResponseModel>(Options(
@@ -70,11 +77,14 @@ class _BookingApi implements BookingApi {
   }
 
   @override
-  Future<CheckAvailabilityResponse> checkAvailability(
-      {required checkAvailabilityBody}) async {
+  Future<CheckAvailabilityResponse> checkAvailability({
+    required signature,
+    required checkAvailabilityBody,
+  }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'X-Signature': signature};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     _data.addAll(checkAvailabilityBody.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -95,10 +105,14 @@ class _BookingApi implements BookingApi {
   }
 
   @override
-  Future<CheckRateResponse> checkRate({required checkRateBody}) async {
+  Future<CheckRateResponse> checkRate({
+    required signature,
+    required checkRateBody,
+  }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'X-Signature': signature};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     _data.addAll(checkRateBody.toJson());
     final _result = await _dio
@@ -119,11 +133,14 @@ class _BookingApi implements BookingApi {
   }
 
   @override
-  Future<CreateBookingResponse> createBooking(
-      {required createBookingBody}) async {
+  Future<CreateBookingResponse> createBooking({
+    required signature,
+    required createBookingBody,
+  }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'X-Signature': signature};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     _data.addAll(createBookingBody.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(

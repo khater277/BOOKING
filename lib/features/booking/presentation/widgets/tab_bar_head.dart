@@ -39,7 +39,7 @@ class TabBarHead extends StatelessWidget {
           },
           tabs: cubit.bookings
               .map((element) => Tab(
-                    text: element,
+                    text: element.name,
                   ))
               .toList(),
         ),

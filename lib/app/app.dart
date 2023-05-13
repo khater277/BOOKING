@@ -44,7 +44,8 @@ class MyApp extends StatelessWidget {
                 create: (BuildContext context) => di<HomeCubit>(),
               ),
               BlocProvider(
-                create: (BuildContext context) => di<BookingCubit>(),
+                create: (BuildContext context) =>
+                    di<BookingCubit>()..getMyBookings(),
               ),
               BlocProvider(
                 create: (BuildContext context) => di<CreateBookingCubit>(),

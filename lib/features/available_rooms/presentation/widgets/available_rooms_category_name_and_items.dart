@@ -1,5 +1,6 @@
 import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/features/available_rooms/data/models/create_booking/body/holder.dart';
 import 'package:booking/features/available_rooms/presentation/widgets/available_room_card.dart';
 import 'package:booking/features/create_booking/data/models/body/check_availability_body.dart';
 import 'package:booking/features/create_booking/data/models/response/room.dart';
@@ -10,10 +11,16 @@ class AvailableRoomsCategoryNameAndItems extends StatelessWidget {
     super.key,
     required this.availableRoom,
     required this.checkAvailabilityBody,
+    required this.holder,
+    required this.roomName,
+    required this.hotelId,
   });
 
   final AvailableRoom availableRoom;
   final CheckAvailabilityBody checkAvailabilityBody;
+  final Holder holder;
+  final String roomName;
+  final int hotelId;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +38,9 @@ class AvailableRoomsCategoryNameAndItems extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) => AvailableRoomCard(
             checkAvailabilityBody: checkAvailabilityBody,
             availableRate: availableRoom.availableRates![index],
+            holder: holder,
+            roomName: roomName,
+            hotelId: hotelId,
           ),
         ),
       ],

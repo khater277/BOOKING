@@ -1,7 +1,11 @@
+import 'package:booking/core/shared_widgets/circle_indicator.dart';
 import 'package:booking/core/shared_widgets/text.dart';
+import 'package:booking/core/utils/app_colors.dart';
 import 'package:booking/core/utils/app_fonts.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/booking/cubit/booking_cubit.dart';
+import 'package:booking/features/booking/presentation/widgets/booking_error.dart';
+import 'package:booking/features/booking/presentation/widgets/booking_success.dart';
 import 'package:booking/features/booking/presentation/widgets/bookings_list.dart';
 import 'package:booking/features/booking/presentation/widgets/tab_bar_head.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +23,7 @@ class _BookingScreenState extends State<BookingScreen>
   @override
   void initState() {
     BookingCubit.get(context).initTabController(this);
+    // BookingCubit.get(context).getMyBookings();
     super.initState();
   }
 
@@ -39,20 +44,17 @@ class _BookingScreenState extends State<BookingScreen>
               ),
             ),
           ),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                child: DefaultTabController(
-                    length: cubit.bookings.length,
-                    initialIndex: 0,
-                    child: Column(children: [
-                      SizedBox(height: AppHeight.h10),
-                      TabBarHead(cubit: cubit),
-                      BookingsList(cubit: cubit),
-                    ])),
+          body: state.maybeWhen(
+            getMyBookingLoading: () => Center(
+              child: CustomCircleIndicator(
+                size: AppSize.s40,
+                color: AppColors.teal,
+                strokeWidth: AppSize.s3,
               ),
-            ],
+            ),
+            getMyBookingError: (errorMsg) =>
+                BookingErrorWidget(errorMsg: errorMsg),
+            orElse: () => BookingSuccessWidget(cubit: cubit),
           ),
         );
       },

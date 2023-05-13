@@ -2,6 +2,7 @@ import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_fonts.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/available_rooms/cubit/available_rooms_cubit.dart';
+import 'package:booking/features/available_rooms/data/models/create_booking/body/holder.dart';
 import 'package:booking/features/available_rooms/presentation/widgets/available_rooms_category_name_and_items.dart';
 import 'package:booking/features/create_booking/data/models/body/check_availability_body.dart';
 import 'package:booking/features/create_booking/data/models/response/room.dart';
@@ -12,15 +13,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AvailableRoomsScreen extends StatelessWidget {
   final List<AvailableRoom> availableRooms;
   final CheckAvailabilityBody checkAvailabilityBody;
+  final Holder holder;
+  final int hotelId;
   const AvailableRoomsScreen(
       {super.key,
       required this.availableRooms,
-      required this.checkAvailabilityBody});
+      required this.checkAvailabilityBody,
+      required this.holder,
+      required this.hotelId});
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AvailableRoomsCubit, AvailableRoomsState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.maybeWhen(
+          initial: () => print("=============>CREATED"),
+          orElse: () {},
+        );
+      },
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
@@ -45,6 +55,9 @@ class AvailableRoomsScreen extends StatelessWidget {
                   AvailableRoomsCategoryNameAndItems(
                 availableRoom: availableRooms[index],
                 checkAvailabilityBody: checkAvailabilityBody,
+                holder: holder,
+                roomName: availableRooms[index].name!,
+                hotelId: hotelId,
               ),
             ),
           ),

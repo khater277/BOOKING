@@ -20,39 +20,48 @@ mixin _$BookingState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
     required TResult Function() changeTabBar,
     required TResult Function() selectDate,
     required TResult Function() initCalenderControllers,
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
-    required TResult Function() getAllHotelsPrice,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +69,7 @@ mixin _$BookingState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
     required TResult Function(_ChangeTabBar value) changeTabBar,
     required TResult Function(_SelectDate value) selectDate,
     required TResult Function(_InitCalenderControllers value)
@@ -70,13 +80,16 @@ mixin _$BookingState {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
-    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -86,13 +99,16 @@ mixin _$BookingState {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -102,7 +118,9 @@ mixin _$BookingState {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -165,13 +183,16 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
     required TResult Function() changeTabBar,
     required TResult Function() selectDate,
     required TResult Function() initCalenderControllers,
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
-    required TResult Function() getAllHotelsPrice,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
   }) {
     return initial();
   }
@@ -181,13 +202,16 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
   }) {
     return initial?.call();
   }
@@ -197,13 +221,16 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -217,6 +244,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
     required TResult Function(_ChangeTabBar value) changeTabBar,
     required TResult Function(_SelectDate value) selectDate,
     required TResult Function(_InitCalenderControllers value)
@@ -227,7 +255,9 @@ class _$_Initial implements _Initial {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
-    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
   }) {
     return initial(this);
   }
@@ -237,6 +267,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -246,7 +277,9 @@ class _$_Initial implements _Initial {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
   }) {
     return initial?.call(this);
   }
@@ -256,6 +289,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -265,7 +299,9 @@ class _$_Initial implements _Initial {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -322,13 +358,16 @@ class _$_InitTabController implements _InitTabController {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
     required TResult Function() changeTabBar,
     required TResult Function() selectDate,
     required TResult Function() initCalenderControllers,
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
-    required TResult Function() getAllHotelsPrice,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
   }) {
     return initTabController();
   }
@@ -338,13 +377,16 @@ class _$_InitTabController implements _InitTabController {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
   }) {
     return initTabController?.call();
   }
@@ -354,13 +396,16 @@ class _$_InitTabController implements _InitTabController {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (initTabController != null) {
@@ -374,6 +419,7 @@ class _$_InitTabController implements _InitTabController {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
     required TResult Function(_ChangeTabBar value) changeTabBar,
     required TResult Function(_SelectDate value) selectDate,
     required TResult Function(_InitCalenderControllers value)
@@ -384,7 +430,9 @@ class _$_InitTabController implements _InitTabController {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
-    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
   }) {
     return initTabController(this);
   }
@@ -394,6 +442,7 @@ class _$_InitTabController implements _InitTabController {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -403,7 +452,9 @@ class _$_InitTabController implements _InitTabController {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
   }) {
     return initTabController?.call(this);
   }
@@ -413,6 +464,7 @@ class _$_InitTabController implements _InitTabController {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -422,7 +474,9 @@ class _$_InitTabController implements _InitTabController {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (initTabController != null) {
@@ -434,6 +488,181 @@ class _$_InitTabController implements _InitTabController {
 
 abstract class _InitTabController implements BookingState {
   const factory _InitTabController() = _$_InitTabController;
+}
+
+/// @nodoc
+abstract class _$$_ChangeTabBarLoadingCopyWith<$Res> {
+  factory _$$_ChangeTabBarLoadingCopyWith(_$_ChangeTabBarLoading value,
+          $Res Function(_$_ChangeTabBarLoading) then) =
+      __$$_ChangeTabBarLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ChangeTabBarLoadingCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res>
+    implements _$$_ChangeTabBarLoadingCopyWith<$Res> {
+  __$$_ChangeTabBarLoadingCopyWithImpl(_$_ChangeTabBarLoading _value,
+      $Res Function(_$_ChangeTabBarLoading) _then)
+      : super(_value, (v) => _then(v as _$_ChangeTabBarLoading));
+
+  @override
+  _$_ChangeTabBarLoading get _value => super._value as _$_ChangeTabBarLoading;
+}
+
+/// @nodoc
+
+class _$_ChangeTabBarLoading implements _ChangeTabBarLoading {
+  const _$_ChangeTabBarLoading();
+
+  @override
+  String toString() {
+    return 'BookingState.changeTabBarLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ChangeTabBarLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
+    required TResult Function() changeTabBar,
+    required TResult Function() selectDate,
+    required TResult Function() initCalenderControllers,
+    required TResult Function() disposeCalenderControllers,
+    required TResult Function() initBookingDetailsControllers,
+    required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
+  }) {
+    return changeTabBarLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
+  }) {
+    return changeTabBarLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
+    required TResult orElse(),
+  }) {
+    if (changeTabBarLoading != null) {
+      return changeTabBarLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
+    required TResult Function(_ChangeTabBar value) changeTabBar,
+    required TResult Function(_SelectDate value) selectDate,
+    required TResult Function(_InitCalenderControllers value)
+        initCalenderControllers,
+    required TResult Function(_DisposeCalenderControllers value)
+        disposeCalenderControllers,
+    required TResult Function(_InitBookingDetailsControllers value)
+        initBookingDetailsControllers,
+    required TResult Function(_DisposeBookingDetailsControllers value)
+        disposeBookingDetailsControllers,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
+  }) {
+    return changeTabBarLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
+  }) {
+    return changeTabBarLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
+    required TResult orElse(),
+  }) {
+    if (changeTabBarLoading != null) {
+      return changeTabBarLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeTabBarLoading implements BookingState {
+  const factory _ChangeTabBarLoading() = _$_ChangeTabBarLoading;
 }
 
 /// @nodoc
@@ -479,13 +708,16 @@ class _$_ChangeTabBar implements _ChangeTabBar {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
     required TResult Function() changeTabBar,
     required TResult Function() selectDate,
     required TResult Function() initCalenderControllers,
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
-    required TResult Function() getAllHotelsPrice,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
   }) {
     return changeTabBar();
   }
@@ -495,13 +727,16 @@ class _$_ChangeTabBar implements _ChangeTabBar {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
   }) {
     return changeTabBar?.call();
   }
@@ -511,13 +746,16 @@ class _$_ChangeTabBar implements _ChangeTabBar {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (changeTabBar != null) {
@@ -531,6 +769,7 @@ class _$_ChangeTabBar implements _ChangeTabBar {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
     required TResult Function(_ChangeTabBar value) changeTabBar,
     required TResult Function(_SelectDate value) selectDate,
     required TResult Function(_InitCalenderControllers value)
@@ -541,7 +780,9 @@ class _$_ChangeTabBar implements _ChangeTabBar {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
-    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
   }) {
     return changeTabBar(this);
   }
@@ -551,6 +792,7 @@ class _$_ChangeTabBar implements _ChangeTabBar {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -560,7 +802,9 @@ class _$_ChangeTabBar implements _ChangeTabBar {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
   }) {
     return changeTabBar?.call(this);
   }
@@ -570,6 +814,7 @@ class _$_ChangeTabBar implements _ChangeTabBar {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -579,7 +824,9 @@ class _$_ChangeTabBar implements _ChangeTabBar {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (changeTabBar != null) {
@@ -635,13 +882,16 @@ class _$_SelectDate implements _SelectDate {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
     required TResult Function() changeTabBar,
     required TResult Function() selectDate,
     required TResult Function() initCalenderControllers,
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
-    required TResult Function() getAllHotelsPrice,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
   }) {
     return selectDate();
   }
@@ -651,13 +901,16 @@ class _$_SelectDate implements _SelectDate {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
   }) {
     return selectDate?.call();
   }
@@ -667,13 +920,16 @@ class _$_SelectDate implements _SelectDate {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (selectDate != null) {
@@ -687,6 +943,7 @@ class _$_SelectDate implements _SelectDate {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
     required TResult Function(_ChangeTabBar value) changeTabBar,
     required TResult Function(_SelectDate value) selectDate,
     required TResult Function(_InitCalenderControllers value)
@@ -697,7 +954,9 @@ class _$_SelectDate implements _SelectDate {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
-    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
   }) {
     return selectDate(this);
   }
@@ -707,6 +966,7 @@ class _$_SelectDate implements _SelectDate {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -716,7 +976,9 @@ class _$_SelectDate implements _SelectDate {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
   }) {
     return selectDate?.call(this);
   }
@@ -726,6 +988,7 @@ class _$_SelectDate implements _SelectDate {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -735,7 +998,9 @@ class _$_SelectDate implements _SelectDate {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (selectDate != null) {
@@ -794,13 +1059,16 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
     required TResult Function() changeTabBar,
     required TResult Function() selectDate,
     required TResult Function() initCalenderControllers,
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
-    required TResult Function() getAllHotelsPrice,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
   }) {
     return initCalenderControllers();
   }
@@ -810,13 +1078,16 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
   }) {
     return initCalenderControllers?.call();
   }
@@ -826,13 +1097,16 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (initCalenderControllers != null) {
@@ -846,6 +1120,7 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
     required TResult Function(_ChangeTabBar value) changeTabBar,
     required TResult Function(_SelectDate value) selectDate,
     required TResult Function(_InitCalenderControllers value)
@@ -856,7 +1131,9 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
-    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
   }) {
     return initCalenderControllers(this);
   }
@@ -866,6 +1143,7 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -875,7 +1153,9 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
   }) {
     return initCalenderControllers?.call(this);
   }
@@ -885,6 +1165,7 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -894,7 +1175,9 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (initCalenderControllers != null) {
@@ -955,13 +1238,16 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
     required TResult Function() changeTabBar,
     required TResult Function() selectDate,
     required TResult Function() initCalenderControllers,
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
-    required TResult Function() getAllHotelsPrice,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
   }) {
     return disposeCalenderControllers();
   }
@@ -971,13 +1257,16 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
   }) {
     return disposeCalenderControllers?.call();
   }
@@ -987,13 +1276,16 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (disposeCalenderControllers != null) {
@@ -1007,6 +1299,7 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
     required TResult Function(_ChangeTabBar value) changeTabBar,
     required TResult Function(_SelectDate value) selectDate,
     required TResult Function(_InitCalenderControllers value)
@@ -1017,7 +1310,9 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
-    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
   }) {
     return disposeCalenderControllers(this);
   }
@@ -1027,6 +1322,7 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -1036,7 +1332,9 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
   }) {
     return disposeCalenderControllers?.call(this);
   }
@@ -1046,6 +1344,7 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -1055,7 +1354,9 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (disposeCalenderControllers != null) {
@@ -1117,13 +1418,16 @@ class _$_InitBookingDetailsControllers
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
     required TResult Function() changeTabBar,
     required TResult Function() selectDate,
     required TResult Function() initCalenderControllers,
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
-    required TResult Function() getAllHotelsPrice,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
   }) {
     return initBookingDetailsControllers();
   }
@@ -1133,13 +1437,16 @@ class _$_InitBookingDetailsControllers
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
   }) {
     return initBookingDetailsControllers?.call();
   }
@@ -1149,13 +1456,16 @@ class _$_InitBookingDetailsControllers
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (initBookingDetailsControllers != null) {
@@ -1169,6 +1479,7 @@ class _$_InitBookingDetailsControllers
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
     required TResult Function(_ChangeTabBar value) changeTabBar,
     required TResult Function(_SelectDate value) selectDate,
     required TResult Function(_InitCalenderControllers value)
@@ -1179,7 +1490,9 @@ class _$_InitBookingDetailsControllers
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
-    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
   }) {
     return initBookingDetailsControllers(this);
   }
@@ -1189,6 +1502,7 @@ class _$_InitBookingDetailsControllers
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -1198,7 +1512,9 @@ class _$_InitBookingDetailsControllers
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
   }) {
     return initBookingDetailsControllers?.call(this);
   }
@@ -1208,6 +1524,7 @@ class _$_InitBookingDetailsControllers
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -1217,7 +1534,9 @@ class _$_InitBookingDetailsControllers
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (initBookingDetailsControllers != null) {
@@ -1280,13 +1599,16 @@ class _$_DisposeBookingDetailsControllers
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
     required TResult Function() changeTabBar,
     required TResult Function() selectDate,
     required TResult Function() initCalenderControllers,
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
-    required TResult Function() getAllHotelsPrice,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
   }) {
     return disposeBookingDetailsControllers();
   }
@@ -1296,13 +1618,16 @@ class _$_DisposeBookingDetailsControllers
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
   }) {
     return disposeBookingDetailsControllers?.call();
   }
@@ -1312,13 +1637,16 @@ class _$_DisposeBookingDetailsControllers
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (disposeBookingDetailsControllers != null) {
@@ -1332,6 +1660,7 @@ class _$_DisposeBookingDetailsControllers
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
     required TResult Function(_ChangeTabBar value) changeTabBar,
     required TResult Function(_SelectDate value) selectDate,
     required TResult Function(_InitCalenderControllers value)
@@ -1342,7 +1671,9 @@ class _$_DisposeBookingDetailsControllers
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
-    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
   }) {
     return disposeBookingDetailsControllers(this);
   }
@@ -1352,6 +1683,7 @@ class _$_DisposeBookingDetailsControllers
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -1361,7 +1693,9 @@ class _$_DisposeBookingDetailsControllers
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
   }) {
     return disposeBookingDetailsControllers?.call(this);
   }
@@ -1371,6 +1705,7 @@ class _$_DisposeBookingDetailsControllers
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -1380,7 +1715,9 @@ class _$_DisposeBookingDetailsControllers
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
     required TResult orElse(),
   }) {
     if (disposeBookingDetailsControllers != null) {
@@ -1396,38 +1733,38 @@ abstract class _DisposeBookingDetailsControllers implements BookingState {
 }
 
 /// @nodoc
-abstract class _$$_GetAllHotelsPriceCopyWith<$Res> {
-  factory _$$_GetAllHotelsPriceCopyWith(_$_GetAllHotelsPrice value,
-          $Res Function(_$_GetAllHotelsPrice) then) =
-      __$$_GetAllHotelsPriceCopyWithImpl<$Res>;
+abstract class _$$_GetMyBookingLoadingCopyWith<$Res> {
+  factory _$$_GetMyBookingLoadingCopyWith(_$_GetMyBookingLoading value,
+          $Res Function(_$_GetMyBookingLoading) then) =
+      __$$_GetMyBookingLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_GetAllHotelsPriceCopyWithImpl<$Res>
+class __$$_GetMyBookingLoadingCopyWithImpl<$Res>
     extends _$BookingStateCopyWithImpl<$Res>
-    implements _$$_GetAllHotelsPriceCopyWith<$Res> {
-  __$$_GetAllHotelsPriceCopyWithImpl(
-      _$_GetAllHotelsPrice _value, $Res Function(_$_GetAllHotelsPrice) _then)
-      : super(_value, (v) => _then(v as _$_GetAllHotelsPrice));
+    implements _$$_GetMyBookingLoadingCopyWith<$Res> {
+  __$$_GetMyBookingLoadingCopyWithImpl(_$_GetMyBookingLoading _value,
+      $Res Function(_$_GetMyBookingLoading) _then)
+      : super(_value, (v) => _then(v as _$_GetMyBookingLoading));
 
   @override
-  _$_GetAllHotelsPrice get _value => super._value as _$_GetAllHotelsPrice;
+  _$_GetMyBookingLoading get _value => super._value as _$_GetMyBookingLoading;
 }
 
 /// @nodoc
 
-class _$_GetAllHotelsPrice implements _GetAllHotelsPrice {
-  const _$_GetAllHotelsPrice();
+class _$_GetMyBookingLoading implements _GetMyBookingLoading {
+  const _$_GetMyBookingLoading();
 
   @override
   String toString() {
-    return 'BookingState.getAllHotelsPrice()';
+    return 'BookingState.getMyBookingLoading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GetAllHotelsPrice);
+        (other.runtimeType == runtimeType && other is _$_GetMyBookingLoading);
   }
 
   @override
@@ -1438,15 +1775,18 @@ class _$_GetAllHotelsPrice implements _GetAllHotelsPrice {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
     required TResult Function() changeTabBar,
     required TResult Function() selectDate,
     required TResult Function() initCalenderControllers,
     required TResult Function() disposeCalenderControllers,
     required TResult Function() initBookingDetailsControllers,
     required TResult Function() disposeBookingDetailsControllers,
-    required TResult Function() getAllHotelsPrice,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
   }) {
-    return getAllHotelsPrice();
+    return getMyBookingLoading();
   }
 
   @override
@@ -1454,15 +1794,18 @@ class _$_GetAllHotelsPrice implements _GetAllHotelsPrice {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
   }) {
-    return getAllHotelsPrice?.call();
+    return getMyBookingLoading?.call();
   }
 
   @override
@@ -1470,17 +1813,20 @@ class _$_GetAllHotelsPrice implements _GetAllHotelsPrice {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
     TResult Function()? changeTabBar,
     TResult Function()? selectDate,
     TResult Function()? initCalenderControllers,
     TResult Function()? disposeCalenderControllers,
     TResult Function()? initBookingDetailsControllers,
     TResult Function()? disposeBookingDetailsControllers,
-    TResult Function()? getAllHotelsPrice,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
     required TResult orElse(),
   }) {
-    if (getAllHotelsPrice != null) {
-      return getAllHotelsPrice();
+    if (getMyBookingLoading != null) {
+      return getMyBookingLoading();
     }
     return orElse();
   }
@@ -1490,6 +1836,7 @@ class _$_GetAllHotelsPrice implements _GetAllHotelsPrice {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
     required TResult Function(_ChangeTabBar value) changeTabBar,
     required TResult Function(_SelectDate value) selectDate,
     required TResult Function(_InitCalenderControllers value)
@@ -1500,9 +1847,11 @@ class _$_GetAllHotelsPrice implements _GetAllHotelsPrice {
         initBookingDetailsControllers,
     required TResult Function(_DisposeBookingDetailsControllers value)
         disposeBookingDetailsControllers,
-    required TResult Function(_GetAllHotelsPrice value) getAllHotelsPrice,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
   }) {
-    return getAllHotelsPrice(this);
+    return getMyBookingLoading(this);
   }
 
   @override
@@ -1510,6 +1859,7 @@ class _$_GetAllHotelsPrice implements _GetAllHotelsPrice {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -1519,9 +1869,11 @@ class _$_GetAllHotelsPrice implements _GetAllHotelsPrice {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
   }) {
-    return getAllHotelsPrice?.call(this);
+    return getMyBookingLoading?.call(this);
   }
 
   @override
@@ -1529,6 +1881,7 @@ class _$_GetAllHotelsPrice implements _GetAllHotelsPrice {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
     TResult Function(_ChangeTabBar value)? changeTabBar,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_InitCalenderControllers value)? initCalenderControllers,
@@ -1538,16 +1891,399 @@ class _$_GetAllHotelsPrice implements _GetAllHotelsPrice {
         initBookingDetailsControllers,
     TResult Function(_DisposeBookingDetailsControllers value)?
         disposeBookingDetailsControllers,
-    TResult Function(_GetAllHotelsPrice value)? getAllHotelsPrice,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
     required TResult orElse(),
   }) {
-    if (getAllHotelsPrice != null) {
-      return getAllHotelsPrice(this);
+    if (getMyBookingLoading != null) {
+      return getMyBookingLoading(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAllHotelsPrice implements BookingState {
-  const factory _GetAllHotelsPrice() = _$_GetAllHotelsPrice;
+abstract class _GetMyBookingLoading implements BookingState {
+  const factory _GetMyBookingLoading() = _$_GetMyBookingLoading;
+}
+
+/// @nodoc
+abstract class _$$_GetMyBookingSuccessCopyWith<$Res> {
+  factory _$$_GetMyBookingSuccessCopyWith(_$_GetMyBookingSuccess value,
+          $Res Function(_$_GetMyBookingSuccess) then) =
+      __$$_GetMyBookingSuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_GetMyBookingSuccessCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res>
+    implements _$$_GetMyBookingSuccessCopyWith<$Res> {
+  __$$_GetMyBookingSuccessCopyWithImpl(_$_GetMyBookingSuccess _value,
+      $Res Function(_$_GetMyBookingSuccess) _then)
+      : super(_value, (v) => _then(v as _$_GetMyBookingSuccess));
+
+  @override
+  _$_GetMyBookingSuccess get _value => super._value as _$_GetMyBookingSuccess;
+}
+
+/// @nodoc
+
+class _$_GetMyBookingSuccess implements _GetMyBookingSuccess {
+  const _$_GetMyBookingSuccess();
+
+  @override
+  String toString() {
+    return 'BookingState.getMyBookingSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GetMyBookingSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
+    required TResult Function() changeTabBar,
+    required TResult Function() selectDate,
+    required TResult Function() initCalenderControllers,
+    required TResult Function() disposeCalenderControllers,
+    required TResult Function() initBookingDetailsControllers,
+    required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
+  }) {
+    return getMyBookingSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
+  }) {
+    return getMyBookingSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
+    required TResult orElse(),
+  }) {
+    if (getMyBookingSuccess != null) {
+      return getMyBookingSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
+    required TResult Function(_ChangeTabBar value) changeTabBar,
+    required TResult Function(_SelectDate value) selectDate,
+    required TResult Function(_InitCalenderControllers value)
+        initCalenderControllers,
+    required TResult Function(_DisposeCalenderControllers value)
+        disposeCalenderControllers,
+    required TResult Function(_InitBookingDetailsControllers value)
+        initBookingDetailsControllers,
+    required TResult Function(_DisposeBookingDetailsControllers value)
+        disposeBookingDetailsControllers,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
+  }) {
+    return getMyBookingSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
+  }) {
+    return getMyBookingSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
+    required TResult orElse(),
+  }) {
+    if (getMyBookingSuccess != null) {
+      return getMyBookingSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetMyBookingSuccess implements BookingState {
+  const factory _GetMyBookingSuccess() = _$_GetMyBookingSuccess;
+}
+
+/// @nodoc
+abstract class _$$_GetMyBookingErrorCopyWith<$Res> {
+  factory _$$_GetMyBookingErrorCopyWith(_$_GetMyBookingError value,
+          $Res Function(_$_GetMyBookingError) then) =
+      __$$_GetMyBookingErrorCopyWithImpl<$Res>;
+  $Res call({String errorMsg});
+}
+
+/// @nodoc
+class __$$_GetMyBookingErrorCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res>
+    implements _$$_GetMyBookingErrorCopyWith<$Res> {
+  __$$_GetMyBookingErrorCopyWithImpl(
+      _$_GetMyBookingError _value, $Res Function(_$_GetMyBookingError) _then)
+      : super(_value, (v) => _then(v as _$_GetMyBookingError));
+
+  @override
+  _$_GetMyBookingError get _value => super._value as _$_GetMyBookingError;
+
+  @override
+  $Res call({
+    Object? errorMsg = freezed,
+  }) {
+    return _then(_$_GetMyBookingError(
+      errorMsg == freezed
+          ? _value.errorMsg
+          : errorMsg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GetMyBookingError implements _GetMyBookingError {
+  const _$_GetMyBookingError(this.errorMsg);
+
+  @override
+  final String errorMsg;
+
+  @override
+  String toString() {
+    return 'BookingState.getMyBookingError(errorMsg: $errorMsg)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GetMyBookingError &&
+            const DeepCollectionEquality().equals(other.errorMsg, errorMsg));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(errorMsg));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GetMyBookingErrorCopyWith<_$_GetMyBookingError> get copyWith =>
+      __$$_GetMyBookingErrorCopyWithImpl<_$_GetMyBookingError>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
+    required TResult Function() changeTabBar,
+    required TResult Function() selectDate,
+    required TResult Function() initCalenderControllers,
+    required TResult Function() disposeCalenderControllers,
+    required TResult Function() initBookingDetailsControllers,
+    required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
+  }) {
+    return getMyBookingError(errorMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
+  }) {
+    return getMyBookingError?.call(errorMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
+    required TResult orElse(),
+  }) {
+    if (getMyBookingError != null) {
+      return getMyBookingError(errorMsg);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
+    required TResult Function(_ChangeTabBar value) changeTabBar,
+    required TResult Function(_SelectDate value) selectDate,
+    required TResult Function(_InitCalenderControllers value)
+        initCalenderControllers,
+    required TResult Function(_DisposeCalenderControllers value)
+        disposeCalenderControllers,
+    required TResult Function(_InitBookingDetailsControllers value)
+        initBookingDetailsControllers,
+    required TResult Function(_DisposeBookingDetailsControllers value)
+        disposeBookingDetailsControllers,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
+  }) {
+    return getMyBookingError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
+  }) {
+    return getMyBookingError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
+    required TResult orElse(),
+  }) {
+    if (getMyBookingError != null) {
+      return getMyBookingError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetMyBookingError implements BookingState {
+  const factory _GetMyBookingError(final String errorMsg) =
+      _$_GetMyBookingError;
+
+  String get errorMsg;
+  @JsonKey(ignore: true)
+  _$$_GetMyBookingErrorCopyWith<_$_GetMyBookingError> get copyWith =>
+      throw _privateConstructorUsedError;
 }

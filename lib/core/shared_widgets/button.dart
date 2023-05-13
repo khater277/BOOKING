@@ -1,3 +1,4 @@
+import 'package:booking/core/shared_widgets/circle_indicator.dart';
 import 'package:booking/core/utils/app_colors.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/core/utils/font_styles.dart';
@@ -10,6 +11,7 @@ class CustomButton extends StatelessWidget {
   final Color? fillColor;
   final Color? textColor;
   final bool setShadow;
+  final bool loadingCondition;
   final IconData? icon;
 
   const CustomButton(
@@ -18,6 +20,7 @@ class CustomButton extends StatelessWidget {
       this.fillColor,
       this.textColor,
       this.setShadow = false,
+      this.loadingCondition = false,
       this.icon,
       required this.onPressed})
       : super(key: key);
@@ -27,27 +30,29 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(backgroundColor: fillColor),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          if (icon != null)
-            Row(
+      child: loadingCondition
+          ? const CustomCircleIndicator(color: Colors.white)
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                FaIcon(
-                  icon,
-                  color: Colors.white,
+                if (icon != null)
+                  Row(
+                    children: [
+                      FaIcon(
+                        icon,
+                        color: Colors.white,
+                      ),
+                      SizedBox(width: AppWidth.w6),
+                    ],
+                  ),
+                Text(
+                  text,
+                  style: getMediumStyle(
+                    fontColor: textColor ?? AppColors.white,
+                  ),
                 ),
-                SizedBox(width: AppWidth.w6),
               ],
             ),
-          Text(
-            text,
-            style: getMediumStyle(
-              fontColor: textColor ?? AppColors.white,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

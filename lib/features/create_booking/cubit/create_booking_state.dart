@@ -18,6 +18,7 @@ class CreateBookingState with _$CreateBookingState {
       final String errorMsg) = _CheckAvailableRoomsError;
   const factory CreateBookingState.findAvailableRooms(
       final List<AvailableRoom> availableRooms,
-      final CheckAvailabilityBody checkAvailabilityBody) = _FindAvailableRooms;
+      final CheckAvailabilityBody checkAvailabilityBody,
+      final Holder holder) = _FindAvailableRooms;
   const factory CreateBookingState.noAvailableRooms() = _NoAvailableRooms;
 }

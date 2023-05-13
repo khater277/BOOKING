@@ -2,7 +2,7 @@ import 'package:booking/config/navigation.dart';
 import 'package:booking/core/shared_widgets/text_form_field.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/core/utils/constants.dart';
-import 'package:booking/features/booking/presentation/screens/select_date_screen.dart';
+import 'package:booking/features/create_booking/presentation/screens/select_date_screen.dart';
 import 'package:booking/features/create_booking/cubit/create_booking_cubit.dart';
 import 'package:booking/features/create_booking/presentation/widgets/create_text_field_title.dart';
 import 'package:flutter/material.dart';

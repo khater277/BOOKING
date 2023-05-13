@@ -1,38 +1,35 @@
-import 'package:booking/features/booking/data/datasources/booking_remote_data_source.dart';
-import 'package:booking/features/booking/data/models/create_booking/response/create_booking_response.dart';
-import 'package:booking/features/booking/data/models/create_booking/body/create_booking_body.dart';
-import 'package:booking/features/booking/data/models/check_rate/response/check_rate_response.dart';
-import 'package:booking/features/booking/data/models/check_rate/body/check_rate_body.dart';
 import 'package:booking/core/errors/failures.dart';
+import 'package:booking/core/hive/hive_helper.dart';
+import 'package:booking/features/booking/data/datasources/booking_remote_data_source.dart';
+import 'package:booking/features/booking/data/models/booking_details_model/booking_details_model.dart';
 import 'package:booking/features/booking/domain/repository/booking_repository.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 class BookingRepositoryImpl implements BookingRepository {
   final BookingRemoteDataSource bookingRemoteDataSource;
 
   BookingRepositoryImpl({required this.bookingRemoteDataSource});
-
   @override
-  Future<Either<Failure, CheckRateResponse>> checkRate(
-      {required CheckRateBody checkRateBody}) async {
+  Future<Either<Failure, List<BookingDetailsModel>>> getMyBookings() async {
     try {
-      final response =
-          await bookingRemoteDataSource.checkRate(checkRateBody: checkRateBody);
-      return Right(response);
-    } on DioError catch (error) {
-      return Left(ServerFailure(error: error));
-    }
-  }
+      if (await InternetConnectionChecker().hasConnection) {
+        final response = await bookingRemoteDataSource.getMyBookings();
+        if (response!.isNotEmpty) {
+          for (var element in response) {
+            await HiveHelper.setMyBookings(
+              bookingId: element.bookingId!,
+              myBooking: element,
+            );
+          }
+        }
 
-  @override
-  Future<Either<Failure, CreateBookingResponse>> createBooking(
-      {required CreateBookingBody createBookingBody}) async {
-    try {
-      final response = await bookingRemoteDataSource.createBooking(
-          createBookingBody: createBookingBody);
-      return Right(response);
-    } on DioError catch (error) {
+        return Right(response);
+      } else {
+        throw FirebaseException(plugin: '', code: 'no-internet-connection');
+      }
+    } on FirebaseException catch (error) {
       return Left(ServerFailure(error: error));
     }
   }

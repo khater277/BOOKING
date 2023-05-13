@@ -1,11 +1,19 @@
 import 'package:booking/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 class CustomNetworkImage extends StatelessWidget {
   final String imageUrl;
   final BoxFit fit;
   const CustomNetworkImage(
       {super.key, required this.imageUrl, required this.fit});
+
+  Future<bool> checkInternet() async {
+    bool? result;
+    InternetConnectionChecker().hasConnection.then((value) => result = value);
+    return result!;
+    // return await InternetConnectionChecker().hasConnection;
+  }
 
   @override
   Widget build(BuildContext context) {

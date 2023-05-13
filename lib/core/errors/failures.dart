@@ -1,5 +1,7 @@
-import 'package:booking/core/errors/firebase_exceptions.dart';
-import 'package:booking/core/errors/network_exceptions.dart';
+import 'package:booking/core/errors/api/network_exceptions.dart';
+import 'package:booking/core/errors/firebase/auth_exceptions.dart';
+import 'package:booking/core/errors/firebase/firestore_exceptions.dart';
+import 'package:cloud_firestore/cloud_firestore.dart' as db;
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -26,6 +28,10 @@ class ServerFailure extends Failure {
         result = AuthExceptionHandler.generateExceptionMessage(
             AuthExceptionHandler.handleException(error));
         break;
+      case db.FirebaseException:
+        result = FirestoreExceptionHandler.generateExceptionMessage(
+            FirestoreExceptionHandler.handleException(error));
+        break;
       default:
         result = e.runtimeType.toString();
     }
@@ -35,7 +41,6 @@ class ServerFailure extends Failure {
   @override
   String getMessage() => handleException(error);
   // "error is  NetworkExceptions.getErrorMessage(error)";
-
 }
 
 class CacheFailure extends Failure {

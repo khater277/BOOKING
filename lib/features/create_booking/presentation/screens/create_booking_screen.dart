@@ -3,6 +3,7 @@ import 'package:booking/core/shared_widgets/button.dart';
 import 'package:booking/core/shared_widgets/snack_bar.dart';
 import 'package:booking/core/utils/app_colors.dart';
 import 'package:booking/core/utils/app_values.dart';
+import 'package:booking/features/available_rooms/cubit/available_rooms_cubit.dart';
 import 'package:booking/features/available_rooms/presentation/screens/available_rooms_screen.dart';
 import 'package:booking/features/create_booking/cubit/create_booking_cubit.dart';
 import 'package:booking/features/create_booking/data/models/body/check_availability_body.dart';
@@ -48,12 +49,16 @@ class _CreateBookingScreenState extends State<CreateBookingScreen> {
             message: "Sorry , There is no available rooms for that reservation",
             color: AppColors.red,
           ),
-          findAvailableRooms: (availableRooms, checkAvailabilityBody) => Go.to(
-              context: context,
-              screen: AvailableRoomsScreen(
-                availableRooms: availableRooms,
-                checkAvailabilityBody: checkAvailabilityBody,
-              )),
+          findAvailableRooms: (availableRooms, checkAvailabilityBody, holder) {
+            Go.to(
+                context: context,
+                screen: AvailableRoomsScreen(
+                  availableRooms: availableRooms,
+                  checkAvailabilityBody: checkAvailabilityBody,
+                  holder: holder,
+                  hotelId: widget.hotelId,
+                ));
+          },
           checkAvailableRoomsError: (errorMsg) => showSnackBar(
             context: context,
             message: errorMsg,
@@ -65,6 +70,12 @@ class _CreateBookingScreenState extends State<CreateBookingScreen> {
       builder: (context, state) {
         final CreateBookingCubit cubit = CreateBookingCubit.get(context);
         return Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+              onPressed: () => Go.back(context: context),
+              icon: const Icon(Icons.arrow_back_ios),
+            ),
+          ),
           body: Padding(
             padding: EdgeInsets.symmetric(horizontal: AppWidth.w20),
             child: Form(
@@ -78,14 +89,22 @@ class _CreateBookingScreenState extends State<CreateBookingScreen> {
                   CreateBookingCheckInAndOut(cubit: cubit),
                   SizedBox(height: AppHeight.h10),
                   CreateBookingAdultsAndChildren(cubit: cubit),
-                  SizedBox(height: AppHeight.h10),
+                  SizedBox(height: AppHeight.h40),
                   CustomButton(
-                      text: "Continue",
-                      onPressed: () {
-                        if (cubit.formKey.currentState!.validate()) {
-                          cubit.checkAvailableRooms(hotelId: widget.hotelId);
-                        }
-                      })
+                    loadingCondition: state ==
+                        const CreateBookingState.checkAvailableRoomsLoading(),
+                    text: "Continue",
+                    onPressed: state !=
+                            const CreateBookingState
+                                .checkAvailableRoomsLoading()
+                        ? () {
+                            if (cubit.formKey.currentState!.validate()) {
+                              cubit.checkAvailableRooms(
+                                  hotelId: widget.hotelId);
+                            }
+                          }
+                        : () {},
+                  )
                 ],
               ),
             ),

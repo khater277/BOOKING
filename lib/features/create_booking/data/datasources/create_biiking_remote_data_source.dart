@@ -1,4 +1,5 @@
 import 'package:booking/core/apis/booking/booking_api.dart';
+import 'package:booking/core/utils/app_functions.dart';
 import 'package:booking/features/create_booking/data/models/body/check_availability_body.dart';
 import 'package:booking/features/create_booking/data/models/response/check_availability_response.dart';
 
@@ -17,6 +18,8 @@ class CreateBookingRemoteDataSourceImpl
   Future<CheckAvailabilityResponse> checkAvailability(
       {required CheckAvailabilityBody checkAvailabilityBody}) {
     return bookingApi.checkAvailability(
-        checkAvailabilityBody: checkAvailabilityBody);
+      checkAvailabilityBody: checkAvailabilityBody,
+      signature: AppFunctions.generateSHA256(),
+    );
   }
 }
