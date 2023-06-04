@@ -28,7 +28,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: onPressed,
+      onPressed: loadingCondition ? () {} : onPressed,
       style: ElevatedButton.styleFrom(backgroundColor: fillColor),
       child: loadingCondition
           ? const CustomCircleIndicator(color: Colors.white)

@@ -1,5 +1,4 @@
 import 'package:booking/features/home/cubit/home_cubit.dart';
-import 'package:booking/features/home/cubit/home_states.dart';
 import 'package:booking/features/home/presentation/widgets/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

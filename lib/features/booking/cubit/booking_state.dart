@@ -19,4 +19,13 @@ class BookingState with _$BookingState {
   const factory BookingState.getMyBookingSuccess() = _GetMyBookingSuccess;
   const factory BookingState.getMyBookingError(final String errorMsg) =
       _GetMyBookingError;
+
+  const factory BookingState.updateMyBookingLoading() = _UpdateMyBookingLoading;
+  const factory BookingState.updateMyBookingSuccess() = _UpdateMyBookingSuccess;
+  const factory BookingState.updateMyBookingError(final String errorMsg) =
+      _UpdateMyBookingError;
+  // const factory BookingState.updateMyBookingLoading() = _UpdateMyBookingLoading;
+  // const factory BookingState.updateMyBookingSuccess() = _UpdateMyBookingSuccess;
+  // const factory BookingState.updateMyBookingError(final String errorMsg) =
+  //     _UpdateMyBookingError;
 }

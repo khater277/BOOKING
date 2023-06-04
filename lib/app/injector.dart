@@ -24,6 +24,7 @@ import 'package:booking/features/booking/data/datasources/booking_remote_data_so
 import 'package:booking/features/booking/data/repositories/booking_repository_impl.dart';
 import 'package:booking/features/booking/domain/repository/booking_repository.dart';
 import 'package:booking/features/booking/domain/usecases/get_my_bookings_use_case.dart';
+import 'package:booking/features/booking/domain/usecases/update_my_booking.dart';
 import 'package:booking/features/create_booking/cubit/create_booking_cubit.dart';
 import 'package:booking/features/create_booking/data/datasources/create_biiking_remote_data_source.dart';
 import 'package:booking/features/create_booking/data/repositories/create_booking_repository_impl.dart';
@@ -61,8 +62,10 @@ void setupGetIt() {
         getFacilitiesUseCase: di(),
       ));
   di.registerLazySingleton<HomeCubit>(() => HomeCubit());
-  di.registerLazySingleton<BookingCubit>(
-      () => BookingCubit(getMyBookingsUseCase: di()));
+  di.registerLazySingleton<BookingCubit>(() => BookingCubit(
+        getMyBookingsUseCase: di(),
+        updateMyBookingUseCase: di(),
+      ));
   di.registerLazySingleton<CreateBookingCubit>(
       () => CreateBookingCubit(checkAvailabilityUseCase: di()));
   di.registerLazySingleton<AvailableRoomsCubit>(() => AvailableRoomsCubit(
@@ -133,6 +136,8 @@ void setupGetIt() {
       () => AddBookingToFirestoreUseCase(availableRoomsRepository: di()));
   di.registerLazySingleton<GetMyBookingsUseCase>(
       () => GetMyBookingsUseCase(bookingRepository: di()));
+  di.registerLazySingleton<UpdateMyBookingUseCase>(
+      () => UpdateMyBookingUseCase(bookingRepository: di()));
   di.registerLazySingleton<PlacesSuggestionsUsecase>(
       () => PlacesSuggestionsUsecase(mapsRepository: di()));
 

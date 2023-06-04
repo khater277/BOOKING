@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
               BlocProvider(
                 create: (BuildContext context) => di<MapsCubit>()
                   // ..changeMapScrollPosition(context)
-                  ..setMarkers(),
+                  ..setMarkers(context: context),
               ),
             ],
             child: MaterialApp(

@@ -117,15 +117,15 @@ class __$$_BookingsListModelCopyWithImpl<$Res>
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       list: list == freezed
-          ? _value._list
+          ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as List<BookingDetailsModel>?,
       popUpList: popUpList == freezed
-          ? _value._popUpList
+          ? _value.popUpList
           : popUpList // ignore: cast_nullable_to_non_nullable
               as List<PopUpInfo>?,
       loadingBookings: loadingBookings == freezed
-          ? _value._loadingBookings
+          ? _value.loadingBookings
           : loadingBookings // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ));
@@ -137,45 +137,22 @@ class __$$_BookingsListModelCopyWithImpl<$Res>
 class _$_BookingsListModel implements _BookingsListModel {
   _$_BookingsListModel(
       {@HiveField(0) this.name,
-      @HiveField(1) final List<BookingDetailsModel>? list,
-      @HiveField(2) final List<PopUpInfo>? popUpList,
-      @HiveField(3) final List<String>? loadingBookings})
-      : _list = list,
-        _popUpList = popUpList,
-        _loadingBookings = loadingBookings;
+      @HiveField(1) this.list,
+      @HiveField(2) this.popUpList,
+      @HiveField(3) this.loadingBookings});
 
   @override
   @HiveField(0)
   final String? name;
-  final List<BookingDetailsModel>? _list;
   @override
   @HiveField(1)
-  List<BookingDetailsModel>? get list {
-    final value = _list;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<PopUpInfo>? _popUpList;
+  final List<BookingDetailsModel>? list;
   @override
   @HiveField(2)
-  List<PopUpInfo>? get popUpList {
-    final value = _popUpList;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<String>? _loadingBookings;
+  final List<PopUpInfo>? popUpList;
   @override
   @HiveField(3)
-  List<String>? get loadingBookings {
-    final value = _loadingBookings;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+  final List<String>? loadingBookings;
 
   @override
   String toString() {
@@ -188,20 +165,19 @@ class _$_BookingsListModel implements _BookingsListModel {
         (other.runtimeType == runtimeType &&
             other is _$_BookingsListModel &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other._list, _list) &&
+            const DeepCollectionEquality().equals(other.list, list) &&
+            const DeepCollectionEquality().equals(other.popUpList, popUpList) &&
             const DeepCollectionEquality()
-                .equals(other._popUpList, _popUpList) &&
-            const DeepCollectionEquality()
-                .equals(other._loadingBookings, _loadingBookings));
+                .equals(other.loadingBookings, loadingBookings));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(_list),
-      const DeepCollectionEquality().hash(_popUpList),
-      const DeepCollectionEquality().hash(_loadingBookings));
+      const DeepCollectionEquality().hash(list),
+      const DeepCollectionEquality().hash(popUpList),
+      const DeepCollectionEquality().hash(loadingBookings));
 
   @JsonKey(ignore: true)
   @override

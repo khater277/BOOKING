@@ -1,13 +1,14 @@
 import 'package:booking/core/firebase/collections_keys.dart';
 import 'package:booking/core/hive/hive_helper.dart';
+import 'package:booking/core/utils/app_functions.dart';
 import 'package:booking/features/auth/data/models/auth_body/body/auth_body.dart';
 import 'package:booking/features/auth/data/models/current_user/current_user.dart';
 import 'package:booking/features/booking/data/models/booking_details_model/booking_details_model.dart';
+import 'package:booking/features/booking/domain/usecases/update_my_booking.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:uuid/uuid.dart';
 
 abstract class FirebaseHelper {
   Future<UserCredential> createUserWithEmail({required AuthBody authBody});
@@ -22,6 +23,7 @@ abstract class FirebaseHelper {
   Future<UserCredential?> signInWithGoogle();
   Future<UserCredential?> signInWithFacebook();
   Future<List<BookingDetailsModel>> getMyBookings();
+  Future<void> updateMyBooking({required UpdateMyBookingParams params});
 }
 
 class FirebaseHelperImpl implements FirebaseHelper {
@@ -117,5 +119,16 @@ class FirebaseHelperImpl implements FirebaseHelper {
       result.add(BookingDetailsModel.fromJson(element.data()));
     }
     return result;
+  }
+
+  @override
+  Future<void> updateMyBooking({required UpdateMyBookingParams params}) async {
+    final String type = params.bookingType;
+    return await _db
+        .collection(Collections.users)
+        .doc(HiveHelper.getCurrentUser()!.uid)
+        .collection(Collections.bookings)
+        .doc(params.bookingId)
+        .update({'type': type});
   }
 }

@@ -2,7 +2,7 @@ import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_fonts.dart';
 import 'package:booking/core/utils/app_values.dart';
 import 'package:booking/features/booking/cubit/booking_cubit.dart';
-import 'package:booking/features/booking/presentation/widgets/booking_card_info.dart';
+import 'package:booking/features/booking/presentation/widgets/info_card/booking_card_info.dart';
 import 'package:flutter/material.dart';
 
 class BookingsList extends StatelessWidget {

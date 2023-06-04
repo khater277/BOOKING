@@ -30,6 +30,9 @@ mixin _$BookingState {
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,6 +49,9 @@ mixin _$BookingState {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +68,9 @@ mixin _$BookingState {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -83,6 +92,11 @@ mixin _$BookingState {
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,6 +116,9 @@ mixin _$BookingState {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -121,6 +138,9 @@ mixin _$BookingState {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -193,6 +213,9 @@ class _$_Initial implements _Initial {
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) {
     return initial();
   }
@@ -212,6 +235,9 @@ class _$_Initial implements _Initial {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) {
     return initial?.call();
   }
@@ -231,6 +257,9 @@ class _$_Initial implements _Initial {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -258,6 +287,11 @@ class _$_Initial implements _Initial {
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) {
     return initial(this);
   }
@@ -280,6 +314,9 @@ class _$_Initial implements _Initial {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) {
     return initial?.call(this);
   }
@@ -302,6 +339,9 @@ class _$_Initial implements _Initial {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -368,6 +408,9 @@ class _$_InitTabController implements _InitTabController {
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) {
     return initTabController();
   }
@@ -387,6 +430,9 @@ class _$_InitTabController implements _InitTabController {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) {
     return initTabController?.call();
   }
@@ -406,6 +452,9 @@ class _$_InitTabController implements _InitTabController {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (initTabController != null) {
@@ -433,6 +482,11 @@ class _$_InitTabController implements _InitTabController {
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) {
     return initTabController(this);
   }
@@ -455,6 +509,9 @@ class _$_InitTabController implements _InitTabController {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) {
     return initTabController?.call(this);
   }
@@ -477,6 +534,9 @@ class _$_InitTabController implements _InitTabController {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (initTabController != null) {
@@ -543,6 +603,9 @@ class _$_ChangeTabBarLoading implements _ChangeTabBarLoading {
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) {
     return changeTabBarLoading();
   }
@@ -562,6 +625,9 @@ class _$_ChangeTabBarLoading implements _ChangeTabBarLoading {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) {
     return changeTabBarLoading?.call();
   }
@@ -581,6 +647,9 @@ class _$_ChangeTabBarLoading implements _ChangeTabBarLoading {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (changeTabBarLoading != null) {
@@ -608,6 +677,11 @@ class _$_ChangeTabBarLoading implements _ChangeTabBarLoading {
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) {
     return changeTabBarLoading(this);
   }
@@ -630,6 +704,9 @@ class _$_ChangeTabBarLoading implements _ChangeTabBarLoading {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) {
     return changeTabBarLoading?.call(this);
   }
@@ -652,6 +729,9 @@ class _$_ChangeTabBarLoading implements _ChangeTabBarLoading {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (changeTabBarLoading != null) {
@@ -718,6 +798,9 @@ class _$_ChangeTabBar implements _ChangeTabBar {
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) {
     return changeTabBar();
   }
@@ -737,6 +820,9 @@ class _$_ChangeTabBar implements _ChangeTabBar {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) {
     return changeTabBar?.call();
   }
@@ -756,6 +842,9 @@ class _$_ChangeTabBar implements _ChangeTabBar {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (changeTabBar != null) {
@@ -783,6 +872,11 @@ class _$_ChangeTabBar implements _ChangeTabBar {
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) {
     return changeTabBar(this);
   }
@@ -805,6 +899,9 @@ class _$_ChangeTabBar implements _ChangeTabBar {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) {
     return changeTabBar?.call(this);
   }
@@ -827,6 +924,9 @@ class _$_ChangeTabBar implements _ChangeTabBar {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (changeTabBar != null) {
@@ -892,6 +992,9 @@ class _$_SelectDate implements _SelectDate {
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) {
     return selectDate();
   }
@@ -911,6 +1014,9 @@ class _$_SelectDate implements _SelectDate {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) {
     return selectDate?.call();
   }
@@ -930,6 +1036,9 @@ class _$_SelectDate implements _SelectDate {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (selectDate != null) {
@@ -957,6 +1066,11 @@ class _$_SelectDate implements _SelectDate {
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) {
     return selectDate(this);
   }
@@ -979,6 +1093,9 @@ class _$_SelectDate implements _SelectDate {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) {
     return selectDate?.call(this);
   }
@@ -1001,6 +1118,9 @@ class _$_SelectDate implements _SelectDate {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (selectDate != null) {
@@ -1069,6 +1189,9 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) {
     return initCalenderControllers();
   }
@@ -1088,6 +1211,9 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) {
     return initCalenderControllers?.call();
   }
@@ -1107,6 +1233,9 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (initCalenderControllers != null) {
@@ -1134,6 +1263,11 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) {
     return initCalenderControllers(this);
   }
@@ -1156,6 +1290,9 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) {
     return initCalenderControllers?.call(this);
   }
@@ -1178,6 +1315,9 @@ class _$_InitCalenderControllers implements _InitCalenderControllers {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (initCalenderControllers != null) {
@@ -1248,6 +1388,9 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) {
     return disposeCalenderControllers();
   }
@@ -1267,6 +1410,9 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) {
     return disposeCalenderControllers?.call();
   }
@@ -1286,6 +1432,9 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (disposeCalenderControllers != null) {
@@ -1313,6 +1462,11 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) {
     return disposeCalenderControllers(this);
   }
@@ -1335,6 +1489,9 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) {
     return disposeCalenderControllers?.call(this);
   }
@@ -1357,6 +1514,9 @@ class _$_DisposeCalenderControllers implements _DisposeCalenderControllers {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (disposeCalenderControllers != null) {
@@ -1428,6 +1588,9 @@ class _$_InitBookingDetailsControllers
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) {
     return initBookingDetailsControllers();
   }
@@ -1447,6 +1610,9 @@ class _$_InitBookingDetailsControllers
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) {
     return initBookingDetailsControllers?.call();
   }
@@ -1466,6 +1632,9 @@ class _$_InitBookingDetailsControllers
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (initBookingDetailsControllers != null) {
@@ -1493,6 +1662,11 @@ class _$_InitBookingDetailsControllers
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) {
     return initBookingDetailsControllers(this);
   }
@@ -1515,6 +1689,9 @@ class _$_InitBookingDetailsControllers
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) {
     return initBookingDetailsControllers?.call(this);
   }
@@ -1537,6 +1714,9 @@ class _$_InitBookingDetailsControllers
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (initBookingDetailsControllers != null) {
@@ -1609,6 +1789,9 @@ class _$_DisposeBookingDetailsControllers
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) {
     return disposeBookingDetailsControllers();
   }
@@ -1628,6 +1811,9 @@ class _$_DisposeBookingDetailsControllers
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) {
     return disposeBookingDetailsControllers?.call();
   }
@@ -1647,6 +1833,9 @@ class _$_DisposeBookingDetailsControllers
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (disposeBookingDetailsControllers != null) {
@@ -1674,6 +1863,11 @@ class _$_DisposeBookingDetailsControllers
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) {
     return disposeBookingDetailsControllers(this);
   }
@@ -1696,6 +1890,9 @@ class _$_DisposeBookingDetailsControllers
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) {
     return disposeBookingDetailsControllers?.call(this);
   }
@@ -1718,6 +1915,9 @@ class _$_DisposeBookingDetailsControllers
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (disposeBookingDetailsControllers != null) {
@@ -1785,6 +1985,9 @@ class _$_GetMyBookingLoading implements _GetMyBookingLoading {
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) {
     return getMyBookingLoading();
   }
@@ -1804,6 +2007,9 @@ class _$_GetMyBookingLoading implements _GetMyBookingLoading {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) {
     return getMyBookingLoading?.call();
   }
@@ -1823,6 +2029,9 @@ class _$_GetMyBookingLoading implements _GetMyBookingLoading {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (getMyBookingLoading != null) {
@@ -1850,6 +2059,11 @@ class _$_GetMyBookingLoading implements _GetMyBookingLoading {
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) {
     return getMyBookingLoading(this);
   }
@@ -1872,6 +2086,9 @@ class _$_GetMyBookingLoading implements _GetMyBookingLoading {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) {
     return getMyBookingLoading?.call(this);
   }
@@ -1894,6 +2111,9 @@ class _$_GetMyBookingLoading implements _GetMyBookingLoading {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (getMyBookingLoading != null) {
@@ -1960,6 +2180,9 @@ class _$_GetMyBookingSuccess implements _GetMyBookingSuccess {
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) {
     return getMyBookingSuccess();
   }
@@ -1979,6 +2202,9 @@ class _$_GetMyBookingSuccess implements _GetMyBookingSuccess {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) {
     return getMyBookingSuccess?.call();
   }
@@ -1998,6 +2224,9 @@ class _$_GetMyBookingSuccess implements _GetMyBookingSuccess {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (getMyBookingSuccess != null) {
@@ -2025,6 +2254,11 @@ class _$_GetMyBookingSuccess implements _GetMyBookingSuccess {
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) {
     return getMyBookingSuccess(this);
   }
@@ -2047,6 +2281,9 @@ class _$_GetMyBookingSuccess implements _GetMyBookingSuccess {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) {
     return getMyBookingSuccess?.call(this);
   }
@@ -2069,6 +2306,9 @@ class _$_GetMyBookingSuccess implements _GetMyBookingSuccess {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (getMyBookingSuccess != null) {
@@ -2160,6 +2400,9 @@ class _$_GetMyBookingError implements _GetMyBookingError {
     required TResult Function() getMyBookingLoading,
     required TResult Function() getMyBookingSuccess,
     required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
   }) {
     return getMyBookingError(errorMsg);
   }
@@ -2179,6 +2422,9 @@ class _$_GetMyBookingError implements _GetMyBookingError {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
   }) {
     return getMyBookingError?.call(errorMsg);
   }
@@ -2198,6 +2444,9 @@ class _$_GetMyBookingError implements _GetMyBookingError {
     TResult Function()? getMyBookingLoading,
     TResult Function()? getMyBookingSuccess,
     TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (getMyBookingError != null) {
@@ -2225,6 +2474,11 @@ class _$_GetMyBookingError implements _GetMyBookingError {
     required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
     required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
     required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
   }) {
     return getMyBookingError(this);
   }
@@ -2247,6 +2501,9 @@ class _$_GetMyBookingError implements _GetMyBookingError {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
   }) {
     return getMyBookingError?.call(this);
   }
@@ -2269,6 +2526,9 @@ class _$_GetMyBookingError implements _GetMyBookingError {
     TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
     TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
     TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
     required TResult orElse(),
   }) {
     if (getMyBookingError != null) {
@@ -2285,5 +2545,625 @@ abstract class _GetMyBookingError implements BookingState {
   String get errorMsg;
   @JsonKey(ignore: true)
   _$$_GetMyBookingErrorCopyWith<_$_GetMyBookingError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_UpdateMyBookingLoadingCopyWith<$Res> {
+  factory _$$_UpdateMyBookingLoadingCopyWith(_$_UpdateMyBookingLoading value,
+          $Res Function(_$_UpdateMyBookingLoading) then) =
+      __$$_UpdateMyBookingLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_UpdateMyBookingLoadingCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res>
+    implements _$$_UpdateMyBookingLoadingCopyWith<$Res> {
+  __$$_UpdateMyBookingLoadingCopyWithImpl(_$_UpdateMyBookingLoading _value,
+      $Res Function(_$_UpdateMyBookingLoading) _then)
+      : super(_value, (v) => _then(v as _$_UpdateMyBookingLoading));
+
+  @override
+  _$_UpdateMyBookingLoading get _value =>
+      super._value as _$_UpdateMyBookingLoading;
+}
+
+/// @nodoc
+
+class _$_UpdateMyBookingLoading implements _UpdateMyBookingLoading {
+  const _$_UpdateMyBookingLoading();
+
+  @override
+  String toString() {
+    return 'BookingState.updateMyBookingLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UpdateMyBookingLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
+    required TResult Function() changeTabBar,
+    required TResult Function() selectDate,
+    required TResult Function() initCalenderControllers,
+    required TResult Function() disposeCalenderControllers,
+    required TResult Function() initBookingDetailsControllers,
+    required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
+  }) {
+    return updateMyBookingLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
+  }) {
+    return updateMyBookingLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
+    required TResult orElse(),
+  }) {
+    if (updateMyBookingLoading != null) {
+      return updateMyBookingLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
+    required TResult Function(_ChangeTabBar value) changeTabBar,
+    required TResult Function(_SelectDate value) selectDate,
+    required TResult Function(_InitCalenderControllers value)
+        initCalenderControllers,
+    required TResult Function(_DisposeCalenderControllers value)
+        disposeCalenderControllers,
+    required TResult Function(_InitBookingDetailsControllers value)
+        initBookingDetailsControllers,
+    required TResult Function(_DisposeBookingDetailsControllers value)
+        disposeBookingDetailsControllers,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
+  }) {
+    return updateMyBookingLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
+  }) {
+    return updateMyBookingLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
+    required TResult orElse(),
+  }) {
+    if (updateMyBookingLoading != null) {
+      return updateMyBookingLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateMyBookingLoading implements BookingState {
+  const factory _UpdateMyBookingLoading() = _$_UpdateMyBookingLoading;
+}
+
+/// @nodoc
+abstract class _$$_UpdateMyBookingSuccessCopyWith<$Res> {
+  factory _$$_UpdateMyBookingSuccessCopyWith(_$_UpdateMyBookingSuccess value,
+          $Res Function(_$_UpdateMyBookingSuccess) then) =
+      __$$_UpdateMyBookingSuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_UpdateMyBookingSuccessCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res>
+    implements _$$_UpdateMyBookingSuccessCopyWith<$Res> {
+  __$$_UpdateMyBookingSuccessCopyWithImpl(_$_UpdateMyBookingSuccess _value,
+      $Res Function(_$_UpdateMyBookingSuccess) _then)
+      : super(_value, (v) => _then(v as _$_UpdateMyBookingSuccess));
+
+  @override
+  _$_UpdateMyBookingSuccess get _value =>
+      super._value as _$_UpdateMyBookingSuccess;
+}
+
+/// @nodoc
+
+class _$_UpdateMyBookingSuccess implements _UpdateMyBookingSuccess {
+  const _$_UpdateMyBookingSuccess();
+
+  @override
+  String toString() {
+    return 'BookingState.updateMyBookingSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UpdateMyBookingSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
+    required TResult Function() changeTabBar,
+    required TResult Function() selectDate,
+    required TResult Function() initCalenderControllers,
+    required TResult Function() disposeCalenderControllers,
+    required TResult Function() initBookingDetailsControllers,
+    required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
+  }) {
+    return updateMyBookingSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
+  }) {
+    return updateMyBookingSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
+    required TResult orElse(),
+  }) {
+    if (updateMyBookingSuccess != null) {
+      return updateMyBookingSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
+    required TResult Function(_ChangeTabBar value) changeTabBar,
+    required TResult Function(_SelectDate value) selectDate,
+    required TResult Function(_InitCalenderControllers value)
+        initCalenderControllers,
+    required TResult Function(_DisposeCalenderControllers value)
+        disposeCalenderControllers,
+    required TResult Function(_InitBookingDetailsControllers value)
+        initBookingDetailsControllers,
+    required TResult Function(_DisposeBookingDetailsControllers value)
+        disposeBookingDetailsControllers,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
+  }) {
+    return updateMyBookingSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
+  }) {
+    return updateMyBookingSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
+    required TResult orElse(),
+  }) {
+    if (updateMyBookingSuccess != null) {
+      return updateMyBookingSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateMyBookingSuccess implements BookingState {
+  const factory _UpdateMyBookingSuccess() = _$_UpdateMyBookingSuccess;
+}
+
+/// @nodoc
+abstract class _$$_UpdateMyBookingErrorCopyWith<$Res> {
+  factory _$$_UpdateMyBookingErrorCopyWith(_$_UpdateMyBookingError value,
+          $Res Function(_$_UpdateMyBookingError) then) =
+      __$$_UpdateMyBookingErrorCopyWithImpl<$Res>;
+  $Res call({String errorMsg});
+}
+
+/// @nodoc
+class __$$_UpdateMyBookingErrorCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res>
+    implements _$$_UpdateMyBookingErrorCopyWith<$Res> {
+  __$$_UpdateMyBookingErrorCopyWithImpl(_$_UpdateMyBookingError _value,
+      $Res Function(_$_UpdateMyBookingError) _then)
+      : super(_value, (v) => _then(v as _$_UpdateMyBookingError));
+
+  @override
+  _$_UpdateMyBookingError get _value => super._value as _$_UpdateMyBookingError;
+
+  @override
+  $Res call({
+    Object? errorMsg = freezed,
+  }) {
+    return _then(_$_UpdateMyBookingError(
+      errorMsg == freezed
+          ? _value.errorMsg
+          : errorMsg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UpdateMyBookingError implements _UpdateMyBookingError {
+  const _$_UpdateMyBookingError(this.errorMsg);
+
+  @override
+  final String errorMsg;
+
+  @override
+  String toString() {
+    return 'BookingState.updateMyBookingError(errorMsg: $errorMsg)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UpdateMyBookingError &&
+            const DeepCollectionEquality().equals(other.errorMsg, errorMsg));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(errorMsg));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UpdateMyBookingErrorCopyWith<_$_UpdateMyBookingError> get copyWith =>
+      __$$_UpdateMyBookingErrorCopyWithImpl<_$_UpdateMyBookingError>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() initTabController,
+    required TResult Function() changeTabBarLoading,
+    required TResult Function() changeTabBar,
+    required TResult Function() selectDate,
+    required TResult Function() initCalenderControllers,
+    required TResult Function() disposeCalenderControllers,
+    required TResult Function() initBookingDetailsControllers,
+    required TResult Function() disposeBookingDetailsControllers,
+    required TResult Function() getMyBookingLoading,
+    required TResult Function() getMyBookingSuccess,
+    required TResult Function(String errorMsg) getMyBookingError,
+    required TResult Function() updateMyBookingLoading,
+    required TResult Function() updateMyBookingSuccess,
+    required TResult Function(String errorMsg) updateMyBookingError,
+  }) {
+    return updateMyBookingError(errorMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
+  }) {
+    return updateMyBookingError?.call(errorMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initTabController,
+    TResult Function()? changeTabBarLoading,
+    TResult Function()? changeTabBar,
+    TResult Function()? selectDate,
+    TResult Function()? initCalenderControllers,
+    TResult Function()? disposeCalenderControllers,
+    TResult Function()? initBookingDetailsControllers,
+    TResult Function()? disposeBookingDetailsControllers,
+    TResult Function()? getMyBookingLoading,
+    TResult Function()? getMyBookingSuccess,
+    TResult Function(String errorMsg)? getMyBookingError,
+    TResult Function()? updateMyBookingLoading,
+    TResult Function()? updateMyBookingSuccess,
+    TResult Function(String errorMsg)? updateMyBookingError,
+    required TResult orElse(),
+  }) {
+    if (updateMyBookingError != null) {
+      return updateMyBookingError(errorMsg);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InitTabController value) initTabController,
+    required TResult Function(_ChangeTabBarLoading value) changeTabBarLoading,
+    required TResult Function(_ChangeTabBar value) changeTabBar,
+    required TResult Function(_SelectDate value) selectDate,
+    required TResult Function(_InitCalenderControllers value)
+        initCalenderControllers,
+    required TResult Function(_DisposeCalenderControllers value)
+        disposeCalenderControllers,
+    required TResult Function(_InitBookingDetailsControllers value)
+        initBookingDetailsControllers,
+    required TResult Function(_DisposeBookingDetailsControllers value)
+        disposeBookingDetailsControllers,
+    required TResult Function(_GetMyBookingLoading value) getMyBookingLoading,
+    required TResult Function(_GetMyBookingSuccess value) getMyBookingSuccess,
+    required TResult Function(_GetMyBookingError value) getMyBookingError,
+    required TResult Function(_UpdateMyBookingLoading value)
+        updateMyBookingLoading,
+    required TResult Function(_UpdateMyBookingSuccess value)
+        updateMyBookingSuccess,
+    required TResult Function(_UpdateMyBookingError value) updateMyBookingError,
+  }) {
+    return updateMyBookingError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
+  }) {
+    return updateMyBookingError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitTabController value)? initTabController,
+    TResult Function(_ChangeTabBarLoading value)? changeTabBarLoading,
+    TResult Function(_ChangeTabBar value)? changeTabBar,
+    TResult Function(_SelectDate value)? selectDate,
+    TResult Function(_InitCalenderControllers value)? initCalenderControllers,
+    TResult Function(_DisposeCalenderControllers value)?
+        disposeCalenderControllers,
+    TResult Function(_InitBookingDetailsControllers value)?
+        initBookingDetailsControllers,
+    TResult Function(_DisposeBookingDetailsControllers value)?
+        disposeBookingDetailsControllers,
+    TResult Function(_GetMyBookingLoading value)? getMyBookingLoading,
+    TResult Function(_GetMyBookingSuccess value)? getMyBookingSuccess,
+    TResult Function(_GetMyBookingError value)? getMyBookingError,
+    TResult Function(_UpdateMyBookingLoading value)? updateMyBookingLoading,
+    TResult Function(_UpdateMyBookingSuccess value)? updateMyBookingSuccess,
+    TResult Function(_UpdateMyBookingError value)? updateMyBookingError,
+    required TResult orElse(),
+  }) {
+    if (updateMyBookingError != null) {
+      return updateMyBookingError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateMyBookingError implements BookingState {
+  const factory _UpdateMyBookingError(final String errorMsg) =
+      _$_UpdateMyBookingError;
+
+  String get errorMsg;
+  @JsonKey(ignore: true)
+  _$$_UpdateMyBookingErrorCopyWith<_$_UpdateMyBookingError> get copyWith =>
       throw _privateConstructorUsedError;
 }

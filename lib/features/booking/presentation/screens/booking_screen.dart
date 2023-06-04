@@ -1,4 +1,5 @@
 import 'package:booking/core/shared_widgets/circle_indicator.dart';
+import 'package:booking/core/shared_widgets/snack_bar.dart';
 import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_colors.dart';
 import 'package:booking/core/utils/app_fonts.dart';
@@ -30,7 +31,16 @@ class _BookingScreenState extends State<BookingScreen>
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<BookingCubit, BookingState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.maybeWhen(
+          updateMyBookingError: (errorMsg) => showSnackBar(
+            context: context,
+            message: errorMsg,
+            color: AppColors.red,
+          ),
+          orElse: () {},
+        );
+      },
       builder: (context, state) {
         final BookingCubit cubit = BookingCubit.get(context);
         return Scaffold(

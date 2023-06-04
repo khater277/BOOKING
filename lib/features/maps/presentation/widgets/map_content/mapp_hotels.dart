@@ -3,10 +3,9 @@ import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.
 import 'package:booking/features/maps/cubit/maps_cubit.dart';
 import 'package:booking/features/maps/presentation/widgets/map_content/map_hotel_item.dart';
 import 'package:flutter/material.dart';
-import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-class MapsHotels extends StatefulWidget {
+class MapsHotels extends StatelessWidget {
   const MapsHotels({
     super.key,
     required this.hotels,
@@ -17,48 +16,26 @@ class MapsHotels extends StatefulWidget {
   final MapsCubit cubit;
 
   @override
-  State<MapsHotels> createState() => _MapsHotelsState();
-}
-
-class _MapsHotelsState extends State<MapsHotels> {
-  @override
-  void initState() {
-    widget.cubit.addPageRequest();
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Align(
         alignment: Alignment.bottomCenter,
         child: SizedBox(
           height: AppHeight.h120,
           child: ListView.builder(
-            controller: widget.cubit.scrollController,
+            controller: cubit.scrollController,
             // pagingController: widget.cubit.pagingController,
-            itemCount: widget.cubit.hotels!.hotels!.length,
+            itemCount: cubit.hotels!.hotels!.length,
             physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) => VisibilityDetector(
               key: Key(index.toString()),
               onVisibilityChanged: (VisibilityInfo info) {
                 if (info.visibleFraction == 1) {
-                  widget.cubit.changeHotelCurrentIndex(index: index);
+                  cubit.changeHotelCurrentIndex(index: index);
                 }
               },
-              child: MapHotelItem(hotel: widget.cubit.hotels!.hotels![index]),
+              child: MapHotelItem(hotel: cubit.hotels!.hotels![index]),
             ),
-            // builderDelegate: PagedChildBuilderDelegate<Hotel>(
-            //   itemBuilder: (context, item, index) => VisibilityDetector(
-            //     key: Key(index.toString()),
-            //     onVisibilityChanged: (VisibilityInfo info) {
-            //       if (info.visibleFraction == 1) {
-            //         widget.cubit.changeHotelCurrentIndex(index: index);
-            //       }
-            //     },
-            //     child: MapHotelItem(hotel: item),
-            //   ),
-            // ),
           ),
         ));
   }

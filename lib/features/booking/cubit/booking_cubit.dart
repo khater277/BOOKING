@@ -3,9 +3,7 @@ import 'package:booking/features/booking/data/models/booking_details_model/booki
 import 'package:booking/features/booking/data/models/booking_list_model/booking_list_model.dart';
 import 'package:booking/features/booking/data/models/pop_up_info/pop_up_info.dart';
 import 'package:booking/features/booking/domain/usecases/get_my_bookings_use_case.dart';
-import 'package:booking/features/booking/presentation/widgets/pop_up_menu.dart';
-import 'package:booking/features/create_booking/data/models/body/hotels.dart';
-import 'package:booking/features/hotels/cubit/hotels_cubit.dart';
+import 'package:booking/features/booking/domain/usecases/update_my_booking.dart';
 import 'package:booking/features/hotels/data/models/hotels_response_model/hotel.dart';
 import 'package:booking/features/hotels/domain/usecases/hotel_usecases.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +15,11 @@ part 'booking_state.dart';
 
 class BookingCubit extends Cubit<BookingState> {
   final GetMyBookingsUseCase getMyBookingsUseCase;
-  BookingCubit({required this.getMyBookingsUseCase})
-      : super(const BookingState.initial());
+  final UpdateMyBookingUseCase updateMyBookingUseCase;
+  BookingCubit({
+    required this.getMyBookingsUseCase,
+    required this.updateMyBookingUseCase,
+  }) : super(const BookingState.initial());
   static BookingCubit get(BuildContext context) => BlocProvider.of(context);
 
   List<BookingsListModel> bookings = [
@@ -123,5 +124,32 @@ class BookingCubit extends Cubit<BookingState> {
 
     bookings[2] = bookings[2].copyWith(
         list: data.where((element) => element.type == "Cancelled").toList());
+  }
+
+  void updateMyBooking({required UpdateMyBookingParams params}) async {
+    emit(const BookingState.updateMyBookingLoading());
+    bookings[tabBarIndex].loadingBookings!.add(params.bookingId);
+    final response = await updateMyBookingUseCase.call(params);
+    response.fold(
+      (failure) {
+        bookings[tabBarIndex].loadingBookings!.remove(params.bookingId);
+        emit(BookingState.updateMyBookingError(failure.getMessage()));
+      },
+      (result) async {
+        final getBookingResponse = await getMyBookingsUseCase.call(NoParams());
+        getBookingResponse.fold(
+          (failure) {
+            bookings[tabBarIndex].loadingBookings!.remove(params.bookingId);
+            handleMyBookings(data: HiveHelper.getMyBookings()!);
+            emit(const BookingState.updateMyBookingSuccess());
+          },
+          (data) {
+            bookings[tabBarIndex].loadingBookings!.remove(params.bookingId);
+            handleMyBookings(data: data);
+            emit(const BookingState.updateMyBookingSuccess());
+          },
+        );
+      },
+    );
   }
 }

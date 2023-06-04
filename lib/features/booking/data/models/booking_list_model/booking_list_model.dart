@@ -6,7 +6,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 part 'booking_list_model.freezed.dart';
 part 'booking_list_model.g.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 @HiveType(typeId: 52)
 class BookingsListModel with _$BookingsListModel {
   factory BookingsListModel({

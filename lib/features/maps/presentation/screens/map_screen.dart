@@ -32,7 +32,7 @@ class _MapScreenState extends State<MapScreen> {
                 initialCameraPosition: cubit.currentCameraPosition,
                 mapType: MapType.terrain,
                 zoomControlsEnabled: true,
-                myLocationEnabled: true,
+                // myLocationEnabled: true,
                 myLocationButtonEnabled: false,
                 markers: cubit.markers,
                 onMapCreated: (GoogleMapController googleMapController) {

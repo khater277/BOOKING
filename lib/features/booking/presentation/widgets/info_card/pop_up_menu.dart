@@ -2,16 +2,17 @@ import 'package:booking/core/shared_widgets/text.dart';
 import 'package:booking/core/utils/app_colors.dart';
 import 'package:booking/features/booking/cubit/booking_cubit.dart';
 import 'package:booking/features/booking/data/models/pop_up_info/pop_up_info.dart';
+import 'package:booking/features/booking/domain/usecases/update_my_booking.dart';
 import 'package:flutter/material.dart';
 
 class BookingPopupMenu extends StatelessWidget {
   final BookingCubit cubit;
-  // final int bookingId;
+  final String bookingId;
   // final int index;
   const BookingPopupMenu({
     Key? key,
     required this.cubit,
-    // required this.bookingId,
+    required this.bookingId,
     // required this.index,
   }) : super(key: key);
 
@@ -32,11 +33,11 @@ class BookingPopupMenu extends StatelessWidget {
         elevation: 2,
         enabled: true,
         onSelected: (PopUpInfo value) {
-          // cubit.updateBooking(
-          //   booking_id: bookingId,
-          //   type: value.text.toLowerCase(),
-          //   index: index,
-          // );
+          cubit.updateMyBooking(
+              params: UpdateMyBookingParams(
+            bookingId: bookingId,
+            bookingType: value.text!,
+          ));
           debugPrint(value.text!.toLowerCase());
         },
         itemBuilder: (context) {
